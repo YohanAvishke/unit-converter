@@ -8,8 +8,29 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var selection: Tab = .units
+    
+    enum Tab {
+        case units
+        case history
+        case constatnts
+    }
+    
     var body: some View {
-        CategoryList()
+        TabView(selection: $selection) {
+            CategoryList()
+                .tabItem {
+                    Label("Convert", systemImage: "arrow.2.squarepath")
+                }
+                .tag(Tab.units)
+            
+            HistoryView()
+                .tabItem {
+                    Label("History", systemImage: "clock.fill")
+                }
+                .tag(Tab.history)
+        }
+        
     }
 }
 
