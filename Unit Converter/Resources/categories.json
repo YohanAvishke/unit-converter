@@ -1,0 +1,28 @@
+[
+	{
+		"name" : "Weight",
+		"description" : "Units: Kg, grams, ounces, pounds, stone-pounds",
+		"imageName" : "weight-light"
+	},
+	{
+		"name" : "Temperature",
+		"description" : "Units: Celsius, Fahrenheit, Kelvin",
+		"imageName" : "temperature-light"
+	},
+	{
+		"name" : "Length",
+		"description" : "Units: metre, km, mile, cm, mm, yard, inch",
+		"imageName" : "length-light"
+	},
+	{
+		"name" : "Speed",
+		"description" : "Units: metres/sec, km/hour, miles/hour, nautical miles/hour (knot)",
+		"imageName" : "speed-light"
+	},
+	{
+		"name" : "Volume",
+		"description" : "Units: UK gallon, litre, UK pint, fluid ounce, millilitre",
+		"imageName" : "volume-light"
+	}
+
+]
