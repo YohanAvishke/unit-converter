@@ -7,19 +7,21 @@
 
 import SwiftUI
 
-struct CteagoryItem: View {
+struct CategoryItem: View {
+    var category: Category
+    
     var body: some View {
         HStack {
-            Image("weight-light")
+            category.image
                 .resizable()
                 .frame(width: 100, height: 100)
             
             Spacer()
             
             VStack() {
-                Text("Weight")
+                Text(category.name)
                     .font(.title)
-                Text("Units: grams, ounces, pounds, stone-pounds")
+                Text(category.description)
                     .font(.caption)
                     .multilineTextAlignment(.center)
                     .foregroundColor(.gray)
@@ -32,7 +34,11 @@ struct CteagoryItem: View {
 
 struct CteagoryItem_Previews: PreviewProvider {
     static var previews: some View {
-        CteagoryItem()
-            .previewLayout(.fixed(width: 370, height: 100))
+        Group {
+            ForEach(categories, id: \.self) { category in
+                CategoryItem(category: category)
+            }
+        }
+        .previewLayout(.fixed(width: 370, height: 100))
     }
 }
