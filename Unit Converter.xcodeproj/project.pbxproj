@@ -17,6 +17,7 @@
 		C8F282B625ED12690030556B /* categories.json in Resources */ = {isa = PBXBuildFile; fileRef = C8F282B525ED12690030556B /* categories.json */; };
 		C8F282BB25ED14070030556B /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F282BA25ED14070030556B /* Category.swift */; };
 		C8F282C025ED14B10030556B /* CategoryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F282BF25ED14B10030556B /* CategoryData.swift */; };
+		C8F282CB25ED5DD80030556B /* CategoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F282CA25ED5DD80030556B /* CategoryList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		C8F282B525ED12690030556B /* categories.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = categories.json; sourceTree = "<group>"; };
 		C8F282BA25ED14070030556B /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		C8F282BF25ED14B10030556B /* CategoryData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryData.swift; sourceTree = "<group>"; };
+		C8F282CA25ED5DD80030556B /* CategoryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +155,7 @@
 			children = (
 				C8F282B025ED06E10030556B /* CategoryItem.swift */,
 				C8629E5A25E81AA60001F7BD /* ContentView.swift */,
+				C8F282CA25ED5DD80030556B /* CategoryList.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -297,6 +300,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C8F282B125ED06E10030556B /* CategoryItem.swift in Sources */,
+				C8F282CB25ED5DD80030556B /* CategoryList.swift in Sources */,
 				C8F282C025ED14B10030556B /* CategoryData.swift in Sources */,
 				C8629E5B25E81AA60001F7BD /* ContentView.swift in Sources */,
 				C8629E5925E81AA60001F7BD /* Unit_ConverterApp.swift in Sources */,

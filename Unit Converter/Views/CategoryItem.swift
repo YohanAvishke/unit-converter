@@ -25,7 +25,6 @@ struct CategoryItem: View {
                     .font(.caption)
                     .multilineTextAlignment(.center)
                     .foregroundColor(.gray)
-                    .frame(width: 200, height: 40.0)
             }
         }
         .padding(.horizontal)
