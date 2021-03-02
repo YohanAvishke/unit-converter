@@ -12,13 +12,12 @@ struct CategoryList: View {
         NavigationView {
             List {
                 ForEach(categories, id: \.self) { category in
-                    NavigationLink(destination: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Destination@*/Text("Destination")/*@END_MENU_TOKEN@*/) {
+                    NavigationLink(destination: WeightView()) {
                         CategoryItem(category: category) }
                 }
             }
             .navigationTitle("Mass Units")
         }
-        
     }
 }
 

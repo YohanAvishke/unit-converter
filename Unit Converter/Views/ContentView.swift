@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var selection: Tab = .units
+    @State private var selection: Tab = .convert
     
     enum Tab {
-        case units
+        case convert
         case history
         case constatnts
     }
@@ -22,7 +22,7 @@ struct ContentView: View {
                 .tabItem {
                     Label("Convert", systemImage: "arrow.2.squarepath")
                 }
-                .tag(Tab.units)
+                .tag(Tab.convert)
             
             HistoryView()
                 .tabItem {
