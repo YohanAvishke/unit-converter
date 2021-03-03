@@ -8,13 +8,44 @@
 import Foundation
 import SwiftUI
 
-enum Unit {
+enum WeightUnit {
     case kilogram
     case gram
     case ounce
     case pound
     case stone
     case stone_pound
+}
+
+enum TemperaturetUnit {
+    case celsius
+    case fahrenheit
+    case kelvin
+}
+
+enum LengthtUnit {
+    case mile
+    case kilometre
+    case metre
+    case yard
+    case inch
+    case centimetre
+    case millimetre
+}
+
+enum SpeedUnit {
+    case knot
+    case miles_hour 
+    case kilometres_hour
+    case metres_sec
+}
+
+enum VolumeUnit {
+    case gallon
+    case litre
+    case pint
+    case fluid_ounce
+    case millilitre
 }
 
 func createInputFeild(placeholder: String, bindedValue: Binding<String>) -> AnyView {

@@ -11,13 +11,13 @@ struct WeightView: View {
     var body: some View {
         ScrollView {
             VStack() {
-                WeightField(unitType: Unit.kilogram)
-                WeightField(unitType: Unit.gram)
-                WeightField(unitType: Unit.ounce)
-                WeightField(unitType: Unit.pound)
+                WeightField(unitType: WeightUnit.kilogram)
+                WeightField(unitType: WeightUnit.gram)
+                WeightField(unitType: WeightUnit.ounce)
+                WeightField(unitType: WeightUnit.pound)
                 HStack {
-                    WeightField(unitType: Unit.stone)
-                    WeightField(unitType: Unit.stone_pound)
+                    WeightField(unitType: WeightUnit.stone)
+                    WeightField(unitType: WeightUnit.stone_pound)
                 }
             }
             .padding(.top)

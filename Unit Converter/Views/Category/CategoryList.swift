@@ -11,9 +11,20 @@ struct CategoryList: View {
     var body: some View {
         NavigationView {
             List {
-                ForEach(categories) { category in
-                    NavigationLink(destination: WeightView()) {
-                        CategoryItem(category: category) }
+                NavigationLink(destination: WeightView()) {
+                    CategoryItem(category: categories[0])
+                }
+                NavigationLink(destination: TemperatureView()) {
+                    CategoryItem(category: categories[1])
+                }
+                NavigationLink(destination: LengthView()) {
+                    CategoryItem(category: categories[2])
+                }
+                NavigationLink(destination: SpeedView()) {
+                    CategoryItem(category: categories[3])
+                }
+                NavigationLink(destination: VolumeView()) {
+                    CategoryItem(category: categories[4])
                 }
             }
             .navigationTitle("Mass Units")

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct WeightField: View {
-    var unitType: Unit
+    var unitType: WeightUnit
     @State var valueOfKilogram: String = ""
     @State var valueOfGram: String = ""
     @State var valueOfOunce: String = ""
@@ -64,7 +64,7 @@ struct WeightField: View {
 struct WeightField_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            WeightField(unitType: Unit.kilogram)
+            WeightField(unitType: WeightUnit.kilogram)
         }
         .background(Color(red: 242/255, green: 242/255, blue: 247/255))
         .previewLayout(.fixed(width: 400, height: 80))
