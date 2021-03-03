@@ -34,7 +34,7 @@ struct CategoryItem: View {
 struct CteagoryItem_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            ForEach(categories, id: \.self) { category in
+            ForEach(categories) { category in
                 CategoryItem(category: category)
             }
         }

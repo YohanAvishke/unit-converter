@@ -11,7 +11,7 @@ struct CategoryList: View {
     var body: some View {
         NavigationView {
             List {
-                ForEach(categories, id: \.self) { category in
+                ForEach(categories) { category in
                     NavigationLink(destination: WeightView()) {
                         CategoryItem(category: category) }
                 }

@@ -117,7 +117,7 @@
 		C85FC32F25EDDF9300F7AF6D /* Category */ = {
 			isa = PBXGroup;
 			children = (
-				C85FC33425EDE07600F7AF6D /* Weight */,
+				C85FC33425EDE07600F7AF6D /* Units */,
 				C8F282B025ED06E10030556B /* CategoryItem.swift */,
 				C8F282CA25ED5DD80030556B /* CategoryList.swift */,
 			);
@@ -132,12 +132,12 @@
 			path = History;
 			sourceTree = "<group>";
 		};
-		C85FC33425EDE07600F7AF6D /* Weight */ = {
+		C85FC33425EDE07600F7AF6D /* Units */ = {
 			isa = PBXGroup;
 			children = (
 				C85FC33525EDE09800F7AF6D /* WeightView.swift */,
 			);
-			path = Weight;
+			path = Units;
 			sourceTree = "<group>";
 		};
 		C8629E4C25E81AA60001F7BD = {
