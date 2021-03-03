@@ -17,6 +17,7 @@ struct CategoryList: View {
                 }
             }
             .navigationTitle("Mass Units")
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
 }

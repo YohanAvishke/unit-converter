@@ -20,7 +20,7 @@ struct CategoryItem: View {
             
             VStack() {
                 Text(category.name)
-                    .font(.title)
+                    .font(.title2)
                 Text(category.description)
                     .font(.caption)
                     .multilineTextAlignment(.center)

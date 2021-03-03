@@ -63,11 +63,6 @@ struct WeightView: View {
     var body: some View {
         ScrollView {
             VStack() {
-                Text("Weight")
-                    .font(.largeTitle)
-                    .fontWeight(.medium)
-                    .padding(.bottom)
-                
                 TextFieldWithLabel(label:"Kilograms", placeholder:"Kg", unitType: Unit.kilogram)
                 TextFieldWithLabel(label:"Grams", placeholder:"g", unitType: Unit.gram)
                 TextFieldWithLabel(label:"Ounces", placeholder:"oz", unitType: Unit.ounce)
@@ -77,10 +72,11 @@ struct WeightView: View {
                     TextFieldWithLabel(label:"Pounds", placeholder:"lb", unitType: Unit.stone_pound)
                 }
             }
-            .padding(.top, 75)
+            .padding(.top)
         }
+        .navigationTitle("Weight")
+        .navigationBarTitleDisplayMode(.inline)
         .background(Color(red: 242/255, green: 242/255, blue: 247/255))
-        .ignoresSafeArea(.all)
     }
 }
 
