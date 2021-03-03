@@ -9,9 +9,9 @@ import SwiftUI
 
 struct TemperatureField: View {
     var unitType: TemperaturetUnit
-    @State var valueOfCelsius: String = ""
-    @State var valueOfFahrenheit: String = ""
-    @State var valueOfKelvin: String = ""
+    @State var valueOfCelsius = ""
+    @State var valueOfFahrenheit = ""
+    @State var valueOfKelvin = ""
     
     var body: some View {
         VStack(alignment: .leading, spacing: 10.0) {

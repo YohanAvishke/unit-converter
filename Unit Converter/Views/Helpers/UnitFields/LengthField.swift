@@ -9,13 +9,13 @@ import SwiftUI
 
 struct LengthField: View {
     var unitType: LengthtUnit
-    @State var valueOfMetre: String = ""
-    @State var valueOfKilometre: String = ""
-    @State var valueOfMile: String = ""
-    @State var valueOfCentimetre: String = ""
-    @State var valueOfMillimetre: String = ""
-    @State var valueOfYard: String = ""
-    @State var valueOfInch: String = ""
+    @State var valueOfMetre = ""
+    @State var valueOfKilometre = ""
+    @State var valueOfMile = ""
+    @State var valueOfCentimetre = ""
+    @State var valueOfMillimetre = ""
+    @State var valueOfYard = ""
+    @State var valueOfInch = ""
     
     var body: some View {
         VStack(alignment: .leading, spacing: 10.0) {

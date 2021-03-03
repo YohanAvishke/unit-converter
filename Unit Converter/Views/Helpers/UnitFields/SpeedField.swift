@@ -9,10 +9,10 @@ import SwiftUI
 
 struct SpeedField: View {
     var unitType: SpeedUnit
-    @State var valueOfMetresPerSecond: String = ""
-    @State var valueOfKilometresPerHour: String = ""
-    @State var valueOfMilesPerHour: String = ""
-    @State var valueOfKnot: String = ""
+    @State var valueOfMetresPerSecond = ""
+    @State var valueOfKilometresPerHour = ""
+    @State var valueOfMilesPerHour = ""
+    @State var valueOfKnot = ""
     
     var body: some View {
         VStack(alignment: .leading, spacing: 10.0) {

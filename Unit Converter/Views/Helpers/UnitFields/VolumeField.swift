@@ -9,12 +9,12 @@ import SwiftUI
 
 struct VolumeField: View {
     var unitType: VolumeUnit
-    @State var valueOfGallon: String = ""
-    @State var valueOfLitre: String = ""
-    @State var valueOfPint: String = ""
-    @State var valueOfFluid: String = ""
-    @State var valueOfOunce: String = ""
-    @State var valueOfMillilitre: String = ""
+    @State var valueOfGallon = ""
+    @State var valueOfLitre = ""
+    @State var valueOfPint = ""
+    @State var valueOfFluid = ""
+    @State var valueOfOunce = ""
+    @State var valueOfMillilitre = ""
     
     var body: some View {
         VStack(alignment: .leading, spacing: 10.0) {

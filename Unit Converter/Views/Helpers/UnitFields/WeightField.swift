@@ -9,12 +9,12 @@ import SwiftUI
 
 struct WeightField: View {
     var unitType: WeightUnit
-    @State var valueOfKilogram: String = ""
-    @State var valueOfGram: String = ""
-    @State var valueOfOunce: String = ""
-    @State var valueOfPound: String = ""
-    @State var valueOfStone: String = ""
-    @State var valueOfStonePound: String = ""
+    @State var valueOfKilogram = ""
+    @State var valueOfGram = ""
+    @State var valueOfOunce = ""
+    @State var valueOfPound = ""
+    @State var valueOfStone = ""
+    @State var valueOfStonePound = ""
     
     var body: some View {
         VStack(alignment: .leading, spacing: 10.0) {

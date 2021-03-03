@@ -50,6 +50,7 @@ enum VolumeUnit {
 
 func createInputFeild(placeholder: String, bindedValue: Binding<String>) -> AnyView {
     return AnyView(TextField(placeholder, text: bindedValue)
+                    .keyboardType(.numberPad)
                     .padding(.all)
                     .background(Color.white)
                     .cornerRadius(10))
