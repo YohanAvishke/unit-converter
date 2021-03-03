@@ -77,6 +77,7 @@ struct WeightView: View {
         .navigationTitle("Weight")
         .navigationBarTitleDisplayMode(.inline)
         .background(Color(red: 242/255, green: 242/255, blue: 247/255))
+        .edgesIgnoringSafeArea(.bottom)
     }
 }
 
