@@ -162,7 +162,7 @@
 			path = History;
 			sourceTree = "<group>";
 		};
-		C85FC33425EDE07600F7AF6D /* Unit */ = {
+		C85FC33425EDE07600F7AF6D /* Units */ = {
 			isa = PBXGroup;
 			children = (
 				C85FC33525EDE09800F7AF6D /* WeightView.swift */,
@@ -171,7 +171,7 @@
 				C817318E25EF600100BF8D36 /* SpeedView.swift */,
 				C817319325EF601500BF8D36 /* VolumeView.swift */,
 			);
-			path = Unit;
+			path = Units;
 			sourceTree = "<group>";
 		};
 		C8629E4C25E81AA60001F7BD = {
@@ -246,7 +246,7 @@
 		C87695D425EBD1EE008E933A /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				C85FC33425EDE07600F7AF6D /* Unit */,
+				C85FC33425EDE07600F7AF6D /* Units */,
 				C817315525EF4D9500BF8D36 /* Helpers */,
 				C85FC33025EDDFA200F7AF6D /* History */,
 				C85FC32F25EDDF9300F7AF6D /* Category */,
