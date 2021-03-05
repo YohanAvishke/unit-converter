@@ -53,5 +53,14 @@ func createInputFeild(placeholder: String, bindedValue: Binding<String>) -> AnyV
                     .keyboardType(.numberPad)
                     .padding(.all)
                     .background(Color.white)
-                    .cornerRadius(10))
+                    .cornerRadius(10)
+                    
+    )
+}
+
+extension Double {
+    func rounded(toPlaces places:Int) -> Double {
+        let divisor = pow(10.0, Double(places))
+        return (self * divisor).rounded() / divisor
+    }
 }

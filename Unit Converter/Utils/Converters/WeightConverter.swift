@@ -8,68 +8,89 @@
 import Foundation
 
 struct WeightConverter {
-    let unit: WeightUnit
-    let decimalPlaces: Int
+    var unit: WeightUnit
+    var decimalPlaces = 3
     
-    init(unit: WeightUnit, decimalPlaces: Int) {
+    init(unit:WeightUnit) {
         self.unit = unit
-        self.decimalPlaces = decimalPlaces
     }
     
-    func convert(value: Double, to: WeightUnit) -> Double {
+    func convert(value: String, to: WeightUnit) -> String {
+        let valueInNumber: Double = Double(value) ?? 0.0
         var output = 0.0
         
         if unit == .kilogram {
             if to == .gram {
-                output = value * 1000
+                output = valueInNumber * 1000
             } else if to == .ounce {
-                output = value * 35.274
+                output = valueInNumber * 35.274
             } else if to == .pound {
-                output = value * 2.205
+                output = valueInNumber * 2.205
             } else if to == .stone {
-                output = value / 6.35
+                output = Double(Int(valueInNumber / 6.35))
+            } else if to == .stone_pound {
+                output = (valueInNumber / 6.35).truncatingRemainder(dividingBy: 1) *  14
             }
         } else if unit == .gram {
             if to == .kilogram {
-                output = value / 1000
+                output = valueInNumber / 1000
             } else if to == .ounce {
-                output = value / 28.35
+                output = valueInNumber / 28.35
             } else if to == .pound {
-                output = value / 454
+                output = valueInNumber / 454
             } else if to == .stone {
-                output = value / 6350
+                output = Double(Int(valueInNumber / 6350))
+            } else if to == .stone_pound {
+                output = (valueInNumber / 6350).truncatingRemainder(dividingBy: 1) *  14
             }
         } else if unit == .ounce {
             if to == .kilogram {
-                output = value / 35.274
+                output = valueInNumber / 35.274
             } else if to == .gram {
-                output = value * 28.35
+                output = valueInNumber * 28.35
             } else if to == .pound {
-                output = value / 16
+                output = valueInNumber / 16
             } else if to == .stone {
-                output = value / 224
+                output = Double(Int(valueInNumber / 224))
+            } else if to == .stone_pound {
+                output = (valueInNumber / 224).truncatingRemainder(dividingBy: 1) *  14
             }
         } else if unit == .pound {
             if to == .kilogram {
-                output = value / 2.205
+                output = valueInNumber / 2.205
             } else if to == .gram {
-                output = value * 454
+                output = valueInNumber * 454
             } else if to == .ounce {
-                output = value * 16
+                output = valueInNumber * 16
             } else if to == .stone {
-                output = value / 14
+                output = Double(Int(valueInNumber / 14))
+            } else if to == .stone_pound {
+                output = (valueInNumber / 14).truncatingRemainder(dividingBy: 1) *  14
             }
         } else if unit == .stone {
             if to == .kilogram {
-                output = value * 6.35
+                output = valueInNumber * 6.35
             } else if to == .gram {
-                output = value * 6350
+                output = valueInNumber * 6350
             } else if to == .pound {
-                output = value *  14
+                output = valueInNumber *  14
             } else if to == .ounce {
-                output = value * 224
+                output = valueInNumber * 224
+            }
+        } else if unit == .stone_pound {
+            if to == .kilogram {
+                output = valueInNumber / 2.205
+            } else if to == .gram {
+                output = valueInNumber * 454
+            } else if to == .ounce {
+                output = valueInNumber * 16
             }
         }
-        return output
+        
+        output = output.rounded(toPlaces: decimalPlaces)
+        if output == 0.0 {
+            return ""
+        }
+        return String(output)
     }
 }
