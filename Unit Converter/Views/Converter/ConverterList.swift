@@ -5,22 +5,22 @@ struct ConverterList: View {
         NavigationView {
             List {
                 NavigationLink(destination: WeightView()) {
-                    ConverterItem(category: categories[0])
+                    ConverterItem(converter: converters[0])
                 }
                 NavigationLink(destination: TemperatureView()) {
-                    ConverterItem(category: categories[1])
+                    ConverterItem(converter: converters[1])
                 }
                 NavigationLink(destination: LengthView()) {
-                    ConverterItem(category: categories[2])
+                    ConverterItem(converter: converters[2])
                 }
                 NavigationLink(destination: SpeedView()) {
-                    ConverterItem(category: categories[3])
+                    ConverterItem(converter: converters[3])
                 }
                 NavigationLink(destination: VolumeView()) {
-                    ConverterItem(category: categories[4])
+                    ConverterItem(converter: converters[4])
                 }
             }
-            .navigationTitle("Conversions")
+            .navigationTitle("Convert")
             .navigationBarTitleDisplayMode(.inline)
         }
     }

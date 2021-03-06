@@ -1,27 +1,20 @@
-//
-//  CteagoryItem.swift
-//  Unit Converter
-//
-//  Created by Yohan Avishke Ediriweera on 2021-03-01.
-//
-
 import SwiftUI
 
 struct ConverterItem: View {
-    var category: Category
+    var converter: Converter
     
     var body: some View {
         HStack {
-            category.image
+            converter.image
                 .resizable()
                 .frame(width: 100, height: 100)
             
             Spacer()
             
             VStack {
-                Text(category.name)
+                Text(converter.name)
                     .font(.title2)
-                Text(category.description)
+                Text(converter.description)
                     .font(.caption)
                     .multilineTextAlignment(.center)
                     .foregroundColor(.gray)
@@ -35,8 +28,8 @@ struct ConverterItem: View {
 struct CteagoryItem_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            ForEach(categories) { category in
-                ConverterItem(category: category)
+            ForEach(converters) { converter in
+                ConverterItem(converter: converter)
             }
         }
         .previewLayout(.fixed(width: 370, height: 100))

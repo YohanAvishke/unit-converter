@@ -1,12 +1,6 @@
-//
-//  CategoryData.swift
-//  Unit Converter
-//
-//  Created by Yohan Avishke Ediriweera on 2021-03-01.
-//
 import Foundation
 
-var categories: [Category] = load("categories.json")
+var converters: [Converter] = load("converters.json")
 
 func load<T: Decodable>(_ filename: String) -> T {
     let data: Data
