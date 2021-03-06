@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct UnitView: View {
+struct FormController: View {
     @State var converterType: ConverterType
     
     var body: some View {
@@ -21,6 +21,6 @@ struct UnitView: View {
 
 struct UnitView_Previews: PreviewProvider {
     static var previews: some View {
-        UnitView(converterType: .weight)
+        FormController(converterType: .weight)
     }
 }
