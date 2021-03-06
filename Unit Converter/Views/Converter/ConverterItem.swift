@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CategoryItem: View {
+struct ConverterItem: View {
     var category: Category
     
     var body: some View {
@@ -18,7 +18,7 @@ struct CategoryItem: View {
             
             Spacer()
             
-            VStack() {
+            VStack {
                 Text(category.name)
                     .font(.title2)
                 Text(category.description)
@@ -26,6 +26,7 @@ struct CategoryItem: View {
                     .multilineTextAlignment(.center)
                     .foregroundColor(.gray)
             }
+            .frame(width: 180)
         }
         .padding(.horizontal)
     }
@@ -35,7 +36,7 @@ struct CteagoryItem_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             ForEach(categories) { category in
-                CategoryItem(category: category)
+                ConverterItem(category: category)
             }
         }
         .previewLayout(.fixed(width: 370, height: 100))

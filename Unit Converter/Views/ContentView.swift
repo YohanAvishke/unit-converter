@@ -1,34 +1,26 @@
-//
-//  ContentView.swift
-//  Unit Converter
-//
-//  Created by Yohan Avishke Ediriweera on 2021-02-25.
-//
-
 import SwiftUI
 
+enum TabBar {
+    case convert
+    case history
+}
+
 struct ContentView: View {
-    @State private var selection: Tab = .convert
-    
-    enum Tab {
-        case convert
-        case history
-        case constatnts
-    }
+    @State private var selection: TabBar = .convert
     
     var body: some View {
         TabView(selection: $selection) {
-            CategoryList()
+            ConverterList()
                 .tabItem {
                     Label("Convert", systemImage: "arrow.2.squarepath")
                 }
-                .tag(Tab.convert)
+                .tag(TabBar.convert)
             
             HistoryView()
                 .tabItem {
                     Label("History", systemImage: "clock.fill")
                 }
-                .tag(Tab.history)
+                .tag(TabBar.history)
         }
     }
 }
