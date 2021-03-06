@@ -13,7 +13,7 @@
 	},
 	{
         "id" : 3,
-		"name" : "Length",
+		"name" : "Distance",
 		"description" : "metre, km, mile, cm, mm, yard, inch",
 		"imageName" : "length-light"
 	},
