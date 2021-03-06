@@ -25,7 +25,7 @@ struct ConverterItem: View {
     }
 }
 
-struct CteagoryItem_Previews: PreviewProvider {
+struct ConverterItem_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             ForEach(converters) { converter in

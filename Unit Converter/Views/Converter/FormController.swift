@@ -19,7 +19,7 @@ struct FormController: View {
     }
 }
 
-struct UnitView_Previews: PreviewProvider {
+struct FormController_Previews: PreviewProvider {
     static var previews: some View {
         FormController(converterType: .weight)
     }

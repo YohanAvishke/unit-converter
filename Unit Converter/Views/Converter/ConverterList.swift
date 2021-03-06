@@ -15,7 +15,7 @@ struct ConverterList: View {
     }
 }
 
-struct MenuView_Previews: PreviewProvider {
+struct ConverterList_Previews: PreviewProvider {
     static var previews: some View {
         ConverterList()
     }
