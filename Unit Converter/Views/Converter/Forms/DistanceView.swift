@@ -1,13 +1,6 @@
-//
-//  LengthView.swift
-//  Unit Converter
-//
-//  Created by Yohan Avishke Ediriweera on 2021-03-03.
-//
-
 import SwiftUI
 
-struct LengthView: View {
+struct DistanceView: View {
     var body: some View {
         ScrollView {
             VStack() {
@@ -28,8 +21,8 @@ struct LengthView: View {
     }
 }
 
-struct LengthView_Previews: PreviewProvider {
+struct DistanceView_Previews: PreviewProvider {
     static var previews: some View {
-        LengthView()
+        DistanceView()
     }
 }
