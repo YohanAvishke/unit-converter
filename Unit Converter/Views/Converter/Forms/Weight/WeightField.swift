@@ -14,9 +14,7 @@ struct WeightField: View {
                                 binding: $valueOfWeight.kilogram
                 )
                 .onChange(of: valueOfWeight.kilogram) { (value) in
-                    if editor.kilogram {
-                        onUnitEdited(changedValue: value)
-                    }
+                    onUnitEdited(changedValue: value)
                 }
             case .gram:
                 Text("Grams")
@@ -24,9 +22,7 @@ struct WeightField: View {
                                 binding: $valueOfWeight.gram
                 )
                 .onChange(of: valueOfWeight.gram) { (value) in
-                    if editor.gram {
-                        onUnitEdited(changedValue: value)
-                    }
+                    onUnitEdited(changedValue: value)
                 }
             case .ounce:
                 Text("Ounces")
@@ -34,9 +30,7 @@ struct WeightField: View {
                                 binding: $valueOfWeight.ounce
                 )
                 .onChange(of: valueOfWeight.ounce) { (value) in
-                    if editor.ounce {
-                        onUnitEdited(changedValue: value)
-                    }
+                    onUnitEdited(changedValue: value)
                 }
             case .pound:
                 Text("Pounds")
@@ -44,9 +38,7 @@ struct WeightField: View {
                                 binding: $valueOfWeight.pound
                 )
                 .onChange(of: valueOfWeight.pound) { (value) in
-                    if editor.pound {
-                        onUnitEdited(changedValue: value)
-                    }
+                    onUnitEdited(changedValue: value)
                 }
             case .stone:
                 Text("Stones")
@@ -54,9 +46,7 @@ struct WeightField: View {
                                 binding: $valueOfWeight.stone
                 )
                 .onChange(of: valueOfWeight.stone) { (value) in
-                    if editor.stone {
-                        onUnitEdited(changedValue: value)
-                    }
+                    onUnitEdited(changedValue: value)
                 }
             case .stone_pound:
                 Text("Pounds")
@@ -64,9 +54,7 @@ struct WeightField: View {
                                 binding: $valueOfWeight.stonePound
                 )
                 .onChange(of: valueOfWeight.stonePound) { (value) in
-                    if editor.stonePound {
-                        onUnitEdited(changedValue: value)
-                    }
+                    onUnitEdited(changedValue: value)
                 }
             }
         }
@@ -106,46 +94,58 @@ struct WeightField: View {
         
         switch unitType {
         case .kilogram:
-            valueOfWeight.gram = converter.convert(value: changedValue, to: .gram)
-            valueOfWeight.ounce = converter.convert(value: changedValue, to: .ounce)
-            valueOfWeight.pound = converter.convert(value: changedValue, to: .pound)
-            valueOfWeight.stone = converter.convert(value: changedValue, to: .stone)
-            valueOfWeight.stonePound = converter.convert(value: changedValue, to: .stone_pound)
+            if editor.kilogram {
+                valueOfWeight.gram = converter.convert(value: changedValue, to: .gram)
+                valueOfWeight.ounce = converter.convert(value: changedValue, to: .ounce)
+                valueOfWeight.pound = converter.convert(value: changedValue, to: .pound)
+                valueOfWeight.stone = converter.convert(value: changedValue, to: .stone)
+                valueOfWeight.stonePound = converter.convert(value: changedValue, to: .stone_pound)
+            }
         case .gram:
             converter.type = unitType
-            valueOfWeight.kilogram = converter.convert(value: changedValue, to: .kilogram)
-            valueOfWeight.ounce = converter.convert(value: changedValue, to: .ounce)
-            valueOfWeight.pound = converter.convert(value: changedValue, to: .pound)
-            valueOfWeight.stone = converter.convert(value: changedValue, to: .stone)
-            valueOfWeight.stonePound = converter.convert(value: changedValue, to: .stone_pound)
+            if editor.gram {
+                valueOfWeight.kilogram = converter.convert(value: changedValue, to: .kilogram)
+                valueOfWeight.ounce = converter.convert(value: changedValue, to: .ounce)
+                valueOfWeight.pound = converter.convert(value: changedValue, to: .pound)
+                valueOfWeight.stone = converter.convert(value: changedValue, to: .stone)
+                valueOfWeight.stonePound = converter.convert(value: changedValue, to: .stone_pound)
+            }
         case .ounce:
             converter.type = unitType
-            valueOfWeight.kilogram = converter.convert(value: changedValue, to: .kilogram)
-            valueOfWeight.gram = converter.convert(value: changedValue, to: .gram)
-            valueOfWeight.pound = converter.convert(value: changedValue, to: .pound)
-            valueOfWeight.stone = converter.convert(value: changedValue, to: .stone)
-            valueOfWeight.stonePound = converter.convert(value: changedValue, to: .stone_pound)
+            if editor.ounce {
+                valueOfWeight.kilogram = converter.convert(value: changedValue, to: .kilogram)
+                valueOfWeight.gram = converter.convert(value: changedValue, to: .gram)
+                valueOfWeight.pound = converter.convert(value: changedValue, to: .pound)
+                valueOfWeight.stone = converter.convert(value: changedValue, to: .stone)
+                valueOfWeight.stonePound = converter.convert(value: changedValue, to: .stone_pound)
+            }
         case .pound:
             converter.type = unitType
-            valueOfWeight.kilogram = converter.convert(value: changedValue, to: .kilogram)
-            valueOfWeight.gram = converter.convert(value: changedValue, to: .gram)
-            valueOfWeight.ounce = converter.convert(value: changedValue, to: .ounce)
-            valueOfWeight.stone = converter.convert(value: changedValue, to: .stone)
-            valueOfWeight.stonePound = converter.convert(value: changedValue, to: .stone_pound)
+            if editor.pound {
+                valueOfWeight.kilogram = converter.convert(value: changedValue, to: .kilogram)
+                valueOfWeight.gram = converter.convert(value: changedValue, to: .gram)
+                valueOfWeight.ounce = converter.convert(value: changedValue, to: .ounce)
+                valueOfWeight.stone = converter.convert(value: changedValue, to: .stone)
+                valueOfWeight.stonePound = converter.convert(value: changedValue, to: .stone_pound)
+            }
         case .stone:
             converter.type = unitType
-            valueOfWeight.kilogram = converter.convert(value: changedValue, to: .kilogram)
-            valueOfWeight.gram = converter.convert(value: changedValue, to: .gram)
-            valueOfWeight.ounce = converter.convert(value: changedValue, to: .ounce)
-            valueOfWeight.pound = converter.convert(value: changedValue, to: .pound)
-            valueOfWeight.stonePound = converter.convert(value: changedValue, to: .stone_pound)
+            if editor.stone {
+                valueOfWeight.kilogram = converter.convert(value: changedValue, to: .kilogram)
+                valueOfWeight.gram = converter.convert(value: changedValue, to: .gram)
+                valueOfWeight.ounce = converter.convert(value: changedValue, to: .ounce)
+                valueOfWeight.pound = converter.convert(value: changedValue, to: .pound)
+                valueOfWeight.stonePound = converter.convert(value: changedValue, to: .stone_pound)
+            }
         case .stone_pound:
             converter.type = unitType
-            valueOfWeight.kilogram = converter.convert(value: changedValue, to: .kilogram)
-            valueOfWeight.gram = converter.convert(value: changedValue, to: .gram)
-            valueOfWeight.ounce = converter.convert(value: changedValue, to: .ounce)
-            valueOfWeight.pound = converter.convert(value: changedValue, to: .pound)
-            valueOfWeight.stone = converter.convert(value: changedValue, to: .stone)
+            if editor.stonePound {
+                valueOfWeight.kilogram = converter.convert(value: changedValue, to: .kilogram)
+                valueOfWeight.gram = converter.convert(value: changedValue, to: .gram)
+                valueOfWeight.ounce = converter.convert(value: changedValue, to: .ounce)
+                valueOfWeight.pound = converter.convert(value: changedValue, to: .pound)
+                valueOfWeight.stone = converter.convert(value: changedValue, to: .stone)
+            }
         }
     }
 }

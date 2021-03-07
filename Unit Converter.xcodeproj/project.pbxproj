@@ -136,31 +136,18 @@
 		C817315525EF4D9500BF8D36 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				C817317425EF5A2800BF8D36 /* UnitFields */,
 			);
 			path = Helpers;
-			sourceTree = "<group>";
-		};
-		C817317425EF5A2800BF8D36 /* UnitFields */ = {
-			isa = PBXGroup;
-			children = (
-				C817316125EF4DE300BF8D36 /* WeightField.swift */,
-				C817319825EF621900BF8D36 /* TemperatureField.swift */,
-				C817319D25EF622700BF8D36 /* LengthField.swift */,
-				C81731A225EF623000BF8D36 /* SpeedField.swift */,
-				C81731A725EF623B00BF8D36 /* VolumeField.swift */,
-			);
-			path = UnitFields;
 			sourceTree = "<group>";
 		};
 		C8287BE525F372500012EE32 /* Forms */ = {
 			isa = PBXGroup;
 			children = (
-				C85FC33525EDE09800F7AF6D /* WeightForm.swift */,
-				C817318425EF5FE000BF8D36 /* TemperatureView.swift */,
-				C817318925EF5FF700BF8D36 /* DistanceView.swift */,
-				C817318E25EF600100BF8D36 /* SpeedView.swift */,
-				C817319325EF601500BF8D36 /* VolumeView.swift */,
+				C8FE26C225F496B300ADDAF3 /* Volume */,
+				C8FE26C125F496A700ADDAF3 /* Speed */,
+				C8FE26C025F4967E00ADDAF3 /* Distance */,
+				C8FE26BF25F4966D00ADDAF3 /* Temperature */,
+				C8FE26BE25F4964F00ADDAF3 /* Weight */,
 			);
 			path = Forms;
 			sourceTree = "<group>";
@@ -291,6 +278,51 @@
 				C8FE26B925F377D900ADDAF3 /* WeightUnit.swift */,
 			);
 			path = Units;
+			sourceTree = "<group>";
+		};
+		C8FE26BE25F4964F00ADDAF3 /* Weight */ = {
+			isa = PBXGroup;
+			children = (
+				C817316125EF4DE300BF8D36 /* WeightField.swift */,
+				C85FC33525EDE09800F7AF6D /* WeightForm.swift */,
+			);
+			path = Weight;
+			sourceTree = "<group>";
+		};
+		C8FE26BF25F4966D00ADDAF3 /* Temperature */ = {
+			isa = PBXGroup;
+			children = (
+				C817319825EF621900BF8D36 /* TemperatureField.swift */,
+				C817318425EF5FE000BF8D36 /* TemperatureView.swift */,
+			);
+			path = Temperature;
+			sourceTree = "<group>";
+		};
+		C8FE26C025F4967E00ADDAF3 /* Distance */ = {
+			isa = PBXGroup;
+			children = (
+				C817319D25EF622700BF8D36 /* LengthField.swift */,
+				C817318925EF5FF700BF8D36 /* DistanceView.swift */,
+			);
+			path = Distance;
+			sourceTree = "<group>";
+		};
+		C8FE26C125F496A700ADDAF3 /* Speed */ = {
+			isa = PBXGroup;
+			children = (
+				C81731A225EF623000BF8D36 /* SpeedField.swift */,
+				C817318E25EF600100BF8D36 /* SpeedView.swift */,
+			);
+			path = Speed;
+			sourceTree = "<group>";
+		};
+		C8FE26C225F496B300ADDAF3 /* Volume */ = {
+			isa = PBXGroup;
+			children = (
+				C81731A725EF623B00BF8D36 /* VolumeField.swift */,
+				C817319325EF601500BF8D36 /* VolumeView.swift */,
+			);
+			path = Volume;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
