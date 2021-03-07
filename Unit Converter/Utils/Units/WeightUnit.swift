@@ -16,6 +16,15 @@ struct ValueOfWeight {
     var pound: String = ""
     var stone: String = ""
     var stonePound: String = ""
+    
+    mutating func clearAll() {
+        kilogram = ""
+        gram = ""
+        ounce = ""
+        pound = ""
+        stone = ""
+        stonePound = ""
+    }
 }
 
 struct WeightEditor {
@@ -27,11 +36,11 @@ struct WeightEditor {
     var stonePound: Bool
     
     init() {
-        self.kilogram = false
-        self.gram = false
-        self.ounce = false
-        self.pound = false
-        self.stone = false
-        self.stonePound = false
+        kilogram = false
+        gram = false
+        ounce = false
+        pound = false
+        stone = false
+        stonePound = false
     }
 }

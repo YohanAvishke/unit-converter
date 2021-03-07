@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct FormController: View {
-    @State var converterType: ConverterType
+    var converterType: ConverterType
     
     var body: some View {
         switch converterType {

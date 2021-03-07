@@ -2,17 +2,18 @@ import SwiftUI
 
 struct WeightForm: View {
     @State private var valueOfWeight = ValueOfWeight()
+    @State private var converterValue = ConverterValue()
     
     var body: some View {
         ScrollView {
             VStack {
-                WeightField(unitType: .kilogram, valueOfWeight: self.$valueOfWeight)
-                WeightField(unitType: .gram, valueOfWeight: self.$valueOfWeight)
-                WeightField(unitType: .ounce, valueOfWeight: self.$valueOfWeight)
-                WeightField(unitType: .pound, valueOfWeight: self.$valueOfWeight)
+                WeightField(unitType: .kilogram, converterValue: $converterValue)
+                WeightField(unitType: .gram, converterValue: $converterValue)
+                WeightField(unitType: .ounce, converterValue: $converterValue)
+                WeightField(unitType: .pound, converterValue: $converterValue)
                 HStack {
-                    WeightField(unitType: .stone, valueOfWeight: self.$valueOfWeight)
-                    WeightField(unitType: .stone_pound, valueOfWeight: self.$valueOfWeight)
+                    WeightField(unitType: .stone, converterValue: $converterValue)
+                    WeightField(unitType: .stone_pound, converterValue: $converterValue)
                 }
             }
             .padding(.top)

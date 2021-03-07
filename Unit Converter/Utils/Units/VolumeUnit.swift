@@ -14,6 +14,14 @@ struct ValueOfVolume {
     var pint = ""
     var fluidOunce = ""
     var millilitre = ""
+    
+    mutating func clearAll() {
+        gallon = ""
+        litre = ""
+        pint = ""
+        fluidOunce = ""
+        millilitre = ""
+    }
 }
 
 struct VolumeEditor {

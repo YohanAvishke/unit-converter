@@ -10,6 +10,12 @@ struct ValueOfTemperature {
     var celsius = ""
     var fahrenheit = ""
     var kelvin = ""
+    
+    mutating func clearAll() {
+        celsius = ""
+        fahrenheit = ""
+        kelvin = ""
+    }
 }
 
 struct TemperatureEditor {

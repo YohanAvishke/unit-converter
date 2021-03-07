@@ -38,6 +38,7 @@
 		C8F282CB25ED5DD80030556B /* ConverterList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F282CA25ED5DD80030556B /* ConverterList.swift */; };
 		C8F282D325ED64940030556B /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F282D225ED64940030556B /* HistoryView.swift */; };
 		C8FAD8CE25F4D0DD00B1D8BA /* VolumeUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FAD8CD25F4D0DD00B1D8BA /* VolumeUnit.swift */; };
+		C8FAD8DD25F4D83C00B1D8BA /* ClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FAD8DC25F4D83C00B1D8BA /* ClearButton.swift */; };
 		C8FE26BA25F377D900ADDAF3 /* WeightUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FE26B925F377D900ADDAF3 /* WeightUnit.swift */; };
 		C8FE26CF25F4988000ADDAF3 /* TemperatureUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FE26CE25F4988000ADDAF3 /* TemperatureUnit.swift */; };
 		C8FE26E325F4BC4200ADDAF3 /* DistanceUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FE26E225F4BC4200ADDAF3 /* DistanceUnit.swift */; };
@@ -98,6 +99,7 @@
 		C8F282CA25ED5DD80030556B /* ConverterList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterList.swift; sourceTree = "<group>"; };
 		C8F282D225ED64940030556B /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		C8FAD8CD25F4D0DD00B1D8BA /* VolumeUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeUnit.swift; sourceTree = "<group>"; };
+		C8FAD8DC25F4D83C00B1D8BA /* ClearButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearButton.swift; sourceTree = "<group>"; };
 		C8FE26B925F377D900ADDAF3 /* WeightUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightUnit.swift; sourceTree = "<group>"; };
 		C8FE26CE25F4988000ADDAF3 /* TemperatureUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureUnit.swift; sourceTree = "<group>"; };
 		C8FE26E225F4BC4200ADDAF3 /* DistanceUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceUnit.swift; sourceTree = "<group>"; };
@@ -241,6 +243,7 @@
 		C87695D425EBD1EE008E933A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C8FAD8DB25F4D82D00B1D8BA /* Helpers */,
 				C85FC33025EDDFA200F7AF6D /* History */,
 				C85FC32F25EDDF9300F7AF6D /* Converter */,
 				C8629E5A25E81AA60001F7BD /* ContentView.swift */,
@@ -255,6 +258,14 @@
 				C8F282BF25ED14B10030556B /* ConverterData.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		C8FAD8DB25F4D82D00B1D8BA /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				C8FAD8DC25F4D83C00B1D8BA /* ClearButton.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		C8FD565625F0F44E00BE8330 /* Converters */ = {
@@ -463,6 +474,7 @@
 				C817319E25EF622700BF8D36 /* DistanceField.swift in Sources */,
 				C8FAD8CE25F4D0DD00B1D8BA /* VolumeUnit.swift in Sources */,
 				C816C81225F0D0F2001A3112 /* DistanceConverter.swift in Sources */,
+				C8FAD8DD25F4D83C00B1D8BA /* ClearButton.swift in Sources */,
 				C8F282D325ED64940030556B /* HistoryView.swift in Sources */,
 				C816C81125F0D0F2001A3112 /* TemperatureConverter.swift in Sources */,
 				C8F282B125ED06E10030556B /* ConverterItem.swift in Sources */,

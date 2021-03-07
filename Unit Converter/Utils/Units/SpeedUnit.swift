@@ -12,6 +12,13 @@ struct ValueOfSpeed {
     var kilometresPerHour = ""
     var milesPerHour = ""
     var knot = ""
+    
+    mutating func clearAll() {
+        metresPerSecond = ""
+        kilometresPerHour = ""
+        milesPerHour = ""
+        knot = ""
+    }
 }
 
 struct SpeedEditor {

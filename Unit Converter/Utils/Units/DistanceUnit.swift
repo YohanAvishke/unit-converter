@@ -18,6 +18,16 @@ struct ValueOfDistance {
     var millimetre = ""
     var yard = ""
     var inch = ""
+    
+    mutating func clearAll() {
+        metre = ""
+        kilometre = ""
+        mile = ""
+        centimetre = ""
+        millimetre = ""
+        yard = ""
+        inch = ""
+    }
 }
 
 struct DistanceEditor {
