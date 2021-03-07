@@ -1,17 +1,14 @@
 import SwiftUI
 
 struct TemperatureForm: View {
-    @State private var valueOfTemperature = ValueOfTemperature()
+    @State private var converterValue = ConverterValue()
     
     var body: some View {
         ScrollView {
             VStack() {
-                TemperatureField(unitType: .celsius,
-                                 valueOfTemperature: self.$valueOfTemperature)
-                TemperatureField(unitType: .fahrenheit,
-                                 valueOfTemperature: self.$valueOfTemperature)
-                TemperatureField(unitType: .kelvin,
-                                 valueOfTemperature: self.$valueOfTemperature)
+                TemperatureField(unitType: .celsius, converterValue: $converterValue)
+                TemperatureField(unitType: .fahrenheit, converterValue: $converterValue)
+                TemperatureField(unitType: .kelvin, converterValue: $converterValue)
             }
             .padding(.top)
         }

@@ -1,7 +1,6 @@
 import SwiftUI
 
 struct WeightForm: View {
-    @State private var valueOfWeight = ValueOfWeight()
     @State private var converterValue = ConverterValue()
     
     var body: some View {
