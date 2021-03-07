@@ -19,6 +19,16 @@ struct WeightForm: View {
         }
         .navigationTitle("Weight")
         .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            Button(
+                action: {
+                    print("Saved")
+                },
+                label: {
+                    Image(systemName: "heart")
+                }
+            )
+        }
         .background(Color(red: 242/255, green: 242/255, blue: 247/255))
         .edgesIgnoringSafeArea(.bottom)
     }
