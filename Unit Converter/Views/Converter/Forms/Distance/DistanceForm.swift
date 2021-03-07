@@ -1,25 +1,18 @@
 import SwiftUI
 
 struct DistanceForm: View {
-    @State private var valueOfDistance = ValueOfDistance()
+    @State private var converterValue = ConverterValue()
     
     var body: some View {
         ScrollView {
             VStack() {
-                DistanceField(unitType: .mile,
-                              valueOfDistance: self.$valueOfDistance)
-                DistanceField(unitType: .kilometre,
-                              valueOfDistance: self.$valueOfDistance)
-                DistanceField(unitType: .metre,
-                              valueOfDistance: self.$valueOfDistance)
-                DistanceField(unitType: .yard,
-                              valueOfDistance: self.$valueOfDistance)
-                DistanceField(unitType: .inch,
-                              valueOfDistance: self.$valueOfDistance)
-                DistanceField(unitType: .centimetre,
-                              valueOfDistance: self.$valueOfDistance)
-                DistanceField(unitType: .millimetre,
-                              valueOfDistance: self.$valueOfDistance)
+                DistanceField(unitType: .mile, converterValue: $converterValue)
+                DistanceField(unitType: .kilometre, converterValue: $converterValue)
+                DistanceField(unitType: .metre, converterValue: $converterValue)
+                DistanceField(unitType: .yard, converterValue: $converterValue)
+                DistanceField(unitType: .inch, converterValue: $converterValue)
+                DistanceField(unitType: .centimetre, converterValue: $converterValue)
+                DistanceField(unitType: .millimetre, converterValue: $converterValue)
             }
             .padding(.top)
         }
