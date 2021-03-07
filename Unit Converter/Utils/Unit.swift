@@ -1,16 +1,6 @@
 import Foundation
 import SwiftUI
 
-enum LengthtUnit {
-    case mile
-    case kilometre
-    case metre
-    case yard
-    case inch
-    case centimetre
-    case millimetre
-}
-
 enum SpeedUnit {
     case knot
     case miles_hour 
