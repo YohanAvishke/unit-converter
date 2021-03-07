@@ -20,7 +20,6 @@ struct SpeedEditor {
     var milesPerHour: Bool
     var knot: Bool
     
-    
     init() {
         self.metresPerSecond = false
         self.kilometresPerHour = false

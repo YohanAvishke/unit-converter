@@ -1,64 +1,133 @@
-//
-//  VolumeField.swift
-//  Unit Converter
-//
-//  Created by Yohan Avishke Ediriweera on 2021-03-03.
-//
-
 import SwiftUI
 
 struct VolumeField: View {
-    var unitType: VolumeUnit
-    @State var valueOfGallon = ""
-    @State var valueOfLitre = ""
-    @State var valueOfPint = ""
-    @State var valueOfFluid = ""
-    @State var valueOfOunce = ""
-    @State var valueOfMillilitre = ""
+    var unitType: VolumeType
+    @Binding var valueOfVolume: ValueOfVolume
+    @State private var editor: VolumeEditor = VolumeEditor()
     
     var body: some View {
         VStack(alignment: .leading, spacing: 10.0) {
             switch unitType {
             case .gallon:
                 Text("Imperial Gallon")
-                createInputFeild(placeholder: "gal", bindedValue: $valueOfGallon)
-                    .onChange(of: valueOfGallon) { value in
-                        print(value)
-                    }
+                createTextField(placeholder: "gal",
+                                binding: $valueOfVolume.gallon
+                )
+                .onChange(of: valueOfVolume.gallon) { value in
+                    onUnitEdited(changedValue: value)
+                }
             case .litre:
                 Text("Litre")
-                createInputFeild(placeholder: "l", bindedValue: $valueOfLitre)
-                    .onChange(of: valueOfLitre) { value in
-                        print(value)
-                    }
+                createTextField(placeholder: "l",
+                                binding: $valueOfVolume.litre
+                )
+                .onChange(of: valueOfVolume.litre) { value in
+                    onUnitEdited(changedValue: value)
+                }
             case .pint:
                 Text("Imperial Pint")
-                createInputFeild(placeholder: "pt", bindedValue: $valueOfPint)
-                    .onChange(of: valueOfPint) { value in
-                        print(value)
-                    }
+                createTextField(placeholder: "pt",
+                                binding: $valueOfVolume.pint
+                )
+                .onChange(of: valueOfVolume.pint) { value in
+                    onUnitEdited(changedValue: value)
+                }
             case .fluid_ounce:
                 Text("Fluid Ounce")
-                createInputFeild(placeholder: "fl oz", bindedValue: $valueOfOunce)
-                    .onChange(of: valueOfOunce) { value in
-                        print(value)
-                    }
+                createTextField(placeholder: "fl oz",
+                                binding: $valueOfVolume.fluidOunce
+                )
+                .onChange(of: valueOfVolume.fluidOunce) { value in
+                    onUnitEdited(changedValue: value)
+                }
             case .millilitre:
                 Text("Millilitre")
-                createInputFeild(placeholder: "ml", bindedValue: $valueOfMillilitre)
-                    .onChange(of: valueOfMillilitre) { value in
-                        print(value)
-                    }
+                createTextField(placeholder: "ml",
+                                binding: $valueOfVolume.millilitre
+                )
+                .onChange(of: valueOfVolume.millilitre) { value in
+                    onUnitEdited(changedValue: value)
+                }
             }
         }
         .padding(.horizontal, 15)
     }
+    
+    func createTextField(placeholder: String, binding: Binding<String>) -> AnyView {
+        return AnyView(
+            TextField (
+                placeholder,
+                text: binding
+            ) { isEditing in
+                switch unitType{
+                case .gallon:
+                    self.editor.gallon = isEditing
+                case .litre:
+                    self.editor.litre = isEditing
+                case .pint:
+                    self.editor.pint = isEditing
+                case .fluid_ounce:
+                    self.editor.fludOunce = isEditing
+                case .millilitre:
+                    self.editor.millilitre = isEditing
+                }
+            }
+            .keyboardType(.numberPad)
+            .padding(.all)
+            .background(Color.white)
+            .cornerRadius(10)
+        )
+    }
+    
+    func onUnitEdited(changedValue: String){
+        let converter = VolumeConverter(type: unitType)
+        
+        switch unitType {
+        case .gallon:
+            if editor.gallon{
+                valueOfVolume.litre = converter.convert(value: changedValue, to: .litre)
+                valueOfVolume.pint = converter.convert(value: changedValue, to: .pint)
+                valueOfVolume.fluidOunce = converter.convert(value: changedValue, to: .fluid_ounce)
+                valueOfVolume.millilitre = converter.convert(value: changedValue, to: .millilitre)
+            }
+        case .litre:
+            if editor.litre{
+                valueOfVolume.gallon = converter.convert(value: changedValue, to: .gallon)
+                valueOfVolume.pint = converter.convert(value: changedValue, to: .pint)
+                valueOfVolume.fluidOunce = converter.convert(value: changedValue, to: .fluid_ounce)
+                valueOfVolume.millilitre = converter.convert(value: changedValue, to: .millilitre)
+            }
+        case .pint:
+            if editor.pint{
+                valueOfVolume.gallon = converter.convert(value: changedValue, to: .gallon)
+                valueOfVolume.litre = converter.convert(value: changedValue, to: .litre)
+                valueOfVolume.fluidOunce = converter.convert(value: changedValue, to: .fluid_ounce)
+                valueOfVolume.millilitre = converter.convert(value: changedValue, to: .millilitre)
+            }
+        case .fluid_ounce:
+            if editor.fludOunce{
+                valueOfVolume.gallon = converter.convert(value: changedValue, to: .gallon)
+                valueOfVolume.litre = converter.convert(value: changedValue, to: .litre)
+                valueOfVolume.pint = converter.convert(value: changedValue, to: .pint)
+                valueOfVolume.millilitre = converter.convert(value: changedValue, to: .millilitre)
+            }
+        case .millilitre:
+            if editor.millilitre{
+                valueOfVolume.gallon = converter.convert(value: changedValue, to: .gallon)
+                valueOfVolume.litre = converter.convert(value: changedValue, to: .litre)
+                valueOfVolume.pint = converter.convert(value: changedValue, to: .pint)
+                valueOfVolume.fluidOunce = converter.convert(value: changedValue, to: .fluid_ounce)
+            }
+        }
+    }
 }
 
 struct VolumeField_Previews: PreviewProvider {
+    @State static var valueOfVolume = ValueOfVolume()
+    
     static var previews: some View {
         Group {
-            VolumeField(unitType: VolumeUnit.gallon)
+            VolumeField(unitType: .gallon, valueOfVolume: $valueOfVolume)
         }
         .background(Color(red: 242/255, green: 242/255, blue: 247/255))
         .previewLayout(.fixed(width: 400, height: 80))
