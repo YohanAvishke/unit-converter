@@ -1,16 +1,16 @@
 import SwiftUI
 
 struct VolumeForm: View {
-    @State private var valueOfVolume = ValueOfVolume()
+    @State private var converterValue = ConverterValue()
     
     var body: some View {
         ScrollView {
             VStack() {
-                VolumeField(unitType: .gallon, valueOfVolume: $valueOfVolume)
-                VolumeField(unitType: .litre, valueOfVolume: $valueOfVolume)
-                VolumeField(unitType: .pint, valueOfVolume: $valueOfVolume)
-                VolumeField(unitType: .fluid_ounce, valueOfVolume: $valueOfVolume)
-                VolumeField(unitType: .millilitre, valueOfVolume: $valueOfVolume)
+                VolumeField(unitType: .gallon, converterValue: $converterValue)
+                VolumeField(unitType: .litre, converterValue: $converterValue)
+                VolumeField(unitType: .pint, converterValue: $converterValue)
+                VolumeField(unitType: .fluid_ounce,  converterValue: $converterValue)
+                VolumeField(unitType: .millilitre, converterValue: $converterValue)
             }
             .padding(.top)
         }
