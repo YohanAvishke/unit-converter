@@ -1,5 +1,6 @@
 import SwiftUI
 
+// TODO calearing doesn't work as expected
 struct TemperatureField: View {
     var unitType: TemperatureType
     @Binding var converterValue: ConverterValue

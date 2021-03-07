@@ -1,10 +1,3 @@
-//
-//  HistoryView.swift
-//  Unit Converter
-//
-//  Created by Yohan Avishke Ediriweera on 2021-03-01.
-//
-
 import SwiftUI
 
 struct HistoryView: View {
