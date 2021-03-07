@@ -1,19 +1,15 @@
 import SwiftUI
 
 struct SpeedForm: View {
-    @State private var valueOfSpeed = ValueOfSpeed()
+    @State private var converterValue = ConverterValue()
     
     var body: some View {
         ScrollView {
             VStack() {
-                SpeedField(unitType: .metres_sec,
-                           valueOfSpeed: self.$valueOfSpeed)
-                SpeedField(unitType: .knot,
-                           valueOfSpeed: self.$valueOfSpeed)
-                SpeedField(unitType: .miles_hour,
-                           valueOfSpeed: self.$valueOfSpeed)
-                SpeedField(unitType: .kilometres_hour,
-                           valueOfSpeed: self.$valueOfSpeed)
+                SpeedField(unitType: .metres_sec, converterValue: $converterValue)
+                SpeedField(unitType: .knot, converterValue: $converterValue)
+                SpeedField(unitType: .miles_hour, converterValue: $converterValue)
+                SpeedField(unitType: .kilometres_hour, converterValue: $converterValue)
             }
             .padding(.top)
         }

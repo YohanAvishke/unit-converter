@@ -154,10 +154,8 @@ struct WeightField_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             VStack {
-                WeightField(unitType: WeightType.kilogram,
-                            converterValue: $converterValue)
-                WeightField(unitType: WeightType.gram,
-                            converterValue: $converterValue)
+                WeightField(unitType: WeightType.kilogram, converterValue: $converterValue)
+                WeightField(unitType: WeightType.gram, converterValue: $converterValue)
             }
         }
         .background(Color(red: 242/255, green: 242/255, blue: 247/255))

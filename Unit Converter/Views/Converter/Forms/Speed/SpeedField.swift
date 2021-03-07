@@ -2,7 +2,7 @@ import SwiftUI
 
 struct SpeedField: View {
     var unitType: SpeedType
-    @Binding var valueOfSpeed: ValueOfSpeed
+    @Binding var converterValue: ConverterValue
     @State private var editor: SpeedEditor = SpeedEditor()
     
     var body: some View {
@@ -10,30 +10,34 @@ struct SpeedField: View {
             switch unitType {
             case .knot:
                 Text("Nautical Miles / Hour")
-                createTextField(placeholder: "knot", binding: $valueOfSpeed.knot
+                createTextField(placeholder: "knot",
+                                binding: $converterValue.speed.knot
                 )
-                .onChange(of: valueOfSpeed.knot) { (value) in
+                .onChange(of: converterValue.speed.knot) { (value) in
                     onUnitEdited(changedValue: value)
                 }
             case .miles_hour:
                 Text("Miles / Hour")
-                createTextField(placeholder: "mi/h", binding: $valueOfSpeed.milesPerHour
+                createTextField(placeholder: "mi/h",
+                                binding: $converterValue.speed.milesPerHour
                 )
-                .onChange(of: valueOfSpeed.milesPerHour) { (value) in
+                .onChange(of: converterValue.speed.milesPerHour) { (value) in
                     onUnitEdited(changedValue: value)
                 }
             case .kilometres_hour:
                 Text("Kilometres / Hour")
-                createTextField(placeholder: "km/h", binding: $valueOfSpeed.kilometresPerHour
+                createTextField(placeholder: "km/h",
+                                binding: $converterValue.speed.kilometresPerHour
                 )
-                .onChange(of: valueOfSpeed.kilometresPerHour) { (value) in
+                .onChange(of: converterValue.speed.kilometresPerHour) { (value) in
                     onUnitEdited(changedValue: value)
                 }
             case .metres_sec:
                 Text("Metres / Second")
-                createTextField(placeholder: "m/s", binding: $valueOfSpeed.metresPerSecond
+                createTextField(placeholder: "m/s",
+                                binding: $converterValue.speed.metresPerSecond
                 )
-                .onChange(of: valueOfSpeed.metresPerSecond) { (value) in
+                .onChange(of: converterValue.speed.metresPerSecond) { (value) in
                     onUnitEdited(changedValue: value)
                 }
             }
@@ -58,6 +62,8 @@ struct SpeedField: View {
                     self.editor.metresPerSecond = isEditing
                 }
             }
+            .modifier(ClearButton(converterValue: $converterValue))
+            .multilineTextAlignment(.leading)
             .keyboardType(.numberPad)
             .padding(.all)
             .background(Color.white)
@@ -71,42 +77,47 @@ struct SpeedField: View {
         switch unitType {
         case .knot:
             if editor.knot{
-                valueOfSpeed.milesPerHour = converter.convert(value: changedValue, to: .miles_hour)
-                valueOfSpeed.kilometresPerHour = converter.convert(value: changedValue,
-                                                                   to: .kilometres_hour)
-                valueOfSpeed.metresPerSecond = converter.convert(value: changedValue, to: .metres_sec)
+                converterValue.speed.milesPerHour = converter.convert(value: changedValue,
+                                                                      to: .miles_hour)
+                converterValue.speed.kilometresPerHour = converter.convert(value: changedValue,
+                                                                           to: .kilometres_hour)
+                converterValue.speed.metresPerSecond = converter.convert(value: changedValue,
+                                                                         to: .metres_sec)
             }
         case .miles_hour:
             if editor.milesPerHour{
-                valueOfSpeed.knot = converter.convert(value: changedValue, to: .knot)
-                valueOfSpeed.kilometresPerHour = converter.convert(value: changedValue,
-                                                                   to: .kilometres_hour)
-                valueOfSpeed.metresPerSecond = converter.convert(value: changedValue, to: .metres_sec)
+                converterValue.speed.knot = converter.convert(value: changedValue, to: .knot)
+                converterValue.speed.kilometresPerHour = converter.convert(value: changedValue,
+                                                                           to: .kilometres_hour)
+                converterValue.speed.metresPerSecond = converter.convert(value: changedValue,
+                                                                         to: .metres_sec)
             }
         case .kilometres_hour:
             if editor.kilometresPerHour{
-                valueOfSpeed.knot = converter.convert(value: changedValue, to: .knot)
-                valueOfSpeed.milesPerHour = converter.convert(value: changedValue, to: .miles_hour)
-                valueOfSpeed.metresPerSecond = converter.convert(value: changedValue, to: .metres_sec)
+                converterValue.speed.knot = converter.convert(value: changedValue, to: .knot)
+                converterValue.speed.milesPerHour = converter.convert(value: changedValue,
+                                                                      to: .miles_hour)
+                converterValue.speed.metresPerSecond = converter.convert(value: changedValue,
+                                                                         to: .metres_sec)
             }
         case .metres_sec:
             if editor.metresPerSecond{
-                valueOfSpeed.knot = converter.convert(value: changedValue, to: .knot)
-                valueOfSpeed.milesPerHour = converter.convert(value: changedValue, to: .miles_hour)
-                valueOfSpeed.kilometresPerHour = converter.convert(value: changedValue,
-                                                                   to: .kilometres_hour)
+                converterValue.speed.knot = converter.convert(value: changedValue, to: .knot)
+                converterValue.speed.milesPerHour = converter.convert(value: changedValue,
+                                                                      to: .miles_hour)
+                converterValue.speed.kilometresPerHour = converter.convert(value: changedValue,
+                                                                           to: .kilometres_hour)
             }
         }
     }
 }
 
 struct SpeedField_Previews: PreviewProvider {
-    @State static var valueOfSpeed = ValueOfSpeed()
+    @State static var converterValue = ConverterValue()
     
     static var previews: some View {
         Group {
-            SpeedField(unitType: SpeedType.knot,
-                       valueOfSpeed: $valueOfSpeed)
+            SpeedField(unitType: .metres_sec, converterValue: $converterValue)
         }
         .background(Color(red: 242/255, green: 242/255, blue: 247/255))
         .previewLayout(.fixed(width: 400, height: 80))
