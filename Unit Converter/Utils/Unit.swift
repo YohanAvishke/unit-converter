@@ -1,12 +1,6 @@
 import Foundation
 import SwiftUI
 
-enum TemperaturetUnit {
-    case celsius
-    case fahrenheit
-    case kelvin
-}
-
 enum LengthtUnit {
     case mile
     case kilometre

@@ -2,8 +2,8 @@ import SwiftUI
 
 struct WeightField: View {
     var unitType: WeightType
-    @State private var editor: WeightEditor = WeightEditor()
     @Binding var valueOfWeight: ValueOfWeight
+    @State private var editor: WeightEditor = WeightEditor()
     
     var body: some View {
         VStack(alignment: .leading, spacing: 10.0) {
@@ -90,7 +90,7 @@ struct WeightField: View {
     }
     
     func onUnitEdited(changedValue: String){
-        var converter = WeightConverter(type: unitType)
+        let converter = WeightConverter(type: unitType)
         
         switch unitType {
         case .kilogram:
@@ -102,7 +102,6 @@ struct WeightField: View {
                 valueOfWeight.stonePound = converter.convert(value: changedValue, to: .stone_pound)
             }
         case .gram:
-            converter.type = unitType
             if editor.gram {
                 valueOfWeight.kilogram = converter.convert(value: changedValue, to: .kilogram)
                 valueOfWeight.ounce = converter.convert(value: changedValue, to: .ounce)
@@ -111,7 +110,6 @@ struct WeightField: View {
                 valueOfWeight.stonePound = converter.convert(value: changedValue, to: .stone_pound)
             }
         case .ounce:
-            converter.type = unitType
             if editor.ounce {
                 valueOfWeight.kilogram = converter.convert(value: changedValue, to: .kilogram)
                 valueOfWeight.gram = converter.convert(value: changedValue, to: .gram)
@@ -120,7 +118,6 @@ struct WeightField: View {
                 valueOfWeight.stonePound = converter.convert(value: changedValue, to: .stone_pound)
             }
         case .pound:
-            converter.type = unitType
             if editor.pound {
                 valueOfWeight.kilogram = converter.convert(value: changedValue, to: .kilogram)
                 valueOfWeight.gram = converter.convert(value: changedValue, to: .gram)
@@ -129,7 +126,6 @@ struct WeightField: View {
                 valueOfWeight.stonePound = converter.convert(value: changedValue, to: .stone_pound)
             }
         case .stone:
-            converter.type = unitType
             if editor.stone {
                 valueOfWeight.kilogram = converter.convert(value: changedValue, to: .kilogram)
                 valueOfWeight.gram = converter.convert(value: changedValue, to: .gram)
@@ -138,7 +134,6 @@ struct WeightField: View {
                 valueOfWeight.stonePound = converter.convert(value: changedValue, to: .stone_pound)
             }
         case .stone_pound:
-            converter.type = unitType
             if editor.stonePound {
                 valueOfWeight.kilogram = converter.convert(value: changedValue, to: .kilogram)
                 valueOfWeight.gram = converter.convert(value: changedValue, to: .gram)

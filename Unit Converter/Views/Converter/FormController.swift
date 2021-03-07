@@ -8,7 +8,7 @@ struct FormController: View {
         case .weight:
             WeightForm()
         case .temperature:
-            TemperatureView()
+            TemperatureForm()
         case .distance:
             DistanceView()
         case .speed:
