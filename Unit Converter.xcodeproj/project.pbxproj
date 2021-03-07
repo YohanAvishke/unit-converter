@@ -133,13 +133,6 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
-		C817315525EF4D9500BF8D36 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Helpers;
-			sourceTree = "<group>";
-		};
 		C8287BE525F372500012EE32 /* Forms */ = {
 			isa = PBXGroup;
 			children = (
@@ -243,7 +236,6 @@
 		C87695D425EBD1EE008E933A /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				C817315525EF4D9500BF8D36 /* Helpers */,
 				C85FC33025EDDFA200F7AF6D /* History */,
 				C85FC32F25EDDF9300F7AF6D /* Converter */,
 				C8629E5A25E81AA60001F7BD /* ContentView.swift */,
