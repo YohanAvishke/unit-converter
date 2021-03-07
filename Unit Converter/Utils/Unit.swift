@@ -1,13 +1,6 @@
 import Foundation
 import SwiftUI
 
-enum SpeedUnit {
-    case knot
-    case miles_hour 
-    case kilometres_hour
-    case metres_sec
-}
-
 enum VolumeUnit {
     case gallon
     case litre

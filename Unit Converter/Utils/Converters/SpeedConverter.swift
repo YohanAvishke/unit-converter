@@ -1,60 +1,57 @@
-//
-//  Speed.swift
-//  utility-converter
-//
-//  Created by Brion Silva on 26/03/2019.
-//  Copyright © 2019 Brion Silva. All rights reserved.
-//
-
 import Foundation
 
 struct SpeedConverter {
-    let unit: SpeedUnit
-    let decimalPlaces: Int
+    let type: SpeedType
+    var decimalPlaces = 3
     
-    init(unit: SpeedUnit, decimalPlaces: Int) {
-        self.unit = unit
-        self.decimalPlaces = decimalPlaces
+    init(type: SpeedType) {
+        self.type = type
     }
     
-    func convert(value: Double, to: SpeedUnit) -> Double {
+    func convert(value: String, to: SpeedType) -> String {
+        let valueInNumber: Double = Double(value) ?? 0.0
         var output = 0.0
         
-        switch unit {
+        switch type {
         case .knot:
             if to == .miles_hour {
-                output = value * 1.151
+                output = valueInNumber * 1.151
             } else if to == .kilometres_hour {
-                output = value * 1.852
+                output = valueInNumber * 1.852
             } else if to == .metres_sec {
-                output = value / 1.944
+                output = valueInNumber / 1.944
             }
         case .miles_hour:
             if to == .knot {
-                output = value / 1.151
+                output = valueInNumber / 1.151
             } else if to == .kilometres_hour {
-                output = value *  1.609
+                output = valueInNumber *  1.609
             } else if to == .metres_sec {
-                output = value / 2.237
+                output = valueInNumber / 2.237
             }
         case .kilometres_hour:
             if to == .knot {
-                output = value / 1.852
+                output = valueInNumber / 1.852
             } else if to == .miles_hour {
-                output = value / 1.609
+                output = valueInNumber / 1.609
             } else if to == .metres_sec {
-                output = value / 3.6
+                output = valueInNumber / 3.6
             }
         case .metres_sec:
             if to == .knot {
-                output = value * 1.944
+                output = valueInNumber * 1.944
             } else if to == .miles_hour {
-                output = value * 2.237
+                output = valueInNumber * 2.237
             } else if to == .kilometres_hour {
-                output = value * 3.6
+                output = valueInNumber * 3.6
             }
         }
-        return output
+        
+        output = output.rounded(toPlaces: decimalPlaces)
+        if output == 0.0 {
+            return ""
+        }
+        return String(output)
     }
 }
 

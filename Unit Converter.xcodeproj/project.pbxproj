@@ -16,7 +16,7 @@
 		C817316225EF4DE300BF8D36 /* WeightField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C817316125EF4DE300BF8D36 /* WeightField.swift */; };
 		C817318525EF5FE000BF8D36 /* TemperatureForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = C817318425EF5FE000BF8D36 /* TemperatureForm.swift */; };
 		C817318A25EF5FF700BF8D36 /* DistanceForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = C817318925EF5FF700BF8D36 /* DistanceForm.swift */; };
-		C817318F25EF600100BF8D36 /* SpeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C817318E25EF600100BF8D36 /* SpeedView.swift */; };
+		C817318F25EF600100BF8D36 /* SpeedForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = C817318E25EF600100BF8D36 /* SpeedForm.swift */; };
 		C817319425EF601500BF8D36 /* VolumeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C817319325EF601500BF8D36 /* VolumeView.swift */; };
 		C817319925EF621900BF8D36 /* TemperatureField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C817319825EF621900BF8D36 /* TemperatureField.swift */; };
 		C817319E25EF622700BF8D36 /* DistanceField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C817319D25EF622700BF8D36 /* DistanceField.swift */; };
@@ -31,6 +31,7 @@
 		C8629E6025E81AA80001F7BD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8629E5F25E81AA80001F7BD /* Preview Assets.xcassets */; };
 		C8629E6B25E81AA90001F7BD /* Unit_ConverterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8629E6A25E81AA90001F7BD /* Unit_ConverterTests.swift */; };
 		C8629E7625E81AA90001F7BD /* Unit_ConverterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8629E7525E81AA90001F7BD /* Unit_ConverterUITests.swift */; };
+		C8AF4B2C25F4C7E8008F7AD7 /* SpeedUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8AF4B2B25F4C7E8008F7AD7 /* SpeedUnit.swift */; };
 		C8F282B125ED06E10030556B /* ConverterItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F282B025ED06E10030556B /* ConverterItem.swift */; };
 		C8F282B625ED12690030556B /* converters.json in Resources */ = {isa = PBXBuildFile; fileRef = C8F282B525ED12690030556B /* converters.json */; };
 		C8F282BB25ED14070030556B /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F282BA25ED14070030556B /* Converter.swift */; };
@@ -69,7 +70,7 @@
 		C817316125EF4DE300BF8D36 /* WeightField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightField.swift; sourceTree = "<group>"; };
 		C817318425EF5FE000BF8D36 /* TemperatureForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureForm.swift; sourceTree = "<group>"; };
 		C817318925EF5FF700BF8D36 /* DistanceForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceForm.swift; sourceTree = "<group>"; };
-		C817318E25EF600100BF8D36 /* SpeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedView.swift; sourceTree = "<group>"; };
+		C817318E25EF600100BF8D36 /* SpeedForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedForm.swift; sourceTree = "<group>"; };
 		C817319325EF601500BF8D36 /* VolumeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeView.swift; sourceTree = "<group>"; };
 		C817319825EF621900BF8D36 /* TemperatureField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureField.swift; sourceTree = "<group>"; };
 		C817319D25EF622700BF8D36 /* DistanceField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceField.swift; sourceTree = "<group>"; };
@@ -90,6 +91,7 @@
 		C8629E7125E81AA90001F7BD /* Unit ConverterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Unit ConverterUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8629E7525E81AA90001F7BD /* Unit_ConverterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unit_ConverterUITests.swift; sourceTree = "<group>"; };
 		C8629E7725E81AA90001F7BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C8AF4B2B25F4C7E8008F7AD7 /* SpeedUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedUnit.swift; sourceTree = "<group>"; };
 		C8F282B025ED06E10030556B /* ConverterItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterItem.swift; sourceTree = "<group>"; };
 		C8F282B525ED12690030556B /* converters.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = converters.json; sourceTree = "<group>"; };
 		C8F282BA25ED14070030556B /* Converter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Converter.swift; sourceTree = "<group>"; };
@@ -141,10 +143,10 @@
 			isa = PBXGroup;
 			children = (
 				C8FE26BE25F4964F00ADDAF3 /* Weight */,
-				C8FE26BF25F4966D00ADDAF3 /* Temperature */,
-				C8FE26C225F496B300ADDAF3 /* Volume */,
-				C8FE26C125F496A700ADDAF3 /* Speed */,
 				C8FE26C025F4967E00ADDAF3 /* Distance */,
+				C8FE26BF25F4966D00ADDAF3 /* Temperature */,
+				C8FE26C125F496A700ADDAF3 /* Speed */,
+				C8FE26C225F496B300ADDAF3 /* Volume */,
 			);
 			path = Forms;
 			sourceTree = "<group>";
@@ -274,6 +276,7 @@
 				C8FE26B925F377D900ADDAF3 /* WeightUnit.swift */,
 				C8FE26CE25F4988000ADDAF3 /* TemperatureUnit.swift */,
 				C8FE26E225F4BC4200ADDAF3 /* DistanceUnit.swift */,
+				C8AF4B2B25F4C7E8008F7AD7 /* SpeedUnit.swift */,
 			);
 			path = Units;
 			sourceTree = "<group>";
@@ -309,7 +312,7 @@
 			isa = PBXGroup;
 			children = (
 				C81731A225EF623000BF8D36 /* SpeedField.swift */,
-				C817318E25EF600100BF8D36 /* SpeedView.swift */,
+				C817318E25EF600100BF8D36 /* SpeedForm.swift */,
 			);
 			path = Speed;
 			sourceTree = "<group>";
@@ -454,6 +457,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C817319425EF601500BF8D36 /* VolumeView.swift in Sources */,
+				C8AF4B2C25F4C7E8008F7AD7 /* SpeedUnit.swift in Sources */,
 				C817318525EF5FE000BF8D36 /* TemperatureForm.swift in Sources */,
 				C81731A325EF623000BF8D36 /* SpeedField.swift in Sources */,
 				C817319E25EF622700BF8D36 /* DistanceField.swift in Sources */,
@@ -479,7 +483,7 @@
 				C8FE26BA25F377D900ADDAF3 /* WeightUnit.swift in Sources */,
 				C85FC33625EDE09800F7AF6D /* WeightForm.swift in Sources */,
 				C8F282BB25ED14070030556B /* Converter.swift in Sources */,
-				C817318F25EF600100BF8D36 /* SpeedView.swift in Sources */,
+				C817318F25EF600100BF8D36 /* SpeedForm.swift in Sources */,
 				C817319925EF621900BF8D36 /* TemperatureField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
