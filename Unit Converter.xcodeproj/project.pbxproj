@@ -24,7 +24,7 @@
 		C81731A825EF623B00BF8D36 /* VolumeField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81731A725EF623B00BF8D36 /* VolumeField.swift */; };
 		C8287BDC25F362280012EE32 /* FormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8287BDB25F362280012EE32 /* FormController.swift */; };
 		C8287BE125F3624B0012EE32 /* ConverterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8287BE025F3624B0012EE32 /* ConverterType.swift */; };
-		C85FC33625EDE09800F7AF6D /* WeightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85FC33525EDE09800F7AF6D /* WeightView.swift */; };
+		C85FC33625EDE09800F7AF6D /* WeightForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85FC33525EDE09800F7AF6D /* WeightForm.swift */; };
 		C8629E5925E81AA60001F7BD /* Unit_ConverterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8629E5825E81AA60001F7BD /* Unit_ConverterApp.swift */; };
 		C8629E5B25E81AA60001F7BD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8629E5A25E81AA60001F7BD /* ContentView.swift */; };
 		C8629E5D25E81AA80001F7BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8629E5C25E81AA80001F7BD /* Assets.xcassets */; };
@@ -37,6 +37,7 @@
 		C8F282C025ED14B10030556B /* ConverterData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F282BF25ED14B10030556B /* ConverterData.swift */; };
 		C8F282CB25ED5DD80030556B /* ConverterList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F282CA25ED5DD80030556B /* ConverterList.swift */; };
 		C8F282D325ED64940030556B /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F282D225ED64940030556B /* HistoryView.swift */; };
+		C8FE26BA25F377D900ADDAF3 /* WeightUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FE26B925F377D900ADDAF3 /* WeightUnit.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,7 +75,7 @@
 		C81731A725EF623B00BF8D36 /* VolumeField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeField.swift; sourceTree = "<group>"; };
 		C8287BDB25F362280012EE32 /* FormController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormController.swift; sourceTree = "<group>"; };
 		C8287BE025F3624B0012EE32 /* ConverterType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterType.swift; sourceTree = "<group>"; };
-		C85FC33525EDE09800F7AF6D /* WeightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightView.swift; sourceTree = "<group>"; };
+		C85FC33525EDE09800F7AF6D /* WeightForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightForm.swift; sourceTree = "<group>"; };
 		C8629E5525E81AA60001F7BD /* Unit Converter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Unit Converter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8629E5825E81AA60001F7BD /* Unit_ConverterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unit_ConverterApp.swift; sourceTree = "<group>"; };
 		C8629E5A25E81AA60001F7BD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -93,6 +94,7 @@
 		C8F282BF25ED14B10030556B /* ConverterData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterData.swift; sourceTree = "<group>"; };
 		C8F282CA25ED5DD80030556B /* ConverterList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterList.swift; sourceTree = "<group>"; };
 		C8F282D225ED64940030556B /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		C8FE26B925F377D900ADDAF3 /* WeightUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightUnit.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 		C817314C25EF4D6100BF8D36 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				C8FE26B825F377B300ADDAF3 /* Units */,
 				C8FD565625F0F44E00BE8330 /* Converters */,
 				C817314D25EF4D7400BF8D36 /* Unit.swift */,
 				C8287BE025F3624B0012EE32 /* ConverterType.swift */,
@@ -153,7 +156,7 @@
 		C8287BE525F372500012EE32 /* Forms */ = {
 			isa = PBXGroup;
 			children = (
-				C85FC33525EDE09800F7AF6D /* WeightView.swift */,
+				C85FC33525EDE09800F7AF6D /* WeightForm.swift */,
 				C817318425EF5FE000BF8D36 /* TemperatureView.swift */,
 				C817318925EF5FF700BF8D36 /* DistanceView.swift */,
 				C817318E25EF600100BF8D36 /* SpeedView.swift */,
@@ -280,6 +283,14 @@
 				C816C80A25F0D0F2001A3112 /* WeightConverter.swift */,
 			);
 			path = Converters;
+			sourceTree = "<group>";
+		};
+		C8FE26B825F377B300ADDAF3 /* Units */ = {
+			isa = PBXGroup;
+			children = (
+				C8FE26B925F377D900ADDAF3 /* WeightUnit.swift */,
+			);
+			path = Units;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -433,7 +444,8 @@
 				C8629E5925E81AA60001F7BD /* Unit_ConverterApp.swift in Sources */,
 				C816C81025F0D0F2001A3112 /* VolumeConverter.swift in Sources */,
 				C816C81325F0D0F2001A3112 /* SpeedConverter.swift in Sources */,
-				C85FC33625EDE09800F7AF6D /* WeightView.swift in Sources */,
+				C8FE26BA25F377D900ADDAF3 /* WeightUnit.swift in Sources */,
+				C85FC33625EDE09800F7AF6D /* WeightForm.swift in Sources */,
 				C8F282BB25ED14070030556B /* Converter.swift in Sources */,
 				C817318F25EF600100BF8D36 /* SpeedView.swift in Sources */,
 				C817319925EF621900BF8D36 /* TemperatureField.swift in Sources */,

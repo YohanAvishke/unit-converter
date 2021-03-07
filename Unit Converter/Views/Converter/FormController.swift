@@ -6,7 +6,7 @@ struct FormController: View {
     var body: some View {
         switch converterType {
         case .weight:
-            WeightView()
+            WeightForm()
         case .temperature:
             TemperatureView()
         case .distance:

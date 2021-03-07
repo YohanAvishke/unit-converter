@@ -1,21 +1,5 @@
-//
-//  Unit.swift
-//  Unit Converter
-//
-//  Created by Yohan Avishke Ediriweera on 2021-03-03.
-//
-
 import Foundation
 import SwiftUI
-
-enum WeightUnit {
-    case kilogram
-    case gram
-    case ounce
-    case pound
-    case stone
-    case stone_pound
-}
 
 enum TemperaturetUnit {
     case celsius
