@@ -25,7 +25,7 @@ struct WeightForm: View {
                     print("Saved")
                 },
                 label: {
-                    Image(systemName: "heart")
+                    Image("save(24x24)")
                 }
             )
         }
