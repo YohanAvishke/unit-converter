@@ -15,8 +15,15 @@ final class History: ObservableObject {
         }
     }
     
+    @Published var distance: [String] {
+        didSet {
+            UserDefaults.standard.set(distance, forKey: "distance")
+        }
+    }
+    
     init() {
         self.weight = UserDefaults.standard.object(forKey: "weight") as? [String] ?? []
         self.temperature = UserDefaults.standard.object(forKey: "temperature") as? [String] ?? []
+        self.distance = UserDefaults.standard.object(forKey: "distance") as? [String] ?? []
     }
 }

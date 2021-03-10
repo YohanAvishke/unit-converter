@@ -2,7 +2,7 @@ import SwiftUI
 
 struct WeightForm: View {
     @State private var converterValue = ConverterValue()
-    @Binding var weightHistory: [String]
+    @Binding var history: [String]
     
     var body: some View {
         ScrollView {
@@ -41,15 +41,15 @@ struct WeightForm: View {
                          ounz = \(weightValues.ounce) ponds =  \(weightValues.pound) \
                          stones = \(weightValues.stone)  & pounds = \(weightValues.stonePound)
                          """
-        if weightHistory.count >= 5 {
-            weightHistory = Array(weightHistory.suffix(4))
+        if history.count >= 5 {
+            history = Array(history.suffix(4))
         }
-        weightHistory.append(conversion)
+        history.append(conversion)
     }
 }
 
 struct WeightForm_Previews: PreviewProvider {
     static var previews: some View {
-        WeightForm(weightHistory: .constant(["String"]))
+        WeightForm(history: .constant(["String"]))
     }
 }

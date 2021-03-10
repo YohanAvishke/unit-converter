@@ -7,11 +7,11 @@ struct FormController: View {
     var body: some View {
         switch converterType {
         case .weight:
-            WeightForm(weightHistory: $history.weight)
+            WeightForm(history: $history.weight)
         case .temperature:
             TemperatureForm(temperatureHistory: $history.temperature)
         case .distance:
-            DistanceForm()
+            DistanceForm(history: $history.distance)
         case .speed:
             SpeedForm()
         case .volume:

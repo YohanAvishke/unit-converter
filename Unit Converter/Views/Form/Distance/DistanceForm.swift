@@ -2,6 +2,7 @@ import SwiftUI
 
 struct DistanceForm: View {
     @State private var converterValue = ConverterValue()
+    @Binding var history: [String]
     
     var body: some View {
         ScrollView {
@@ -21,20 +22,34 @@ struct DistanceForm: View {
         .toolbar {
             Button(
                 action: {
-                    print("Saved")
+                    self.save()
                 },
                 label: {
-                    Image(systemName: "heart")
+                    Image("save(24x24)")
                 }
             )
         }
         .background(Color(red: 242/255, green: 242/255, blue: 247/255))
         .edgesIgnoringSafeArea(.bottom)
     }
+    
+    func save() {
+        let distanceValues = converterValue.distance
+        let conversion = """
+                         Mile = \(distanceValues.mile) Kilometer = \(distanceValues.kilometre) \
+                         Metre = \(distanceValues.metre) Yard =  \(distanceValues.yard) \
+                         Inch = \(distanceValues.inch) Centimetre = \(distanceValues.centimetre) \
+                         Millimetre = \(distanceValues.millimetre)
+                         """
+        if history.count >= 5 {
+            history = Array(history.suffix(4))
+        }
+        history.append(conversion)
+    }
 }
 
 struct DistanceForm_Previews: PreviewProvider {
     static var previews: some View {
-        DistanceForm()
+        DistanceForm(history: .constant(["String"]))
     }
 }
