@@ -1,10 +1,8 @@
 import SwiftUI
 
-let WEIGHTS_USER_DEFAULTS_KEY = "weight"
-private let WEIGHTS_USER_DEFAULTS_MAX_COUNT = 5
-
 struct WeightForm: View {
     @State private var converterValue = ConverterValue()
+    @Binding var weightHistory: [String]
     
     var body: some View {
         ScrollView {
@@ -38,20 +36,20 @@ struct WeightForm: View {
     
     func saveWeight() {
         let weightValues = converterValue.weight
-        let conversion = "\(weightValues.kilogram) kg = \(weightValues.gram) g = \(weightValues.ounce) oz =  \(weightValues.pound) lb = \(weightValues.stone) stones & \(weightValues.stonePound) pounds"
-        var arr = UserDefaults.standard.array(forKey: WEIGHTS_USER_DEFAULTS_KEY) as? [String] ?? []
-        
-        if arr.count >= WEIGHTS_USER_DEFAULTS_MAX_COUNT {
-            arr = Array(arr.suffix(WEIGHTS_USER_DEFAULTS_MAX_COUNT - 1))
+        let conversion = """
+                         kilogram = \(weightValues.kilogram) gram = \(weightValues.gram) \
+                         ounz = \(weightValues.ounce) ponds =  \(weightValues.pound) \
+                         stones = \(weightValues.stone)  & pounds = \(weightValues.stonePound)
+                         """
+        if weightHistory.count >= 5 {
+            weightHistory = Array(weightHistory.suffix(4))
         }
-        arr.append(conversion)
-        UserDefaults.standard.set(arr, forKey: WEIGHTS_USER_DEFAULTS_KEY)
-        print("Saved \(conversion)")
+        weightHistory.append(conversion)
     }
 }
 
 struct WeightForm_Previews: PreviewProvider {
     static var previews: some View {
-        WeightForm()
+        WeightForm(weightHistory: .constant(["String"]))
     }
 }

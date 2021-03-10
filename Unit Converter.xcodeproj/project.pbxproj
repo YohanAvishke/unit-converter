@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C80268FE25F89E9B008C9F9C /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80268FD25F89E9B008C9F9C /* Utility.swift */; };
+		C802690925F8BD03008C9F9C /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = C802690825F8BD03008C9F9C /* History.swift */; };
 		C816C80F25F0D0F2001A3112 /* WeightConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C816C80A25F0D0F2001A3112 /* WeightConverter.swift */; };
 		C816C81025F0D0F2001A3112 /* VolumeConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C816C80B25F0D0F2001A3112 /* VolumeConverter.swift */; };
 		C816C81125F0D0F2001A3112 /* TemperatureConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C816C80C25F0D0F2001A3112 /* TemperatureConverter.swift */; };
@@ -64,6 +65,7 @@
 
 /* Begin PBXFileReference section */
 		C80268FD25F89E9B008C9F9C /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		C802690825F8BD03008C9F9C /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
 		C816C80A25F0D0F2001A3112 /* WeightConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeightConverter.swift; sourceTree = "<group>"; };
 		C816C80B25F0D0F2001A3112 /* VolumeConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VolumeConverter.swift; sourceTree = "<group>"; };
 		C816C80C25F0D0F2001A3112 /* TemperatureConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemperatureConverter.swift; sourceTree = "<group>"; };
@@ -259,6 +261,7 @@
 				C8FE26B825F377B300ADDAF3 /* Unit */,
 				C8F282BA25ED14070030556B /* Converter.swift */,
 				C8F282BF25ED14B10030556B /* DataReader.swift */,
+				C802690825F8BD03008C9F9C /* History.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -496,6 +499,7 @@
 				C816C81025F0D0F2001A3112 /* VolumeConverter.swift in Sources */,
 				C816C81325F0D0F2001A3112 /* SpeedConverter.swift in Sources */,
 				C8FE26BA25F377D900ADDAF3 /* WeightUnit.swift in Sources */,
+				C802690925F8BD03008C9F9C /* History.swift in Sources */,
 				C85FC33625EDE09800F7AF6D /* WeightForm.swift in Sources */,
 				C80268FE25F89E9B008C9F9C /* Utility.swift in Sources */,
 				C8F282BB25ED14070030556B /* Converter.swift in Sources */,
