@@ -13,7 +13,7 @@ struct HistoryView: View {
     func generateHistory() ->  AnyView {
         return
             AnyView(
-                VStack {
+                List {
                     Text("Weight")
                     List(history.weight, id: \.self) { item in
                         Text(item)
