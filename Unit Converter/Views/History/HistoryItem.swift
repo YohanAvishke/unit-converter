@@ -1,13 +1,16 @@
 import SwiftUI
 
 struct HistoryItem: View {
+    var converter: Converter
+    var data: String
+    
     var body: some View {
         HStack {
-            Image("weight-light")
+            converter.image
                 .resizable()
                 .frame(width: 80, height: 80)
             
-            Text("Conversion data")
+            Text(data)
                 .font(.footnote)
                 .padding(.leading)
             
@@ -19,9 +22,7 @@ struct HistoryItem: View {
 struct HistoryItem_Previews: PreviewProvider {
     static var previews: some View {
         List {
-            HistoryItem()
-            HistoryItem()
-            HistoryItem()
+            HistoryItem(converter: converters[0], data: "Test data")
         }
     }
 }

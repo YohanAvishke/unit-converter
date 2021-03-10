@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		C80268FE25F89E9B008C9F9C /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80268FD25F89E9B008C9F9C /* Utility.swift */; };
 		C802690925F8BD03008C9F9C /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = C802690825F8BD03008C9F9C /* History.swift */; };
+		C802690E25F92770008C9F9C /* HistoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C802690D25F92770008C9F9C /* HistoryList.swift */; };
+		C802691325F9292A008C9F9C /* HistoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C802691225F9292A008C9F9C /* HistoryController.swift */; };
 		C816C80F25F0D0F2001A3112 /* WeightConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C816C80A25F0D0F2001A3112 /* WeightConverter.swift */; };
 		C816C81025F0D0F2001A3112 /* VolumeConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C816C80B25F0D0F2001A3112 /* VolumeConverter.swift */; };
 		C816C81125F0D0F2001A3112 /* TemperatureConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C816C80C25F0D0F2001A3112 /* TemperatureConverter.swift */; };
@@ -37,7 +39,6 @@
 		C8F282BB25ED14070030556B /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F282BA25ED14070030556B /* Converter.swift */; };
 		C8F282C025ED14B10030556B /* DataReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F282BF25ED14B10030556B /* DataReader.swift */; };
 		C8F282CB25ED5DD80030556B /* ConverterList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F282CA25ED5DD80030556B /* ConverterList.swift */; };
-		C8F282D325ED64940030556B /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F282D225ED64940030556B /* HistoryView.swift */; };
 		C8FAD8CE25F4D0DD00B1D8BA /* VolumeUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FAD8CD25F4D0DD00B1D8BA /* VolumeUnit.swift */; };
 		C8FAD8DD25F4D83C00B1D8BA /* ClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FAD8DC25F4D83C00B1D8BA /* ClearButton.swift */; };
 		C8FAD8E225F546D300B1D8BA /* HistoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FAD8E125F546D300B1D8BA /* HistoryItem.swift */; };
@@ -66,6 +67,8 @@
 /* Begin PBXFileReference section */
 		C80268FD25F89E9B008C9F9C /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		C802690825F8BD03008C9F9C /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
+		C802690D25F92770008C9F9C /* HistoryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryList.swift; sourceTree = "<group>"; };
+		C802691225F9292A008C9F9C /* HistoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryController.swift; sourceTree = "<group>"; };
 		C816C80A25F0D0F2001A3112 /* WeightConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeightConverter.swift; sourceTree = "<group>"; };
 		C816C80B25F0D0F2001A3112 /* VolumeConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VolumeConverter.swift; sourceTree = "<group>"; };
 		C816C80C25F0D0F2001A3112 /* TemperatureConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemperatureConverter.swift; sourceTree = "<group>"; };
@@ -100,7 +103,6 @@
 		C8F282BA25ED14070030556B /* Converter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Converter.swift; sourceTree = "<group>"; };
 		C8F282BF25ED14B10030556B /* DataReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataReader.swift; sourceTree = "<group>"; };
 		C8F282CA25ED5DD80030556B /* ConverterList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterList.swift; sourceTree = "<group>"; };
-		C8F282D225ED64940030556B /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		C8FAD8CD25F4D0DD00B1D8BA /* VolumeUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeUnit.swift; sourceTree = "<group>"; };
 		C8FAD8DC25F4D83C00B1D8BA /* ClearButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearButton.swift; sourceTree = "<group>"; };
 		C8FAD8E125F546D300B1D8BA /* HistoryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryItem.swift; sourceTree = "<group>"; };
@@ -168,8 +170,9 @@
 		C85FC33025EDDFA200F7AF6D /* History */ = {
 			isa = PBXGroup;
 			children = (
-				C8F282D225ED64940030556B /* HistoryView.swift */,
 				C8FAD8E125F546D300B1D8BA /* HistoryItem.swift */,
+				C802690D25F92770008C9F9C /* HistoryList.swift */,
+				C802691225F9292A008C9F9C /* HistoryController.swift */,
 			);
 			path = History;
 			sourceTree = "<group>";
@@ -479,9 +482,9 @@
 				C81731A325EF623000BF8D36 /* SpeedField.swift in Sources */,
 				C817319E25EF622700BF8D36 /* DistanceField.swift in Sources */,
 				C8FAD8CE25F4D0DD00B1D8BA /* VolumeUnit.swift in Sources */,
+				C802690E25F92770008C9F9C /* HistoryList.swift in Sources */,
 				C816C81225F0D0F2001A3112 /* DistanceConverter.swift in Sources */,
 				C8FAD8DD25F4D83C00B1D8BA /* ClearButton.swift in Sources */,
-				C8F282D325ED64940030556B /* HistoryView.swift in Sources */,
 				C816C81125F0D0F2001A3112 /* TemperatureConverter.swift in Sources */,
 				C8F282B125ED06E10030556B /* ConverterItem.swift in Sources */,
 				C81731A825EF623B00BF8D36 /* VolumeField.swift in Sources */,
@@ -502,6 +505,7 @@
 				C802690925F8BD03008C9F9C /* History.swift in Sources */,
 				C85FC33625EDE09800F7AF6D /* WeightForm.swift in Sources */,
 				C80268FE25F89E9B008C9F9C /* Utility.swift in Sources */,
+				C802691325F9292A008C9F9C /* HistoryController.swift in Sources */,
 				C8F282BB25ED14070030556B /* Converter.swift in Sources */,
 				C817318F25EF600100BF8D36 /* SpeedForm.swift in Sources */,
 				C817319925EF621900BF8D36 /* TemperatureField.swift in Sources */,

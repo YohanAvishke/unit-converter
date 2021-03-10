@@ -16,7 +16,7 @@ struct ContentView: View {
                 }
                 .tag(TabBar.convert)
             
-            HistoryView()
+            HistoryController()
                 .tabItem {
                     Label("History", systemImage: "clock.fill")
                 }
