@@ -26,6 +26,10 @@ struct HistoryView: View {
                     List(history.distance, id: \.self) { item in
                         Text(item)
                     }
+                    Text("Speed")
+                    List(history.speed, id: \.self) { item in
+                        Text(item)
+                    }
                 }
             )
     }

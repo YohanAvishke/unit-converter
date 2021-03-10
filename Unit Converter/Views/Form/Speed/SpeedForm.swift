@@ -2,6 +2,7 @@ import SwiftUI
 
 struct SpeedForm: View {
     @State private var converterValue = ConverterValue()
+    @Binding var history: [String]
     
     var body: some View {
         ScrollView {
@@ -18,20 +19,33 @@ struct SpeedForm: View {
         .toolbar {
             Button(
                 action: {
-                    print("Saved")
+                    self.save()
                 },
                 label: {
-                    Image(systemName: "heart")
+                    Image("save(24x24)")
                 }
             )
         }
         .background(Color(red: 242/255, green: 242/255, blue: 247/255))
         .edgesIgnoringSafeArea(.bottom)
     }
+    
+    func save() {
+        let speedValues = converterValue.speed
+        let conversion = """
+                         Metres per Sec = \(speedValues.metresPerSecond) \
+                         Knot = \(speedValues.knot) Miles per Hour = \(speedValues.milesPerHour) \
+                         Kilometres per Hour =  \(speedValues.kilometresPerHour)
+                         """
+        if history.count >= 5 {
+            history = Array(history.suffix(4))
+        }
+        history.append(conversion)
+    }
 }
 
 struct SpeedForm_Previews: PreviewProvider {
     static var previews: some View {
-        SpeedForm()
+        SpeedForm(history: .constant(["String"]))
     }
 }

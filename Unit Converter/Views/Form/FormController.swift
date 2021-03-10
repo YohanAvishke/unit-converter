@@ -13,7 +13,7 @@ struct FormController: View {
         case .distance:
             DistanceForm(history: $history.distance)
         case .speed:
-            SpeedForm()
+            SpeedForm(history: $history.speed)
         case .volume:
             VolumeForm()
         }
