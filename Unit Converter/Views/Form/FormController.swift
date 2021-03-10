@@ -15,7 +15,7 @@ struct FormController: View {
         case .speed:
             SpeedForm(history: $history.speed)
         case .volume:
-            VolumeForm()
+            VolumeForm(history: $history.volume)
         }
     }
 }

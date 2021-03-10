@@ -27,10 +27,17 @@ final class History: ObservableObject {
         }
     }
     
+    @Published var volume: [String] {
+        didSet {
+            UserDefaults.standard.set(volume, forKey: "volume")
+        }
+    }
+    
     init() {
         self.weight = UserDefaults.standard.object(forKey: "weight") as? [String] ?? []
         self.temperature = UserDefaults.standard.object(forKey: "temperature") as? [String] ?? []
         self.distance = UserDefaults.standard.object(forKey: "distance") as? [String] ?? []
         self.speed = UserDefaults.standard.object(forKey: "speed") as? [String] ?? []
+        self.volume = UserDefaults.standard.object(forKey: "volume") as? [String] ?? []
     }
 }

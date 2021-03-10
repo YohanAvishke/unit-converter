@@ -30,6 +30,10 @@ struct HistoryView: View {
                     List(history.speed, id: \.self) { item in
                         Text(item)
                     }
+                    Text("Volume")
+                    List(history.volume, id: \.self) { item in
+                        Text(item)
+                    }
                 }
             )
     }
