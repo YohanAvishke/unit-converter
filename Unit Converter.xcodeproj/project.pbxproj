@@ -34,7 +34,7 @@
 		C8F282B125ED06E10030556B /* ConverterItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F282B025ED06E10030556B /* ConverterItem.swift */; };
 		C8F282B625ED12690030556B /* converterData.json in Resources */ = {isa = PBXBuildFile; fileRef = C8F282B525ED12690030556B /* converterData.json */; };
 		C8F282BB25ED14070030556B /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F282BA25ED14070030556B /* Converter.swift */; };
-		C8F282C025ED14B10030556B /* ConverterData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F282BF25ED14B10030556B /* ConverterData.swift */; };
+		C8F282C025ED14B10030556B /* DataReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F282BF25ED14B10030556B /* DataReader.swift */; };
 		C8F282CB25ED5DD80030556B /* ConverterList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F282CA25ED5DD80030556B /* ConverterList.swift */; };
 		C8F282D325ED64940030556B /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F282D225ED64940030556B /* HistoryView.swift */; };
 		C8FAD8CE25F4D0DD00B1D8BA /* VolumeUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FAD8CD25F4D0DD00B1D8BA /* VolumeUnit.swift */; };
@@ -96,7 +96,7 @@
 		C8F282B025ED06E10030556B /* ConverterItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterItem.swift; sourceTree = "<group>"; };
 		C8F282B525ED12690030556B /* converterData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = converterData.json; sourceTree = "<group>"; };
 		C8F282BA25ED14070030556B /* Converter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Converter.swift; sourceTree = "<group>"; };
-		C8F282BF25ED14B10030556B /* ConverterData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterData.swift; sourceTree = "<group>"; };
+		C8F282BF25ED14B10030556B /* DataReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataReader.swift; sourceTree = "<group>"; };
 		C8F282CA25ED5DD80030556B /* ConverterList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterList.swift; sourceTree = "<group>"; };
 		C8F282D225ED64940030556B /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		C8FAD8CD25F4D0DD00B1D8BA /* VolumeUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeUnit.swift; sourceTree = "<group>"; };
@@ -142,23 +142,22 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
-		C8287BE525F372500012EE32 /* Forms */ = {
+		C8287BE525F372500012EE32 /* Form */ = {
 			isa = PBXGroup;
 			children = (
+				C8287BDB25F362280012EE32 /* FormController.swift */,
 				C8FE26BE25F4964F00ADDAF3 /* Weight */,
 				C8FE26C025F4967E00ADDAF3 /* Distance */,
 				C8FE26BF25F4966D00ADDAF3 /* Temperature */,
 				C8FE26C125F496A700ADDAF3 /* Speed */,
 				C8FE26C225F496B300ADDAF3 /* Volume */,
 			);
-			path = Forms;
+			path = Form;
 			sourceTree = "<group>";
 		};
 		C85FC32F25EDDF9300F7AF6D /* Converter */ = {
 			isa = PBXGroup;
 			children = (
-				C8287BE525F372500012EE32 /* Forms */,
-				C8287BDB25F362280012EE32 /* FormController.swift */,
 				C8F282CA25ED5DD80030556B /* ConverterList.swift */,
 				C8F282B025ED06E10030556B /* ConverterItem.swift */,
 			);
@@ -246,6 +245,7 @@
 		C87695D425EBD1EE008E933A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C8287BE525F372500012EE32 /* Form */,
 				C8FAD8DB25F4D82D00B1D8BA /* Helpers */,
 				C85FC33025EDDFA200F7AF6D /* History */,
 				C85FC32F25EDDF9300F7AF6D /* Converter */,
@@ -258,7 +258,7 @@
 			isa = PBXGroup;
 			children = (
 				C8F282BA25ED14070030556B /* Converter.swift */,
-				C8F282BF25ED14B10030556B /* ConverterData.swift */,
+				C8F282BF25ED14B10030556B /* DataReader.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -489,7 +489,7 @@
 				C8FE26CF25F4988000ADDAF3 /* TemperatureUnit.swift in Sources */,
 				C8287BDC25F362280012EE32 /* FormController.swift in Sources */,
 				C817316225EF4DE300BF8D36 /* WeightField.swift in Sources */,
-				C8F282C025ED14B10030556B /* ConverterData.swift in Sources */,
+				C8F282C025ED14B10030556B /* DataReader.swift in Sources */,
 				C8629E5B25E81AA60001F7BD /* ContentView.swift in Sources */,
 				C817318A25EF5FF700BF8D36 /* DistanceForm.swift in Sources */,
 				C8629E5925E81AA60001F7BD /* Unit_ConverterApp.swift in Sources */,

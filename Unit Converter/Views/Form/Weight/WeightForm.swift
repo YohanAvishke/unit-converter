@@ -1,5 +1,8 @@
 import SwiftUI
 
+let WEIGHTS_USER_DEFAULTS_KEY = "weight"
+private let WEIGHTS_USER_DEFAULTS_MAX_COUNT = 5
+
 struct WeightForm: View {
     @State private var converterValue = ConverterValue()
     
@@ -22,7 +25,7 @@ struct WeightForm: View {
         .toolbar {
             Button(
                 action: {
-                    print("Saved")
+                    saveWeight()
                 },
                 label: {
                     Image("save(24x24)")
@@ -31,6 +34,19 @@ struct WeightForm: View {
         }
         .background(Color(red: 242/255, green: 242/255, blue: 247/255))
         .edgesIgnoringSafeArea(.bottom)
+    }
+    
+    func saveWeight() {
+        let weightValues = converterValue.weight
+        let conversion = "\(weightValues.kilogram) kg = \(weightValues.gram) g = \(weightValues.ounce) oz =  \(weightValues.pound) lb = \(weightValues.stone) stones & \(weightValues.stonePound) pounds"
+        var arr = UserDefaults.standard.array(forKey: WEIGHTS_USER_DEFAULTS_KEY) as? [String] ?? []
+        
+        if arr.count >= WEIGHTS_USER_DEFAULTS_MAX_COUNT {
+            arr = Array(arr.suffix(WEIGHTS_USER_DEFAULTS_MAX_COUNT - 1))
+        }
+        arr.append(conversion)
+        UserDefaults.standard.set(arr, forKey: WEIGHTS_USER_DEFAULTS_KEY)
+        print("Saved \(conversion)")
     }
 }
 
