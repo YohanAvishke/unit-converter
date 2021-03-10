@@ -13,8 +13,13 @@ struct HistoryView: View {
     func generateHistory() ->  AnyView {
         return
             AnyView(
-                List {
-                    ForEach(history.weight, id: \.self) { item in
+                VStack {
+                    Text("Weight")
+                    List(history.weight, id: \.self) { item in
+                        Text(item)
+                    }
+                    Text("Temperature")
+                    List(history.temperature, id: \.self) { item in
                         Text(item)
                     }
                 }

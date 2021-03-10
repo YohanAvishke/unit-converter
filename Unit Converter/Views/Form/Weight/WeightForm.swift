@@ -23,7 +23,7 @@ struct WeightForm: View {
         .toolbar {
             Button(
                 action: {
-                    saveWeight()
+                    self.save()
                 },
                 label: {
                     Image("save(24x24)")
@@ -34,7 +34,7 @@ struct WeightForm: View {
         .edgesIgnoringSafeArea(.bottom)
     }
     
-    func saveWeight() {
+    func save() {
         let weightValues = converterValue.weight
         let conversion = """
                          kilogram = \(weightValues.kilogram) gram = \(weightValues.gram) \

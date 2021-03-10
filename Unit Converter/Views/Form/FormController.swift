@@ -9,7 +9,7 @@ struct FormController: View {
         case .weight:
             WeightForm(weightHistory: $history.weight)
         case .temperature:
-            TemperatureForm()
+            TemperatureForm(temperatureHistory: $history.temperature)
         case .distance:
             DistanceForm()
         case .speed:
