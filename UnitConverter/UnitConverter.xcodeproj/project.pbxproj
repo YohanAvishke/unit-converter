@@ -56,15 +56,23 @@
 		C802693C25FA2705008C9F9C /* UnitConverter */ = {
 			isa = PBXGroup;
 			children = (
+				C80269FB25FA2D80008C9F9C /* views */,
 				C802693D25FA2705008C9F9C /* AppDelegate.swift */,
 				C802693F25FA2705008C9F9C /* SceneDelegate.swift */,
 				C802694125FA2705008C9F9C /* ViewController.swift */,
-				C802694325FA2705008C9F9C /* Main.storyboard */,
 				C802694625FA2708008C9F9C /* Assets.xcassets */,
-				C802694825FA2708008C9F9C /* LaunchScreen.storyboard */,
 				C802694B25FA2708008C9F9C /* Info.plist */,
 			);
 			path = UnitConverter;
+			sourceTree = "<group>";
+		};
+		C80269FB25FA2D80008C9F9C /* views */ = {
+			isa = PBXGroup;
+			children = (
+				C802694825FA2708008C9F9C /* LaunchScreen.storyboard */,
+				C802694325FA2705008C9F9C /* Main.storyboard */,
+			);
+			path = views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
