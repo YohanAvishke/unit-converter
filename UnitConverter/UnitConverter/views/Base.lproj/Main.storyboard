@@ -18,7 +18,7 @@
                         <viewLayoutGuide key="safeArea" id="VY2-6f-2Jy"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Convert" image="arrow.3.trianglepath" catalog="system" id="sC2-Pe-U3I"/>
+                    <tabBarItem key="tabBarItem" title="Convert" image="arrow.2.circlepath" catalog="system" id="sC2-Pe-U3I"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bmn-GO-JyF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -60,7 +60,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="arrow.3.trianglepath" catalog="system" width="128" height="128"/>
+        <image name="arrow.2.circlepath" catalog="system" width="128" height="101"/>
         <image name="clock" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
