@@ -15,6 +15,8 @@
 		C8026A0825FA977C008C9F9C /* JsonReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8026A0625FA977B008C9F9C /* JsonReader.swift */; };
 		C8026A1A25FA9E50008C9F9C /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8026A1925FA9E50008C9F9C /* Converter.swift */; };
 		C8026A1D25FA9E6B008C9F9C /* converterData.json in Resources */ = {isa = PBXBuildFile; fileRef = C8026A1C25FA9E6B008C9F9C /* converterData.json */; };
+		C8026A2425FA9F56008C9F9C /* ConvertersSceneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8026A2325FA9F56008C9F9C /* ConvertersSceneController.swift */; };
+		C8026A2725FAA27B008C9F9C /* ConverterViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8026A2625FAA27B008C9F9C /* ConverterViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		C8026A0625FA977B008C9F9C /* JsonReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonReader.swift; sourceTree = "<group>"; };
 		C8026A1925FA9E50008C9F9C /* Converter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Converter.swift; sourceTree = "<group>"; };
 		C8026A1C25FA9E6B008C9F9C /* converterData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = converterData.json; sourceTree = "<group>"; };
+		C8026A2325FA9F56008C9F9C /* ConvertersSceneController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertersSceneController.swift; sourceTree = "<group>"; };
+		C8026A2625FAA27B008C9F9C /* ConverterViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				C8026A1925FA9E50008C9F9C /* Converter.swift */,
+				C8026A2625FAA27B008C9F9C /* ConverterViewCell.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -101,6 +106,7 @@
 		C8026A0B25FA9BED008C9F9C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				C8026A2325FA9F56008C9F9C /* ConvertersSceneController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -185,6 +191,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C8026A0825FA977C008C9F9C /* JsonReader.swift in Sources */,
+				C8026A2725FAA27B008C9F9C /* ConverterViewCell.swift in Sources */,
+				C8026A2425FA9F56008C9F9C /* ConvertersSceneController.swift in Sources */,
 				C802693E25FA2705008C9F9C /* AppDelegate.swift in Sources */,
 				C8026A1A25FA9E50008C9F9C /* Converter.swift in Sources */,
 				C802694025FA2705008C9F9C /* SceneDelegate.swift in Sources */,
