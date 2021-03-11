@@ -1,3 +1,10 @@
+//
+//  JsonReader.swift
+//  UnitConverter
+//
+//  Created by Yohan Avishke Ediriweera on 2021-03-11.
+//
+
 import Foundation
 
 var converters: [Converter] = load("converter.json")
