@@ -56,13 +56,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wi3-jF-P3d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="993" y="-619"/>
+            <point key="canvasLocation" x="914.49275362318849" y="-618.75"/>
         </scene>
         <!--ConverterNavigation-->
         <scene sceneID="Nsg-xt-lj8">
             <objects>
                 <navigationController title="ConverterNavigation" id="dxt-tb-iQk" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Convert" image="arrow.2.circlepath" catalog="system" id="eWm-K8-63C"/>
+                    <tabBarItem key="tabBarItem" title="Convert" image="arrow.triangle.2.circlepath" catalog="system" id="eWm-K8-63C"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="MiK-eD-LIK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -77,7 +77,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="arrow.2.circlepath" catalog="system" width="128" height="101"/>
+        <image name="arrow.triangle.2.circlepath" catalog="system" width="128" height="101"/>
         <image name="clock" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
