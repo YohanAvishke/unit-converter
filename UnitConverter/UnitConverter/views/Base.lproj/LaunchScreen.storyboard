@@ -15,8 +15,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="r1u-LU-rTw">
-                                <rect key="frame" x="76.748451701428394" y="298.7042323372234" width="260" height="140"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="r1u-LU-rTw">
+                                <rect key="frame" x="77" y="298" width="260" height="140"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0ht-5R-lBY">
                                         <rect key="frame" x="0.0" y="0.0" width="260" height="80"/>
@@ -49,7 +49,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By Yohan Avishke" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QVa-U7-CZT">
-                                        <rect key="frame" x="66.666666666666686" y="120.66666666666667" width="127" height="19.333333333333329"/>
+                                        <rect key="frame" x="66.666666666666657" y="120.66666666666667" width="127" height="19.333333333333329"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
                                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -59,6 +59,10 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="r1u-LU-rTw" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="OLg-pM-qq1"/>
+                            <constraint firstItem="r1u-LU-rTw" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="ZhI-kP-bAm"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
