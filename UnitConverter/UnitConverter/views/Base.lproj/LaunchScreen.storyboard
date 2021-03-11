@@ -16,40 +16,45 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="r1u-LU-rTw">
-                                <rect key="frame" x="77" y="298" width="260" height="140"/>
+                                <rect key="frame" x="64" y="277" width="286" height="182"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0ht-5R-lBY">
-                                        <rect key="frame" x="0.0" y="0.0" width="260" height="80"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="psI-kO-KMD">
+                                        <rect key="frame" x="0.0" y="0.0" width="286" height="122"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-stars-left" translatesAutoresizingMaskIntoConstraints="NO" id="q4p-yc-Tig">
-                                                <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                                <rect key="frame" x="0.0" y="21" width="80" height="80"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="80" id="Up7-6U-jPp"/>
+                                                    <constraint firstAttribute="width" secondItem="q4p-yc-Tig" secondAttribute="height" multiplier="1:1" id="TeZ-md-dXz"/>
+                                                    <constraint firstAttribute="width" constant="80" id="WDy-JO-fcG"/>
+                                                    <constraint firstAttribute="height" constant="80" id="iJT-Ed-T91"/>
                                                 </constraints>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-bulb" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Oaa-6q-Mn2">
-                                                <rect key="frame" x="80" y="0.0" width="100" height="80"/>
+                                                <rect key="frame" x="88" y="0.0" width="110" height="122"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="100" id="5cj-iD-mI9"/>
+                                                    <constraint firstAttribute="height" constant="122" id="4Mx-Wu-HA3"/>
+                                                    <constraint firstAttribute="width" secondItem="Oaa-6q-Mn2" secondAttribute="height" multiplier="55:61" id="WqK-Ck-gxs"/>
+                                                    <constraint firstAttribute="width" constant="110" id="zUs-HE-a1S"/>
                                                 </constraints>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-stars-right" translatesAutoresizingMaskIntoConstraints="NO" id="UXK-oX-vV2">
-                                                <rect key="frame" x="180" y="0.0" width="80" height="80"/>
+                                                <rect key="frame" x="206" y="21" width="80" height="80"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="80" id="HYV-dv-yks"/>
-                                                    <constraint firstAttribute="height" constant="80" id="wK3-dB-VZc"/>
+                                                    <constraint firstAttribute="height" constant="80" id="6vj-Me-fCI"/>
+                                                    <constraint firstAttribute="width" secondItem="UXK-oX-vV2" secondAttribute="height" multiplier="1:1" id="DaL-8q-e63"/>
+                                                    <constraint firstAttribute="width" constant="80" id="l8S-qA-knH"/>
                                                 </constraints>
                                             </imageView>
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unit Converter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J9b-QJ-pcd">
-                                        <rect key="frame" x="24" y="80" width="212" height="40.666666666666657"/>
+                                        <rect key="frame" x="37" y="122.00000000000001" width="212" height="40.666666666666671"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By Yohan Avishke" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QVa-U7-CZT">
-                                        <rect key="frame" x="66.666666666666657" y="120.66666666666667" width="127" height="19.333333333333329"/>
+                                        <rect key="frame" x="79.666666666666657" y="162.66666666666669" width="127" height="19.333333333333343"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
                                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
