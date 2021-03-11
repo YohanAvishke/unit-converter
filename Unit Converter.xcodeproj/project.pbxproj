@@ -11,6 +11,9 @@
 		C802690925F8BD03008C9F9C /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = C802690825F8BD03008C9F9C /* History.swift */; };
 		C802690E25F92770008C9F9C /* HistoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C802690D25F92770008C9F9C /* HistoryList.swift */; };
 		C802691325F9292A008C9F9C /* HistoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C802691225F9292A008C9F9C /* HistoryController.swift */; };
+		C802691B25F93EC9008C9F9C /* KeyPadRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C802691A25F93EC9008C9F9C /* KeyPadRow.swift */; };
+		C802692025F93F08008C9F9C /* KeyPadButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C802691F25F93F08008C9F9C /* KeyPadButton.swift */; };
+		C802692925F93FA0008C9F9C /* KeyPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = C802692825F93FA0008C9F9C /* KeyPad.swift */; };
 		C816C80F25F0D0F2001A3112 /* WeightConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C816C80A25F0D0F2001A3112 /* WeightConverter.swift */; };
 		C816C81025F0D0F2001A3112 /* VolumeConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C816C80B25F0D0F2001A3112 /* VolumeConverter.swift */; };
 		C816C81125F0D0F2001A3112 /* TemperatureConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C816C80C25F0D0F2001A3112 /* TemperatureConverter.swift */; };
@@ -69,6 +72,9 @@
 		C802690825F8BD03008C9F9C /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
 		C802690D25F92770008C9F9C /* HistoryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryList.swift; sourceTree = "<group>"; };
 		C802691225F9292A008C9F9C /* HistoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryController.swift; sourceTree = "<group>"; };
+		C802691A25F93EC9008C9F9C /* KeyPadRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyPadRow.swift; sourceTree = "<group>"; };
+		C802691F25F93F08008C9F9C /* KeyPadButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyPadButton.swift; sourceTree = "<group>"; };
+		C802692825F93FA0008C9F9C /* KeyPad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyPad.swift; sourceTree = "<group>"; };
 		C816C80A25F0D0F2001A3112 /* WeightConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeightConverter.swift; sourceTree = "<group>"; };
 		C816C80B25F0D0F2001A3112 /* VolumeConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VolumeConverter.swift; sourceTree = "<group>"; };
 		C816C80C25F0D0F2001A3112 /* TemperatureConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemperatureConverter.swift; sourceTree = "<group>"; };
@@ -136,6 +142,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C802692425F93F2A008C9F9C /* Keyboard */ = {
+			isa = PBXGroup;
+			children = (
+				C802691A25F93EC9008C9F9C /* KeyPadRow.swift */,
+				C802691F25F93F08008C9F9C /* KeyPadButton.swift */,
+				C802692825F93FA0008C9F9C /* KeyPad.swift */,
+			);
+			path = Keyboard;
+			sourceTree = "<group>";
+		};
 		C817314C25EF4D6100BF8D36 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -272,6 +288,7 @@
 		C8FAD8DB25F4D82D00B1D8BA /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				C802692425F93F2A008C9F9C /* Keyboard */,
 				C8FAD8DC25F4D83C00B1D8BA /* ClearButton.swift */,
 			);
 			path = Helpers;
@@ -482,12 +499,14 @@
 				C81731A325EF623000BF8D36 /* SpeedField.swift in Sources */,
 				C817319E25EF622700BF8D36 /* DistanceField.swift in Sources */,
 				C8FAD8CE25F4D0DD00B1D8BA /* VolumeUnit.swift in Sources */,
+				C802692025F93F08008C9F9C /* KeyPadButton.swift in Sources */,
 				C802690E25F92770008C9F9C /* HistoryList.swift in Sources */,
 				C816C81225F0D0F2001A3112 /* DistanceConverter.swift in Sources */,
 				C8FAD8DD25F4D83C00B1D8BA /* ClearButton.swift in Sources */,
 				C816C81125F0D0F2001A3112 /* TemperatureConverter.swift in Sources */,
 				C8F282B125ED06E10030556B /* ConverterItem.swift in Sources */,
 				C81731A825EF623B00BF8D36 /* VolumeField.swift in Sources */,
+				C802692925F93FA0008C9F9C /* KeyPad.swift in Sources */,
 				C8F282CB25ED5DD80030556B /* ConverterList.swift in Sources */,
 				C8FAD8E225F546D300B1D8BA /* HistoryItem.swift in Sources */,
 				C816C80F25F0D0F2001A3112 /* WeightConverter.swift in Sources */,
@@ -500,6 +519,7 @@
 				C8629E5925E81AA60001F7BD /* Unit_ConverterApp.swift in Sources */,
 				C8FE26E325F4BC4200ADDAF3 /* DistanceUnit.swift in Sources */,
 				C816C81025F0D0F2001A3112 /* VolumeConverter.swift in Sources */,
+				C802691B25F93EC9008C9F9C /* KeyPadRow.swift in Sources */,
 				C816C81325F0D0F2001A3112 /* SpeedConverter.swift in Sources */,
 				C8FE26BA25F377D900ADDAF3 /* WeightUnit.swift in Sources */,
 				C802690925F8BD03008C9F9C /* History.swift in Sources */,
