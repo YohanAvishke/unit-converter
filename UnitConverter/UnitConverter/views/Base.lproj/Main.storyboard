@@ -8,22 +8,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Convert-->
-        <scene sceneID="TwR-Be-FdE">
-            <objects>
-                <viewController id="fze-o1-QPi" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="gHB-fL-2lp">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="VY2-6f-2Jy"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Convert" image="arrow.2.circlepath" catalog="system" id="sC2-Pe-U3I"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Bmn-GO-JyF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-29" y="-571"/>
-        </scene>
         <!--History-->
         <scene sceneID="3xA-DE-7Cz">
             <objects>
@@ -50,13 +34,46 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="fze-o1-QPi" kind="relationship" relationship="viewControllers" id="Ohq-Bt-YT0"/>
+                        <segue destination="dxt-tb-iQk" kind="relationship" relationship="viewControllers" id="N41-A6-Cwl"/>
                         <segue destination="Bcu-fj-phw" kind="relationship" relationship="viewControllers" id="B1a-p8-3nD"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hgs-vN-iUo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1086" y="-242"/>
+            <point key="canvasLocation" x="-933" y="-239"/>
+        </scene>
+        <!--Converters-->
+        <scene sceneID="JP2-6x-Iyt">
+            <objects>
+                <viewController title="Converters" id="3Ts-px-zmU" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aVE-7A-Alw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="tZ7-gW-mnv"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Converters" id="ZsV-sB-evK"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wi3-jF-P3d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="993" y="-619"/>
+        </scene>
+        <!--ConverterNavigation-->
+        <scene sceneID="Nsg-xt-lj8">
+            <objects>
+                <navigationController title="ConverterNavigation" id="dxt-tb-iQk" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Convert" image="arrow.2.circlepath" catalog="system" id="eWm-K8-63C"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="MiK-eD-LIK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="3Ts-px-zmU" kind="relationship" relationship="rootViewController" id="PY4-sF-eiv"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N7M-q8-xKu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-30" y="-618"/>
         </scene>
     </scenes>
     <resources>
