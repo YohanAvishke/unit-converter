@@ -25,10 +25,10 @@
             </objects>
             <point key="canvasLocation" x="-30" y="262"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Taba-->
         <scene sceneID="NjN-lp-jkq">
             <objects>
-                <tabBarController id="0Yz-hZ-rTO" sceneMemberID="viewController">
+                <tabBarController title="Taba" id="0Yz-hZ-rTO" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1Su-om-sdz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
