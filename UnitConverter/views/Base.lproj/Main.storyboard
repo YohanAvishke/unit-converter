@@ -5,25 +5,25 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--History-->
-        <scene sceneID="3xA-DE-7Cz">
+        <!--HistoryNavigationController-->
+        <scene sceneID="Nv4-By-SjS">
             <objects>
-                <viewController id="Bcu-fj-phw" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Pcs-ZQ-d1v">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="4NX-wV-GYC"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="History" image="clock" catalog="system" id="6Qy-k0-BIy"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GMy-aA-HuR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <navigationController title="HistoryNavigationController" id="eeU-ZV-w6F" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="History" image="clock.arrow.circlepath" catalog="system" id="U13-BI-Xd6"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="X5H-dK-TgX">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="1R6-KL-usn" kind="relationship" relationship="rootViewController" id="zR7-Lp-e2q"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pH6-S3-tM2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-30" y="184"/>
+            <point key="canvasLocation" x="-30" y="262"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="NjN-lp-jkq">
@@ -36,7 +36,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="dxt-tb-iQk" kind="relationship" relationship="viewControllers" id="N41-A6-Cwl"/>
-                        <segue destination="Bcu-fj-phw" kind="relationship" relationship="viewControllers" id="B1a-p8-3nD"/>
+                        <segue destination="eeU-ZV-w6F" kind="relationship" relationship="viewControllers" id="78V-LF-N9i"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hgs-vN-iUo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1028,16 +1028,98 @@
             </objects>
             <point key="canvasLocation" x="2490" y="-1210"/>
         </scene>
+        <!--History-->
+        <scene sceneID="T32-6a-izO">
+            <objects>
+                <viewController id="1R6-KL-usn" customClass="HistoryViewController" customModule="utility_converter" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PMY-25-Lh0">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="95" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="CCv-ea-4AQ">
+                                <rect key="frame" x="0.0" y="128" width="375" height="491"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.094117647060000004" green="0.094117647060000004" blue="0.094117647060000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="90" id="gx7-za-CoN" customClass="HistoryTableViewCell" customModule="utility_converter" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="90"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gx7-za-CoN" id="kMu-at-FGx">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ml8-So-1uh">
+                                                    <rect key="frame" x="15" y="20" width="50" height="50"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Conversion" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OLo-Wz-vQH">
+                                                    <rect key="frame" x="75" y="20" width="285" height="15"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                                    <color key="textColor" systemColor="lightTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Value" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rsw-br-Uzq">
+                                                    <rect key="frame" x="75" y="35" width="285" height="35"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.094117647060000004" green="0.094117647060000004" blue="0.094117647060000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <outlet property="historyConversionText" destination="Rsw-br-Uzq" id="7mh-7G-cZ3"/>
+                                            <outlet property="historyTypeIcon" destination="ml8-So-1uh" id="anI-zK-S5e"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="1R6-KL-usn" id="KC0-0t-oEU"/>
+                                    <outlet property="delegate" destination="1R6-KL-usn" id="Sbc-HP-X24"/>
+                                </connections>
+                            </tableView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="0SM-4g-Gwf">
+                                <rect key="frame" x="16" y="81" width="343" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Weight"/>
+                                    <segment title="Temperature"/>
+                                    <segment title="Volume"/>
+                                    <segment title="Speed"/>
+                                </segments>
+                                <connections>
+                                    <action selector="handleSegmentControlIndexChange:" destination="1R6-KL-usn" eventType="valueChanged" id="TvQ-PK-OLd"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="qCF-jR-aCB"/>
+                        <color key="backgroundColor" red="0.094117647060000004" green="0.094117647060000004" blue="0.094117647060000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="History" id="Peq-61-lq8">
+                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="nf3-0M-ajh">
+                            <connections>
+                                <action selector="handleHistoryClearButtonClick:" destination="1R6-KL-usn" id="2X1-9e-0iU"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="segmentedControl" destination="0SM-4g-Gwf" id="iag-dL-rWF"/>
+                        <outlet property="tableView" destination="CCv-ea-4AQ" id="nPm-VC-BJG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nxr-kt-iWf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1099" y="262"/>
+        </scene>
     </scenes>
     <resources>
         <image name="arrow.triangle.2.circlepath" catalog="system" width="128" height="101"/>
-        <image name="clock" catalog="system" width="128" height="121"/>
+        <image name="clock.arrow.circlepath" catalog="system" width="128" height="110"/>
         <image name="save(24x24)" width="24" height="24"/>
         <systemColor name="lightTextColor">
             <color white="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>

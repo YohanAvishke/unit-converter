@@ -33,6 +33,9 @@
 		C880627525FB682F00CDEC0C /* UITableView+EmptyTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C880627125FB682F00CDEC0C /* UITableView+EmptyTable.swift */; };
 		C880627625FB682F00CDEC0C /* UIViewController+HideKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C880627225FB682F00CDEC0C /* UIViewController+HideKeyboard.swift */; };
 		C880627A25FB687400CDEC0C /* CustomNumericKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C880627925FB687400CDEC0C /* CustomNumericKeyboard.swift */; };
+		C880627E25FB71B200CDEC0C /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C880627C25FB71B200CDEC0C /* HistoryViewController.swift */; };
+		C880628425FB71E000CDEC0C /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = C880628225FB71DF00CDEC0C /* History.swift */; };
+		C880628525FB71E000CDEC0C /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C880628325FB71E000CDEC0C /* HistoryTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +67,9 @@
 		C880627125FB682F00CDEC0C /* UITableView+EmptyTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+EmptyTable.swift"; sourceTree = "<group>"; };
 		C880627225FB682F00CDEC0C /* UIViewController+HideKeyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+HideKeyboard.swift"; sourceTree = "<group>"; };
 		C880627925FB687400CDEC0C /* CustomNumericKeyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNumericKeyboard.swift; sourceTree = "<group>"; };
+		C880627C25FB71B200CDEC0C /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		C880628225FB71DF00CDEC0C /* History.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
+		C880628325FB71E000CDEC0C /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +130,8 @@
 		C80269FF25FA93CC008C9F9C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				C880628225FB71DF00CDEC0C /* History.swift */,
+				C880628325FB71E000CDEC0C /* HistoryTableViewCell.swift */,
 				C8026A1925FA9E50008C9F9C /* Converter.swift */,
 				C8026A2625FAA27B008C9F9C /* ConverterViewCell.swift */,
 			);
@@ -147,6 +155,7 @@
 				C880626325FB678400CDEC0C /* VolumeConversionViewController.swift */,
 				C880626025FB678300CDEC0C /* WeightConversionViewController.swift */,
 				C8026A2325FA9F56008C9F9C /* ConvertersSceneController.swift */,
+				C880627C25FB71B200CDEC0C /* HistoryViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -268,6 +277,7 @@
 				C880627325FB682F00CDEC0C /* UITextField+CustomNumericKeyboard.swift in Sources */,
 				C8026A2725FAA27B008C9F9C /* ConverterViewCell.swift in Sources */,
 				C880625A25FB675900CDEC0C /* Distance.swift in Sources */,
+				C880627E25FB71B200CDEC0C /* HistoryViewController.swift in Sources */,
 				C880627A25FB687400CDEC0C /* CustomNumericKeyboard.swift in Sources */,
 				C880626725FB678400CDEC0C /* TemperatureConversionViewController.swift in Sources */,
 				C880626925FB678400CDEC0C /* SpeedConversionViewController.swift in Sources */,
@@ -275,10 +285,12 @@
 				C802693E25FA2705008C9F9C /* AppDelegate.swift in Sources */,
 				C880627625FB682F00CDEC0C /* UIViewController+HideKeyboard.swift in Sources */,
 				C8026A1A25FA9E50008C9F9C /* Converter.swift in Sources */,
+				C880628425FB71E000CDEC0C /* History.swift in Sources */,
 				C802694025FA2705008C9F9C /* SceneDelegate.swift in Sources */,
 				C880626825FB678400CDEC0C /* VolumeConversionViewController.swift in Sources */,
 				C880626625FB678400CDEC0C /* DistanceConversionViewController.swift in Sources */,
 				C880625B25FB675900CDEC0C /* Speed.swift in Sources */,
+				C880628525FB71E000CDEC0C /* HistoryTableViewCell.swift in Sources */,
 				C880626525FB678400CDEC0C /* WeightConversionViewController.swift in Sources */,
 				C880625E25FB675900CDEC0C /* Volume.swift in Sources */,
 				C880627525FB682F00CDEC0C /* UITableView+EmptyTable.swift in Sources */,
