@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 class ConverterViewCell: UICollectionViewCell {
-    
-    @IBOutlet weak var conversionIcon: UIImageView!
-    @IBOutlet weak var conversionName: UILabel!
+    @IBOutlet weak var converterImage: UIImageView!
+    @IBOutlet weak var converterName: UILabel!
+    @IBOutlet weak var converterDescription: UILabel!
 }
