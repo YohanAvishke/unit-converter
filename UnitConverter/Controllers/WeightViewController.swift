@@ -1,9 +1,8 @@
 //
-//  TemperatureViewController.swift
-//  utility-converter
+//  WeightViewController.swift
+//  UnitConverter
 //
-//  Created by Brion Silva on 25/03/2019.
-//  Copyright © 2019 Brion Silva. All rights reserved.
+//  Created by Yohan Avishke Ediriweera on 2021-03-12.
 //
 
 import UIKit
@@ -11,7 +10,7 @@ import UIKit
 let WEIGHTS_USER_DEFAULTS_KEY = "weight"
 private let WEIGHTS_USER_DEFAULTS_MAX_COUNT = 5
 
-class WeightConversionViewController: UIViewController, CustomNumericKeyboardDelegate {
+class WeightViewController: UIViewController, CustomNumericKeyboardDelegate {
     
     @IBOutlet weak var weightViewScroller: UIScrollView!
     @IBOutlet weak var outerStackView: UIStackView!
