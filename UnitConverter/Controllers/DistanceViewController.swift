@@ -1,31 +1,31 @@
 //
-//  WeightViewController.swift
+//  DistanceViewController.swift
 //  UnitConverter
 //
-//  Created by Yohan Avishke Ediriweera on 2021-03-12.
+//  Created by Yohan Avishke Ediriweera on 2021-03-16.
 //
 
 import UIKit
 
-class WeightViewController: UIViewController, CustomNumericKeyboardDelegate {
+class DistanceViewController: UIViewController, CustomNumericKeyboardDelegate {
     @IBOutlet weak var viewScroller: UIScrollView!
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var stackViewTopConstraint: NSLayoutConstraint!
-    @IBOutlet weak var kilogramTextField: UITextField!
-    @IBOutlet weak var gramTextField: UITextField!
-    @IBOutlet weak var ounceTextField: UITextField!
-    @IBOutlet weak var poundTextField: UITextField!
-    @IBOutlet weak var spStoneTextField: UITextField!
-    @IBOutlet weak var spPoundTextField: UITextField!
+    @IBOutlet weak var mileTextField: UITextField!
+    @IBOutlet weak var kilometerTextField: UITextField!
+    @IBOutlet weak var meterTextField: UITextField!
+    @IBOutlet weak var yardTextField: UITextField!
+    @IBOutlet weak var inchTextField: UITextField!
+    @IBOutlet weak var centimeterTextField: UITextField!
+    @IBOutlet weak var millimeterTextField: UITextField!
     
     var textFeilds: [UITextField]? = nil
     var activeTextField = UITextField()
-    var history = History().weight
+    var history = History().distance
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        textFeilds = [kilogramTextField, gramTextField, ounceTextField, poundTextField,
-                      spStoneTextField, spPoundTextField]
+        textFeilds = [mileTextField, kilometerTextField, meterTextField, yardTextField,
+                      inchTextField, centimeterTextField, millimeterTextField]
         
         // Hide keyboard if view is tapped
         view.addGestureRecognizer(
@@ -38,38 +38,40 @@ class WeightViewController: UIViewController, CustomNumericKeyboardDelegate {
         super.viewWillAppear(animated)
         
         // Attach the custom keyboard
-        kilogramTextField.setPaddingFor(left: UnitTextField.LEFT_TEXT_PADDING)
-        kilogramTextField.setAsNumericKeyboard(delegate: self)
+        mileTextField.setPaddingFor(left: UnitTextField.LEFT_TEXT_PADDING)
+        mileTextField.setAsNumericKeyboard(delegate: self)
         
-        gramTextField.setPaddingFor(left: UnitTextField.LEFT_TEXT_PADDING)
-        gramTextField.setAsNumericKeyboard(delegate: self)
+        kilometerTextField.setPaddingFor(left: UnitTextField.LEFT_TEXT_PADDING)
+        kilometerTextField.setAsNumericKeyboard(delegate: self)
         
-        ounceTextField.setPaddingFor(left: UnitTextField.LEFT_TEXT_PADDING)
-        ounceTextField.setAsNumericKeyboard(delegate: self)
+        meterTextField.setPaddingFor(left: UnitTextField.LEFT_TEXT_PADDING)
+        meterTextField.setAsNumericKeyboard(delegate: self)
         
-        poundTextField.setPaddingFor(left: UnitTextField.LEFT_TEXT_PADDING)
-        poundTextField.setAsNumericKeyboard(delegate: self)
+        yardTextField.setPaddingFor(left: UnitTextField.LEFT_TEXT_PADDING)
+        yardTextField.setAsNumericKeyboard(delegate: self)
         
-        spStoneTextField.setPaddingFor(left: UnitTextField.LEFT_TEXT_PADDING)
-        spStoneTextField.setAsNumericKeyboard(delegate: self)
+        inchTextField.setPaddingFor(left: UnitTextField.LEFT_TEXT_PADDING)
+        inchTextField.setAsNumericKeyboard(delegate: self)
         
-        spPoundTextField.setPaddingFor(left: UnitTextField.LEFT_TEXT_PADDING)
-        spPoundTextField.setAsNumericKeyboard(delegate: self)
+        centimeterTextField.setPaddingFor(left: UnitTextField.LEFT_TEXT_PADDING)
+        centimeterTextField.setAsNumericKeyboard(delegate: self)
         
-        // Disable events for the stone-pound text field
-        spPoundTextField.isUserInteractionEnabled = false
+        millimeterTextField.setPaddingFor(left: UnitTextField.LEFT_TEXT_PADDING)
+        millimeterTextField.setAsNumericKeyboard(delegate: self)
         
         // Observe keyboard show event to add prerequisits
+        //  TODO
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(keyboardWillShow(notification:)),
                                                name: UIResponder.keyboardWillChangeFrameNotification,
                                                object: nil)
+        //        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)),
+        //                                               name: UIResponder.keyboardWillShowNotification, object: nil)
     }
     
     /**
      Listen to taps on the view. Handle hiding the keyboard and resotre the view
      */
-    // TODO remove @objc
     @objc func hideKeyboard() {
         view.endEditing(true)
         UIView.animate(withDuration: Defaults.ANIMATION_DURATION, animations: {
@@ -94,11 +96,7 @@ class WeightViewController: UIViewController, CustomNumericKeyboardDelegate {
             // Selected text field
             activeTextField = firstResponder as! UITextField;
             // Stack the text field belongs to
-            var activeTextFieldSuperView = activeTextField.superview!
-            // If stone or stone-pounds are edited
-            if activeTextField.tag == 5 || activeTextField.tag == 6 {
-                activeTextFieldSuperView = activeTextField.superview!.superview!
-            }
+            let activeTextFieldSuperView = activeTextField.superview!
             
             if let info = notification.userInfo {
                 let keyboard:CGRect = info["UIKeyboardFrameEndUserInfoKey"] as! CGRect
@@ -133,20 +131,22 @@ class WeightViewController: UIViewController, CustomNumericKeyboardDelegate {
      - Parameter textField: Value changed text field.
      */
     @IBAction func onTextFieldChange(_ textField: UITextField) {
-        var unit: WeightUnit?
+        var unit: DistanceUnit?
         
         if textField.tag == 1 {
-            unit = .kilogram
+            unit = DistanceUnit.meter
         } else if textField.tag == 2 {
-            unit = .gram
+            unit = DistanceUnit.centimeter
         } else if textField.tag == 3 {
-            unit = .ounce
+            unit = DistanceUnit.millimeter
         } else if textField.tag == 4 {
-            unit = .pound
+            unit = DistanceUnit.mile
         } else if textField.tag == 5 {
-            unit = .stone
+            unit = DistanceUnit.yard
+        } else if textField.tag == 6 {
+            unit = DistanceUnit.inch
         }
-        updateTextFields(textField: textField, of: unit!)
+        updateTextFields(textField: textField, unit: unit!)
         
         // Disable save button if all the TextFields are empty
         if isTextFieldsEmpty(list: textFeilds!) {
@@ -166,16 +166,17 @@ class WeightViewController: UIViewController, CustomNumericKeyboardDelegate {
     @IBAction func onSaveClick(_ sender: UIBarButtonItem) {
         if !isTextFieldsEmpty(list: textFeilds!) {
             let conversion = """
-                             kilogram = \(kilogramTextField.text!) gram = \(gramTextField.text!) \
-                             ounz = \(ounceTextField.text!) ponds =  \(poundTextField.text!) \
-                             stones = \(spStoneTextField.text!)  & pounds = \(spPoundTextField.text!)
+                             mile = \(mileTextField.text!) kilometer = \(kilometerTextField.text!) \
+                             meter = \(meterTextField.text!) yard =  \(yardTextField.text!) \
+                             inch = \(inchTextField.text!) centimeter = \(centimeterTextField.text!) \
+                             millimeter = \(millimeterTextField.text!)
                              """
             // Update weight's history from the new conversion value (algo: FIFO)
             if history.count > HistoryConst.MAX_SIZE {
                 history = Array(history.suffix(HistoryConst.MAX_SIZE - 1))
             }
             history.append(conversion)
-            History().weight = history
+            History().distance = history
             
             // Alert user about the update
             let alert = UIAlertController(title: "Success",
@@ -194,21 +195,20 @@ class WeightViewController: UIViewController, CustomNumericKeyboardDelegate {
      - Parameter textField: Changed field
      - Parameter unit: `WeightUnit` type of the changed field
      */
-    func updateTextFields(textField: UITextField, of unit: WeightUnit) -> Void {
+    func updateTextFields(textField: UITextField, unit: DistanceUnit) -> Void {
         if let input = textField.text {
             if input.isEmpty {
                 clearTextFields()
             } else {
-                let weightConverter = WeightConverter(weight: Weight(unit: unit, value: input,
+                let weightConverter = DistanceConverter(distance: Distance(unit: unit, value: input,
                                                                      decimalPlaces: 4))
                 
-                for _unit in WeightUnit.allCases {
+                for _unit in DistanceUnit.allCases {
                     if _unit == unit {
                         continue
                     }
                     let textField = mapToTextField(unit: _unit)
                     textField.text = weightConverter.convert(to: _unit)
-                    moderateStonePounds(weight: weightConverter.weight)
                 }
             }
         }
@@ -216,55 +216,40 @@ class WeightViewController: UIViewController, CustomNumericKeyboardDelegate {
     
     /// Clear all the `TextFields`
     func clearTextFields() {
-        kilogramTextField.text = ""
-        gramTextField.text = ""
-        ounceTextField.text = ""
-        poundTextField.text = ""
-        spStoneTextField.text = ""
-        spPoundTextField.text = ""
+        mileTextField.text = ""
+        kilometerTextField.text = ""
+        meterTextField.text = ""
+        yardTextField.text = ""
+        inchTextField.text = ""
+        centimeterTextField.text = ""
+        millimeterTextField.text = ""
     }
     
     /**
-     Map the `WeightUnit` to the respective `UITextField`
+     Map the `DistanceUnit` to the respective `UITextField`
      
-     - Parameter unit: Weight unit type
+     - Parameter unit: Distance unit type
      - Returns: Corresponding `UITextField`
      */
-    func mapToTextField(unit: WeightUnit) -> UITextField {
-        var textField = kilogramTextField
+    func mapToTextField(unit: DistanceUnit) -> UITextField {
+        var textField = meterTextField
         switch unit {
-        case .kilogram:
-            textField = kilogramTextField
-        case .gram:
-            textField = gramTextField
-        case .ounce:
-            textField = ounceTextField
-        case .pound:
-            textField = poundTextField
-        case .stone:
-            textField = spStoneTextField
+        case .mile:
+            textField = mileTextField
+        case .kilometer:
+            textField = kilometerTextField
+        case .meter:
+            textField = meterTextField
+        case .yard:
+            textField = yardTextField
+        case .inch:
+            textField = inchTextField
+        case .centimeter:
+            textField = centimeterTextField
+        case .millimeter:
+            textField = millimeterTextField
         }
         return textField!
-    }
-    
-    /**
-     Seperate out the decimal portion of the stone field and convert and add it to pound field
-     */
-    func moderateStonePounds(weight: Weight) {
-        if let textFieldVal = spStoneTextField.text {
-            if let value = Double(textFieldVal as String) {
-                let stones = Int(value)
-                spStoneTextField.text = String(stones)
-                // Set pounds if pound value == 0.0 then clear the field
-                let deciamlPart = value.truncatingRemainder(dividingBy: 1)
-                if deciamlPart > 0 {
-                    let pounds = deciamlPart * 14
-                    spPoundTextField.text = String(pounds.rounded(toPlaces: weight.decimalPlaces))
-                } else {
-                    spPoundTextField.text = ""
-                }
-            }
-        }
     }
     
     /// Overidden from `CustomNumericKeyboardDelegate` will be triggered when retract button is pressed

@@ -1,111 +1,164 @@
 //
 //  Distance.swift
-//  utility-converter
+//  UnitConverter
 //
-//  Created by Brion Silva on 26/03/2019.
-//  Copyright © 2019 Brion Silva. All rights reserved.
+//  Created by Yohan Avishke Ediriweera on 2021-03-16.
 //
 
 import Foundation
 
-enum DistanceUnit {
+enum DistanceUnit: CaseIterable {
+    case mile
+    case kilometer
     case meter
     case centimeter
     case millimeter
-    case mile
     case yard
     case inch
-    
-    static let getAllUnits = [meter, centimeter, millimeter, mile, yard, inch]
 }
 
-struct Distance {
-    let value: Double
-    let unit: DistanceUnit
+class Distance {
+    var value: Double
+    var unit: DistanceUnit
+    var decimalPlaces: Int
     
-    init(unit: DistanceUnit, value: Double) {
-        self.value = value
+    init(unit: DistanceUnit, value: String, decimalPlaces: Int) {
         self.unit = unit
+        self.value = Double(value)!
+        self.decimalPlaces = decimalPlaces
+    }
+}
+
+class DistanceConverter {
+    var distance: Distance
+    
+    init(distance: Distance) {
+        self.distance = distance
     }
     
-    func convert(unit to: DistanceUnit) -> Double {
+    /**
+     Convert `distance.value` from `distance.unit` to `to`
+     
+     - Parameters: `DistanceUnit` type  that  `value` is converted to
+     - Returns: `String` containing the converted value
+     */
+    func convert(to: DistanceUnit) -> String {
         var output = 0.0
         
-        switch unit {
-        case .meter:
-            if to == .centimeter {
-                output = value * 100
-            } else if to == .millimeter {
-                output = value * 1000
-            } else if to == .mile {
-                output = value / 1609.244
-            } else if to == .yard {
-                output = value * 1.094
-            } else if to == .inch {
-                output = value * 39.37
-            }
-        case .centimeter:
-            if to == .meter {
-                output = value / 100
-            } else if to == .millimeter {
-                output = value * 10
-            } else if to == .mile {
-                output = value / 160934.4
-            } else if to == .yard {
-                output = value / 91.44
-            } else if to == .inch {
-                output = value / 2.54
-            }
-        case .millimeter:
-            if to == .meter {
-                output = value / 1000
-            } else if to == .centimeter {
-                output = value / 10
-            } else if to == .mile {
-                output = value / 1.609e+6
-            } else if to == .yard {
-                output = value / 914.4
-            } else if to == .inch {
-                output = value / 25.4
-            }
+        switch distance.unit {
         case .mile:
-            if to == .meter {
-                output = value * 1609.344
-            } else if to == .centimeter {
-                output = value * 160934.4
-            } else if to == .millimeter {
-                output = value * 1.609e+6
+            if to == .kilometer {
+                output = distance.value * 1.609
+            } else if to == .meter {
+                output = distance.value * 1609
             } else if to == .yard {
-                output = value * 1760
+                output = distance.value * 1760
             } else if to == .inch {
-                output = value * 63360
+                output = distance.value * 63360
+            } else if to == .centimeter {
+                output = distance.value * 160934
+            } else if to == .millimeter {
+                output = distance.value * 1.609e+6
+            }
+        case .kilometer:
+            if to == .mile {
+                output = distance.value / 1.609
+            } else if to == .meter {
+                output = distance.value * 1000
+            } else if to == .yard {
+                output = distance.value * 1094
+            } else if to == .inch {
+                output = distance.value * 39370
+            } else if to == .centimeter {
+                output = distance.value * 100000
+            } else if to == .millimeter {
+                output = distance.value * 1e+6
+            }
+        case .meter:
+            if to == .mile {
+                output = distance.value / 1609
+            } else if to == .kilometer {
+                output = distance.value / 1000
+            } else if to == .yard {
+                output = distance.value * 1.094
+            } else if to == .inch {
+                output = distance.value * 39.37
+            } else if to == .centimeter {
+                output = distance.value * 100
+            } else if to == .millimeter {
+                output = distance.value * 1000
             }
         case .yard:
-            if to == .meter {
-                output = value / 1.094
-            } else if to == .centimeter {
-                output = value * 91.44
-            } else if to == .millimeter {
-                output = value * 914.4
-            } else if to == .mile {
-                output = value / 1760
+            if to == .mile {
+                output = distance.value / 1760
+            } else if to == .kilometer {
+                output = distance.value / 1094
+            } else if to == .meter {
+                output = distance.value / 1.094
             } else if to == .inch {
-                output = value * 36
+                output = distance.value * 36
+            } else if to == .centimeter {
+                output = distance.value * 91.44
+            } else if to == .millimeter {
+                output = distance.value * 914
             }
         case .inch:
-            if to == .meter {
-                output = value / 39.37
-            } else if to == .centimeter {
-                output = value * 2.54
-            } else if to == .millimeter {
-                output = value * 25.4
-            } else if to == .mile {
-                output = value / 63360
+            if to == .mile {
+                output = distance.value / 63360
+            } else if to == .kilometer {
+                output = distance.value / 39370
+            } else if to == .meter {
+                output = distance.value / 39.37
             } else if to == .yard {
-                output = value / 36
+                output = distance.value / 36
+            } else if to == .centimeter {
+                output = distance.value * 2.54
+            } else if to == .millimeter {
+                output = distance.value * 25.4
+            }
+        case .centimeter:
+            if to == .mile {
+                output = distance.value / 160934
+            } else if to == .kilometer {
+                output = distance.value / 100000
+            } else if to == .meter {
+                output = distance.value / 100
+            } else if to == .yard {
+                output = distance.value / 91.44
+            } else if to == .inch {
+                output = distance.value / 2.54
+            } else if to == .millimeter {
+                output = distance.value * 10
+            }
+        case .millimeter:
+            if to == .mile {
+                output = distance.value / 1.609e+6
+            }else if to == .kilometer {
+                output = distance.value / 1e+6
+            } else if to == .meter {
+                output = distance.value / 1000
+            } else if to == .yard {
+                output = distance.value / 914
+            } else if to == .inch {
+                output = distance.value / 25.4
+            } else if to == .centimeter {
+                output = distance.value / 10
             }
         }
-            return output
+        
+        // Check if output has a decimal part. And if true then round it off
+        let deciamlPart = output.truncatingRemainder(dividingBy: 1)
+        if deciamlPart > 0 {
+            output = output.rounded(toPlaces: distance.decimalPlaces)
+        } else {
+            return String(Int(output))
+        }
+        
+        if output == 0.0 {
+            return ""
+        }
+        
+        return String(output)
     }
 }
 

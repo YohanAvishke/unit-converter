@@ -27,7 +27,7 @@
 		C880625D25FB675900CDEC0C /* Temperature.swift in Sources */ = {isa = PBXBuildFile; fileRef = C880625825FB675800CDEC0C /* Temperature.swift */; };
 		C880625E25FB675900CDEC0C /* Volume.swift in Sources */ = {isa = PBXBuildFile; fileRef = C880625925FB675900CDEC0C /* Volume.swift */; };
 		C880626525FB678400CDEC0C /* WeightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C880626025FB678300CDEC0C /* WeightViewController.swift */; };
-		C880626625FB678400CDEC0C /* DistanceConversionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C880626125FB678300CDEC0C /* DistanceConversionViewController.swift */; };
+		C880626625FB678400CDEC0C /* DistanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C880626125FB678300CDEC0C /* DistanceViewController.swift */; };
 		C880626725FB678400CDEC0C /* TemperatureConversionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C880626225FB678300CDEC0C /* TemperatureConversionViewController.swift */; };
 		C880626825FB678400CDEC0C /* VolumeConversionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C880626325FB678400CDEC0C /* VolumeConversionViewController.swift */; };
 		C880626925FB678400CDEC0C /* SpeedConversionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C880626425FB678400CDEC0C /* SpeedConversionViewController.swift */; };
@@ -68,7 +68,7 @@
 		C880625825FB675800CDEC0C /* Temperature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Temperature.swift; sourceTree = "<group>"; };
 		C880625925FB675900CDEC0C /* Volume.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Volume.swift; sourceTree = "<group>"; };
 		C880626025FB678300CDEC0C /* WeightViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeightViewController.swift; sourceTree = "<group>"; };
-		C880626125FB678300CDEC0C /* DistanceConversionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DistanceConversionViewController.swift; sourceTree = "<group>"; };
+		C880626125FB678300CDEC0C /* DistanceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DistanceViewController.swift; sourceTree = "<group>"; };
 		C880626225FB678300CDEC0C /* TemperatureConversionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemperatureConversionViewController.swift; sourceTree = "<group>"; };
 		C880626325FB678400CDEC0C /* VolumeConversionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VolumeConversionViewController.swift; sourceTree = "<group>"; };
 		C880626425FB678400CDEC0C /* SpeedConversionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeedConversionViewController.swift; sourceTree = "<group>"; };
@@ -168,7 +168,7 @@
 				C80BC48225FB9F2700A50B9A /* MainTabController.swift */,
 				C8026A2325FA9F56008C9F9C /* ConvertersController.swift */,
 				C880626025FB678300CDEC0C /* WeightViewController.swift */,
-				C880626125FB678300CDEC0C /* DistanceConversionViewController.swift */,
+				C880626125FB678300CDEC0C /* DistanceViewController.swift */,
 				C880626425FB678400CDEC0C /* SpeedConversionViewController.swift */,
 				C880626225FB678300CDEC0C /* TemperatureConversionViewController.swift */,
 				C880626325FB678400CDEC0C /* VolumeConversionViewController.swift */,
@@ -313,7 +313,7 @@
 				C802694025FA2705008C9F9C /* SceneDelegate.swift in Sources */,
 				C880626825FB678400CDEC0C /* VolumeConversionViewController.swift in Sources */,
 				C8B21FF025FC78BD00A25463 /* TableCellView.swift in Sources */,
-				C880626625FB678400CDEC0C /* DistanceConversionViewController.swift in Sources */,
+				C880626625FB678400CDEC0C /* DistanceViewController.swift in Sources */,
 				C80BC48325FB9F2700A50B9A /* MainTabController.swift in Sources */,
 				C880625B25FB675900CDEC0C /* Speed.swift in Sources */,
 				C8D7F12B2600750600D9C343 /* History.swift in Sources */,
