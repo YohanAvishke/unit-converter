@@ -1,5 +1,5 @@
 //
-//  Double.swift
+//  DoubleExtension.swift
 //  UnitConverter
 //
 //  Created by Yohan Avishke Ediriweera on 2021-03-16.

@@ -20,7 +20,7 @@
 		C80BC48325FB9F2700A50B9A /* MainTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80BC48225FB9F2700A50B9A /* MainTabController.swift */; };
 		C81A9ED925FFB53500760DBD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81A9ED825FFB53500760DBD /* Constants.swift */; };
 		C81A9EDC25FFC8DE00760DBD /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81A9EDB25FFC8DE00760DBD /* Utils.swift */; };
-		C81A9EE026005C5600760DBD /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81A9EDF26005C5600760DBD /* Double.swift */; };
+		C81A9EE026005C5600760DBD /* DoubleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81A9EDF26005C5600760DBD /* DoubleExtension.swift */; };
 		C880625A25FB675900CDEC0C /* Distance.swift in Sources */ = {isa = PBXBuildFile; fileRef = C880625525FB675800CDEC0C /* Distance.swift */; };
 		C880625B25FB675900CDEC0C /* Speed.swift in Sources */ = {isa = PBXBuildFile; fileRef = C880625625FB675800CDEC0C /* Speed.swift */; };
 		C880625C25FB675900CDEC0C /* Weight.swift in Sources */ = {isa = PBXBuildFile; fileRef = C880625725FB675800CDEC0C /* Weight.swift */; };
@@ -59,7 +59,7 @@
 		C80BC48225FB9F2700A50B9A /* MainTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabController.swift; sourceTree = "<group>"; };
 		C81A9ED825FFB53500760DBD /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C81A9EDB25FFC8DE00760DBD /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
-		C81A9EDF26005C5600760DBD /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
+		C81A9EDF26005C5600760DBD /* DoubleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleExtension.swift; sourceTree = "<group>"; };
 		C880625525FB675800CDEC0C /* Distance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Distance.swift; sourceTree = "<group>"; };
 		C880625625FB675800CDEC0C /* Speed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Speed.swift; sourceTree = "<group>"; };
 		C880625725FB675800CDEC0C /* Weight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weight.swift; sourceTree = "<group>"; };
@@ -128,7 +128,9 @@
 		C80269FB25FA2D80008C9F9C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C81A9EDE26005C4700760DBD /* Extensions */,
 				C8026A2625FAA27B008C9F9C /* ConverterViewCell.swift */,
+				C880628325FB71E000CDEC0C /* HistoryTableViewCell.swift */,
 				C880627925FB687400CDEC0C /* CustomNumericKeyboard.swift */,
 				C802694825FA2708008C9F9C /* LaunchScreen.storyboard */,
 				C802694325FA2705008C9F9C /* Main.storyboard */,
@@ -140,10 +142,10 @@
 		C80269FF25FA93CC008C9F9C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				C880625425FB674900CDEC0C /* Converters */,
 				C880628225FB71DF00CDEC0C /* HistoryView.swift */,
-				C880628325FB71E000CDEC0C /* HistoryTableViewCell.swift */,
-				C8026A1925FA9E50008C9F9C /* ConverterView.swift */,
 				C8D7F12A2600750600D9C343 /* History.swift */,
+				C8026A1925FA9E50008C9F9C /* ConverterView.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -174,10 +176,9 @@
 		C8026A0C25FA9C34008C9F9C /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				C81A9EDE26005C4700760DBD /* Extensions */,
-				C880625425FB674900CDEC0C /* Converters */,
 				C8026A0625FA977B008C9F9C /* JsonReader.swift */,
 				C81A9ED825FFB53500760DBD /* Constants.swift */,
+				C81A9EDF26005C5600760DBD /* DoubleExtension.swift */,
 				C81A9EDB25FFC8DE00760DBD /* Utils.swift */,
 			);
 			path = Utils;
@@ -190,7 +191,6 @@
 				C880626F25FB682F00CDEC0C /* UITextField+CustomNumericKeyboard.swift */,
 				C880627025FB682F00CDEC0C /* UITextField.swift */,
 				C880627225FB682F00CDEC0C /* UIViewController+HideKeyboard.swift */,
-				C81A9EDF26005C5600760DBD /* Double.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -306,7 +306,7 @@
 				C880625E25FB675900CDEC0C /* Volume.swift in Sources */,
 				C880627525FB682F00CDEC0C /* UITableView+EmptyTable.swift in Sources */,
 				C880625D25FB675900CDEC0C /* Temperature.swift in Sources */,
-				C81A9EE026005C5600760DBD /* Double.swift in Sources */,
+				C81A9EE026005C5600760DBD /* DoubleExtension.swift in Sources */,
 				C880625C25FB675900CDEC0C /* Weight.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
