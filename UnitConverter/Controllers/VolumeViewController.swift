@@ -1,5 +1,5 @@
 //
-//  SpeedViewController.swift
+//  VolumeViewController.swift
 //  UnitConverter
 //
 //  Created by Yohan Avishke Ediriweera on 2021-03-16.
@@ -7,21 +7,23 @@
 
 import UIKit
 
-class SpeedViewController: UIViewController, CustomNumericKeyboardDelegate {
+class VolumeViewController: UIViewController, CustomNumericKeyboardDelegate {
     @IBOutlet weak var viewScroller: UIScrollView!
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var stackViewTopConstraint: NSLayoutConstraint!
-    @IBOutlet weak var msTextField: UITextField!
-    @IBOutlet weak var kmhTextField: UITextField!
-    @IBOutlet weak var mihTextField: UITextField!
-    @IBOutlet weak var knotTextField: UITextField!
+    @IBOutlet weak var litreTextField: UITextField!
+    @IBOutlet weak var millilitreTextField: UITextField!
+    @IBOutlet weak var gallonTextField: UITextField!
+    @IBOutlet weak var pintTextField: UITextField!
+    @IBOutlet weak var fluidOunceTextField: UITextField!
     
     var textFeilds: [UITextField]? = nil
     var activeTextField = UITextField()
-    var history = History().speed
+    var history = History().volume
     
     override func viewDidLoad() {
-        textFeilds = [msTextField, kmhTextField, mihTextField, knotTextField]
+        textFeilds = [litreTextField, millilitreTextField, gallonTextField, pintTextField,
+                      fluidOunceTextField]
         // Hide keyboard if view is tapped
         view.addGestureRecognizer(
             UITapGestureRecognizer(target: self, action: #selector(hideKeyboard)))
@@ -32,17 +34,20 @@ class SpeedViewController: UIViewController, CustomNumericKeyboardDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        msTextField.setPaddingFor(left: UnitTextField.LEFT_TEXT_PADDING)
-        msTextField.setAsNumericKeyboard(delegate: self)
+        litreTextField.setPaddingFor(left: UnitTextField.LEFT_TEXT_PADDING)
+        litreTextField.setAsNumericKeyboard(delegate: self)
         
-        kmhTextField.setPaddingFor(left: UnitTextField.LEFT_TEXT_PADDING)
-        kmhTextField.setAsNumericKeyboard(delegate: self)
+        millilitreTextField.setPaddingFor(left: UnitTextField.LEFT_TEXT_PADDING)
+        millilitreTextField.setAsNumericKeyboard(delegate: self)
         
-        mihTextField.setPaddingFor(left: UnitTextField.LEFT_TEXT_PADDING)
-        mihTextField.setAsNumericKeyboard(delegate: self)
+        gallonTextField.setPaddingFor(left: UnitTextField.LEFT_TEXT_PADDING)
+        gallonTextField.setAsNumericKeyboard(delegate: self)
         
-        knotTextField.setPaddingFor(left: UnitTextField.LEFT_TEXT_PADDING)
-        knotTextField.setAsNumericKeyboard(delegate: self)
+        pintTextField.setPaddingFor(left: UnitTextField.LEFT_TEXT_PADDING)
+        pintTextField.setAsNumericKeyboard(delegate: self)
+        
+        fluidOunceTextField.setPaddingFor(left: UnitTextField.LEFT_TEXT_PADDING)
+        fluidOunceTextField.setAsNumericKeyboard(delegate: self)
         
         // Observe keyboard show event to add prerequisits
         NotificationCenter.default.addObserver(self,
@@ -111,16 +116,18 @@ class SpeedViewController: UIViewController, CustomNumericKeyboardDelegate {
      - Parameter textField: Value changed text field.
      */
     @IBAction func onTextFieldChange(_ textField: UITextField) {
-        var unit: SpeedUnit?
+        var unit: VolumeUnit?
         
         if textField.tag == 1 {
-            unit = SpeedUnit.knot
+            unit = VolumeUnit.litre
         } else if textField.tag == 2 {
-            unit = SpeedUnit.ms
+            unit = VolumeUnit.millilitre
         } else if textField.tag == 3 {
-            unit = SpeedUnit.mih
+            unit = VolumeUnit.gallon
         } else if textField.tag == 4 {
-            unit = SpeedUnit.kmh
+            unit = VolumeUnit.pint
+        } else if textField.tag == 5 {
+            unit = VolumeUnit.fluidOunce
         }
         updateTextFields(textField: textField, unit: unit!)
         
@@ -142,15 +149,17 @@ class SpeedViewController: UIViewController, CustomNumericKeyboardDelegate {
     @IBAction func onSaveClick(_ sender: UIBarButtonItem) {
         if !isTextFieldsEmpty(list: textFeilds!) {
             let conversion = """
-                             knot = \(knotTextField.text!) m/s = \(msTextField.text!) \
-                             mi/h = \(mihTextField.text!) km/h =  \(kmhTextField.text!) 
+                             litre = \(litreTextField.text!) \
+                             millilitre = \(millilitreTextField.text!) \
+                             gallon = \(gallonTextField.text!) pint =  \(pintTextField.text!) \
+                             fluid ounce =  \(fluidOunceTextField.text!)
                              """
             // Update speed's history from the new conversion value (algo: FIFO)
             if history.count > HistoryConst.MAX_SIZE {
                 history = Array(history.suffix(HistoryConst.MAX_SIZE - 1))
             }
             history.append(conversion)
-            History().speed = history
+            History().volume = history
             
             // Alert user about the update
             let alert = UIAlertController(title: "Success",
@@ -167,22 +176,22 @@ class SpeedViewController: UIViewController, CustomNumericKeyboardDelegate {
      Modifies all the respective `TextFields` with conversions of the changed text field
      
      - Parameter textField: Changed field
-     - Parameter unit: `SpeedUnit` type of the changed field
+     - Parameter unit: `VolumeUnit` type of the changed field
      */
-    func updateTextFields(textField: UITextField, unit: SpeedUnit) -> Void {
+    func updateTextFields(textField: UITextField, unit: VolumeUnit) -> Void {
         if let input = textField.text {
             if input.isEmpty {
                 clearTextFields()
             } else {
-                let speedConverter = SpeedConverter(speed: Speed(unit: unit, value: input,
-                                                                 decimalPlaces: 4))
+                let volumeConverter = VolumeConverter(volume: Volume(unit: unit, value: input,
+                                                                     decimalPlaces: 4))
                 
-                for _unit in SpeedUnit.allCases {
+                for _unit in VolumeUnit.allCases {
                     if _unit == unit {
                         continue
                     }
                     let textField = mapToTextField(unit: _unit)
-                    textField.text = speedConverter.convert(unit: _unit)
+                    textField.text = volumeConverter.convert(unit: _unit)
                 }
             }
         }
@@ -190,29 +199,32 @@ class SpeedViewController: UIViewController, CustomNumericKeyboardDelegate {
     
     /// Clear all the `TextFields`
     func clearTextFields() {
-        msTextField.text = ""
-        kmhTextField.text = ""
-        mihTextField.text = ""
-        knotTextField.text = ""
+        litreTextField.text = ""
+        millilitreTextField.text = ""
+        gallonTextField.text = ""
+        pintTextField.text = ""
+        fluidOunceTextField.text = ""
     }
     
     /**
-     Map the `SpeedUnit` to the respective `UITextField`
+     Map the `VolumeUnit` to the respective `UITextField`
      
      - Parameter unit: Speed unit type
      - Returns: Corresponding `UITextField`
      */
-    func mapToTextField(unit: SpeedUnit) -> UITextField {
-        var textField = msTextField
+    func mapToTextField(unit: VolumeUnit) -> UITextField {
+        var textField = litreTextField
         switch unit {
-        case .ms:
-            textField = msTextField
-        case .kmh:
-            textField = kmhTextField
-        case .mih:
-            textField = mihTextField
-        case .knot:
-            textField = knotTextField
+        case .litre:
+            textField = litreTextField
+        case .millilitre:
+            textField = millilitreTextField
+        case .gallon:
+            textField = gallonTextField
+        case .pint:
+            textField = pintTextField
+        case .fluidOunce:
+            textField = fluidOunceTextField
         }
         return textField!
     }

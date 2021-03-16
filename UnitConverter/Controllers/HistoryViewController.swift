@@ -46,7 +46,7 @@ class HistoryViewController: UIViewController ,UITableViewDataSource,UITableView
             conversionType = HistoryConst.TEMP_KEY
             icon = UIImage(named: "temperature")!
         case 2:
-            conversionType = VOLUME_USER_DEFAULTS_KEY
+            conversionType = HistoryConst.VOLUME_KEY
             icon = UIImage(named: "volume")!
         case 3:
             conversionType = HistoryConst.SPEED_KEY

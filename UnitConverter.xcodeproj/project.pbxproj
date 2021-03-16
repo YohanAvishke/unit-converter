@@ -29,7 +29,7 @@
 		C880626525FB678400CDEC0C /* WeightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C880626025FB678300CDEC0C /* WeightViewController.swift */; };
 		C880626625FB678400CDEC0C /* DistanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C880626125FB678300CDEC0C /* DistanceViewController.swift */; };
 		C880626725FB678400CDEC0C /* TemperatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C880626225FB678300CDEC0C /* TemperatureViewController.swift */; };
-		C880626825FB678400CDEC0C /* VolumeConversionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C880626325FB678400CDEC0C /* VolumeConversionViewController.swift */; };
+		C880626825FB678400CDEC0C /* VolumeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C880626325FB678400CDEC0C /* VolumeViewController.swift */; };
 		C880626925FB678400CDEC0C /* SpeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C880626425FB678400CDEC0C /* SpeedViewController.swift */; };
 		C880626C25FB67EE00CDEC0C /* CustomNumericKeyboard.xib in Resources */ = {isa = PBXBuildFile; fileRef = C880626B25FB67EE00CDEC0C /* CustomNumericKeyboard.xib */; };
 		C880627325FB682F00CDEC0C /* UITextField+CustomNumericKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C880626F25FB682F00CDEC0C /* UITextField+CustomNumericKeyboard.swift */; };
@@ -70,7 +70,7 @@
 		C880626025FB678300CDEC0C /* WeightViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeightViewController.swift; sourceTree = "<group>"; };
 		C880626125FB678300CDEC0C /* DistanceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DistanceViewController.swift; sourceTree = "<group>"; };
 		C880626225FB678300CDEC0C /* TemperatureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemperatureViewController.swift; sourceTree = "<group>"; };
-		C880626325FB678400CDEC0C /* VolumeConversionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VolumeConversionViewController.swift; sourceTree = "<group>"; };
+		C880626325FB678400CDEC0C /* VolumeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VolumeViewController.swift; sourceTree = "<group>"; };
 		C880626425FB678400CDEC0C /* SpeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeedViewController.swift; sourceTree = "<group>"; };
 		C880626B25FB67EE00CDEC0C /* CustomNumericKeyboard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomNumericKeyboard.xib; sourceTree = "<group>"; };
 		C880626F25FB682F00CDEC0C /* UITextField+CustomNumericKeyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+CustomNumericKeyboard.swift"; sourceTree = "<group>"; };
@@ -166,13 +166,13 @@
 				C8B21FE925FBE3C900A25463 /* Helpers */,
 				C8B21FEB25FBE98E00A25463 /* TableController.swift */,
 				C80BC48225FB9F2700A50B9A /* MainTabController.swift */,
+				C880627C25FB71B200CDEC0C /* HistoryViewController.swift */,
 				C8026A2325FA9F56008C9F9C /* ConvertersController.swift */,
 				C880626025FB678300CDEC0C /* WeightViewController.swift */,
 				C880626225FB678300CDEC0C /* TemperatureViewController.swift */,
 				C880626125FB678300CDEC0C /* DistanceViewController.swift */,
 				C880626425FB678400CDEC0C /* SpeedViewController.swift */,
-				C880626325FB678400CDEC0C /* VolumeConversionViewController.swift */,
-				C880627C25FB71B200CDEC0C /* HistoryViewController.swift */,
+				C880626325FB678400CDEC0C /* VolumeViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -311,7 +311,7 @@
 				C8026A1A25FA9E50008C9F9C /* ConverterView.swift in Sources */,
 				C880628425FB71E000CDEC0C /* HistoryView.swift in Sources */,
 				C802694025FA2705008C9F9C /* SceneDelegate.swift in Sources */,
-				C880626825FB678400CDEC0C /* VolumeConversionViewController.swift in Sources */,
+				C880626825FB678400CDEC0C /* VolumeViewController.swift in Sources */,
 				C8B21FF025FC78BD00A25463 /* TableCellView.swift in Sources */,
 				C880626625FB678400CDEC0C /* DistanceViewController.swift in Sources */,
 				C80BC48325FB9F2700A50B9A /* MainTabController.swift in Sources */,

@@ -53,11 +53,11 @@ class SpeedConverter {
             }
         case .ms:
             if to == .kmh {
-                output = speed.value * 5793.638
+                output = speed.value * 3.6
             } else if to == .mih {
-                output = speed.value * 3600
+                output = speed.value * 2.237
             } else if to == .knot {
-                output = speed.value / 3128.314
+                output = speed.value * 1.944
             }
         case .kmh:
             if to == .ms {
