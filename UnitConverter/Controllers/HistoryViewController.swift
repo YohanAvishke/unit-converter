@@ -1,15 +1,13 @@
 //
 //  HistoryViewController.swift
-//  utility-converter
+//  UnitConverter
 //
-//  Created by Brion Silva on 26/03/2019.
-//  Copyright © 2019 Brion Silva. All rights reserved.
+//  Created by Yohan Avishke Ediriweera on 2021-03-16.
 //
 
 import UIKit
 
-class HistoryViewController: UIViewController ,UITableViewDataSource,UITableViewDelegate {
-    
+class HistoryViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     
@@ -105,15 +103,11 @@ class HistoryViewController: UIViewController ,UITableViewDataSource,UITableView
     /// This function generates the table cells.
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! HistoryTableViewCell
-        cell.historyConversionText.text = histories[indexPath.row].getHistoryConversion()
-        cell.historyTypeIcon.image = histories[indexPath.row].getHistoryIcon()
+        cell.data.text = histories[indexPath.row].getHistoryConversion()
+        cell.icon.image = histories[indexPath.row].getHistoryIcon()
         
         // Card(cell) styles
         cell.isUserInteractionEnabled = false
-        cell.contentView.backgroundColor = UIColor(red: 30/255, green: 30/255, blue: 30/255, alpha: 1.00)
-        cell.contentView.layer.cornerRadius = 10.0
-        cell.contentView.layer.borderWidth = 1.0
-        cell.contentView.layer.borderColor = UIColor(red: 0.25, green: 0.25, blue: 0.25, alpha: 1.00).cgColor
         cell.contentView.layer.masksToBounds = false
         
         return cell
