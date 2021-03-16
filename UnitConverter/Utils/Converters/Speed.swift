@@ -1,69 +1,95 @@
 //
 //  Speed.swift
-//  utility-converter
+//  UnitConverter
 //
-//  Created by Brion Silva on 26/03/2019.
-//  Copyright © 2019 Brion Silva. All rights reserved.
+//  Created by Yohan Avishke Ediriweera on 2021-03-16.
 //
 
 import Foundation
 
-enum SpeedUnit {
+enum SpeedUnit: CaseIterable {
+    case knot
     case ms
-    case kmh
     case mih
-    case kn
-    
-    static let getAllUnits = [ms, kmh, mih, kn]
+    case kmh
 }
 
-struct Speed {
-    let value: Double
-    let unit: SpeedUnit
+class Speed {
+    var unit: SpeedUnit
+    var value: Double
+    var decimalPlaces: Int
     
-    init(unit: SpeedUnit, value: Double) {
-        self.value = value
+    init(unit: SpeedUnit, value: String, decimalPlaces: Int) {
         self.unit = unit
+        self.value = Double(value)!
+        self.decimalPlaces = decimalPlaces
+    }
+}
+
+class SpeedConverter {
+    var speed: Speed
+    
+    init(speed: Speed) {
+        self.speed = speed
     }
     
-    func convert(unit to: SpeedUnit) -> Double {
+    /**
+     Convert `speed.value` from `speed.unit` to `to`
+     
+     - Parameters: `SpeedUnit` type  that  `value` is converted to
+     - Returns: `String` containing the converted value
+     */
+    func convert(unit to: SpeedUnit) -> String {
         var output = 0.0
         
-        switch unit {
+        switch speed.unit {
+        case .knot:
+            if to == .ms {
+                output = speed.value / 1.944
+            } else if to == .kmh {
+                output = speed.value * 1.852
+            } else if to == .mih {
+                output = speed.value * 1.151
+            }
         case .ms:
             if to == .kmh {
-                output = value * 5793.638
+                output = speed.value * 5793.638
             } else if to == .mih {
-                output = value * 3600
-            } else if to == .kn {
-                output = value / 3128.314
+                output = speed.value * 3600
+            } else if to == .knot {
+                output = speed.value / 3128.314
             }
         case .kmh:
             if to == .ms {
-                output = value / 3.6
+                output = speed.value / 3.6
             } else if to == .mih {
-                output = value / 1.609
-            } else if to == .kn {
-                output = value / 1.852
+                output = speed.value / 1.609
+            } else if to == .knot {
+                output = speed.value / 1.852
             }
         case .mih:
             if to == .ms {
-                output = value / 2.237
+                output = speed.value / 2.237
             } else if to == .kmh {
-                output = value *  1.609
-            } else if to == .kn {
-                output = value / 1.151
-            }
-        case .kn:
-            if to == .ms {
-                output = value / 1.944
-            } else if to == .kmh {
-                output = value * 1.852
-            } else if to == .mih {
-                output = value * 1.151
+                output = speed.value *  1.609
+            } else if to == .knot {
+                output = speed.value / 1.151
             }
         }
-        return output
+        
+        // Check if output has a decimal part. And if true then round it off
+        let deciamlPart = output.truncatingRemainder(dividingBy: 1)
+        if deciamlPart > 0 {
+            output = output.rounded(toPlaces: speed.decimalPlaces)
+        } else {
+            return String(Int(output))
+        }
+        
+        if output == 0.0 {
+            return ""
+        }
+        
+        return String(output)
     }
 }
 

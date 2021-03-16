@@ -32,7 +32,6 @@ class TemperatureViewController: UIViewController, CustomNumericKeyboardDelegate
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        // set Text Field Styles and Properties
         celsiusTextField.setPaddingFor(left: UnitTextField.LEFT_TEXT_PADDING)
         celsiusTextField.setAsNumericKeyboard(delegate: self)
         

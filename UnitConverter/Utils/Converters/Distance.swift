@@ -50,13 +50,13 @@ class DistanceConverter {
             if to == .kilometer {
                 output = distance.value * 1.609
             } else if to == .meter {
-                output = distance.value * 1609
+                output = distance.value * 1609.344
             } else if to == .yard {
                 output = distance.value * 1760
             } else if to == .inch {
                 output = distance.value * 63360
             } else if to == .centimeter {
-                output = distance.value * 160934
+                output = distance.value * 160934.4
             } else if to == .millimeter {
                 output = distance.value * 1.609e+6
             }
@@ -76,7 +76,7 @@ class DistanceConverter {
             }
         case .meter:
             if to == .mile {
-                output = distance.value / 1609
+                output = distance.value / 1609.244
             } else if to == .kilometer {
                 output = distance.value / 1000
             } else if to == .yard {
@@ -118,7 +118,7 @@ class DistanceConverter {
             }
         case .centimeter:
             if to == .mile {
-                output = distance.value / 160934
+                output = distance.value / 160934.4
             } else if to == .kilometer {
                 output = distance.value / 100000
             } else if to == .meter {
@@ -138,7 +138,7 @@ class DistanceConverter {
             } else if to == .meter {
                 output = distance.value / 1000
             } else if to == .yard {
-                output = distance.value / 914
+                output = distance.value / 914.4
             } else if to == .inch {
                 output = distance.value / 25.4
             } else if to == .centimeter {

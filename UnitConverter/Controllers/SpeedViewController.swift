@@ -1,5 +1,5 @@
 //
-//  DistanceViewController.swift
+//  SpeedViewController.swift
 //  UnitConverter
 //
 //  Created by Yohan Avishke Ediriweera on 2021-03-16.
@@ -7,25 +7,21 @@
 
 import UIKit
 
-class DistanceViewController: UIViewController, CustomNumericKeyboardDelegate {
+class SpeedViewController: UIViewController, CustomNumericKeyboardDelegate {
     @IBOutlet weak var viewScroller: UIScrollView!
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var stackViewTopConstraint: NSLayoutConstraint!
-    @IBOutlet weak var mileTextField: UITextField!
-    @IBOutlet weak var kilometerTextField: UITextField!
-    @IBOutlet weak var meterTextField: UITextField!
-    @IBOutlet weak var yardTextField: UITextField!
-    @IBOutlet weak var inchTextField: UITextField!
-    @IBOutlet weak var centimeterTextField: UITextField!
-    @IBOutlet weak var millimeterTextField: UITextField!
+    @IBOutlet weak var msTextField: UITextField!
+    @IBOutlet weak var kmhTextField: UITextField!
+    @IBOutlet weak var mihTextField: UITextField!
+    @IBOutlet weak var knotTextField: UITextField!
     
     var textFeilds: [UITextField]? = nil
     var activeTextField = UITextField()
-    var history = History().distance
+    var history = History().speed
     
     override func viewDidLoad() {
-        textFeilds = [mileTextField, kilometerTextField, meterTextField, yardTextField,
-                      inchTextField, centimeterTextField, millimeterTextField]
+        textFeilds = [msTextField, kmhTextField, mihTextField, knotTextField]
         
         // Hide keyboard if view is tapped
         view.addGestureRecognizer(
@@ -37,26 +33,17 @@ class DistanceViewController: UIViewController, CustomNumericKeyboardDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        mileTextField.setPaddingFor(left: UnitTextField.LEFT_TEXT_PADDING)
-        mileTextField.setAsNumericKeyboard(delegate: self)
+        msTextField.setPaddingFor(left: UnitTextField.LEFT_TEXT_PADDING)
+        msTextField.setAsNumericKeyboard(delegate: self)
         
-        kilometerTextField.setPaddingFor(left: UnitTextField.LEFT_TEXT_PADDING)
-        kilometerTextField.setAsNumericKeyboard(delegate: self)
+        kmhTextField.setPaddingFor(left: UnitTextField.LEFT_TEXT_PADDING)
+        kmhTextField.setAsNumericKeyboard(delegate: self)
         
-        meterTextField.setPaddingFor(left: UnitTextField.LEFT_TEXT_PADDING)
-        meterTextField.setAsNumericKeyboard(delegate: self)
+        mihTextField.setPaddingFor(left: UnitTextField.LEFT_TEXT_PADDING)
+        mihTextField.setAsNumericKeyboard(delegate: self)
         
-        yardTextField.setPaddingFor(left: UnitTextField.LEFT_TEXT_PADDING)
-        yardTextField.setAsNumericKeyboard(delegate: self)
-        
-        inchTextField.setPaddingFor(left: UnitTextField.LEFT_TEXT_PADDING)
-        inchTextField.setAsNumericKeyboard(delegate: self)
-        
-        centimeterTextField.setPaddingFor(left: UnitTextField.LEFT_TEXT_PADDING)
-        centimeterTextField.setAsNumericKeyboard(delegate: self)
-        
-        millimeterTextField.setPaddingFor(left: UnitTextField.LEFT_TEXT_PADDING)
-        millimeterTextField.setAsNumericKeyboard(delegate: self)
+        knotTextField.setPaddingFor(left: UnitTextField.LEFT_TEXT_PADDING)
+        knotTextField.setAsNumericKeyboard(delegate: self)
         
         // Observe keyboard show event to add prerequisits
         NotificationCenter.default.addObserver(self,
@@ -125,22 +112,16 @@ class DistanceViewController: UIViewController, CustomNumericKeyboardDelegate {
      - Parameter textField: Value changed text field.
      */
     @IBAction func onTextFieldChange(_ textField: UITextField) {
-        var unit: DistanceUnit?
+        var unit: SpeedUnit?
         
         if textField.tag == 1 {
-            unit = DistanceUnit.mile
+            unit = SpeedUnit.knot
         } else if textField.tag == 2 {
-            unit = DistanceUnit.kilometer
+            unit = SpeedUnit.ms
         } else if textField.tag == 3 {
-            unit = DistanceUnit.meter
+            unit = SpeedUnit.mih
         } else if textField.tag == 4 {
-            unit = DistanceUnit.yard
-        } else if textField.tag == 5 {
-            unit = DistanceUnit.inch
-        } else if textField.tag == 6 {
-            unit = DistanceUnit.centimeter
-        } else if textField.tag == 7 {
-            unit = DistanceUnit.millimeter
+            unit = SpeedUnit.kmh
         }
         updateTextFields(textField: textField, unit: unit!)
         
@@ -162,17 +143,15 @@ class DistanceViewController: UIViewController, CustomNumericKeyboardDelegate {
     @IBAction func onSaveClick(_ sender: UIBarButtonItem) {
         if !isTextFieldsEmpty(list: textFeilds!) {
             let conversion = """
-                             mile = \(mileTextField.text!) kilometer = \(kilometerTextField.text!) \
-                             meter = \(meterTextField.text!) yard =  \(yardTextField.text!) \
-                             inch = \(inchTextField.text!) centimeter = \(centimeterTextField.text!) \
-                             millimeter = \(millimeterTextField.text!)
+                             knot = \(knotTextField.text!) m/s = \(msTextField.text!) \
+                             mi/h = \(mihTextField.text!) km/h =  \(kmhTextField.text!) 
                              """
-            // Update distance's history from the new conversion value (algo: FIFO)
+            // Update speed's history from the new conversion value (algo: FIFO)
             if history.count > HistoryConst.MAX_SIZE {
                 history = Array(history.suffix(HistoryConst.MAX_SIZE - 1))
             }
             history.append(conversion)
-            History().distance = history
+            History().speed = history
             
             // Alert user about the update
             let alert = UIAlertController(title: "Success",
@@ -189,23 +168,22 @@ class DistanceViewController: UIViewController, CustomNumericKeyboardDelegate {
      Modifies all the respective `TextFields` with conversions of the changed text field
      
      - Parameter textField: Changed field
-     - Parameter unit: `DistanceUnit` type of the changed field
+     - Parameter unit: `SpeedUnit` type of the changed field
      */
-    func updateTextFields(textField: UITextField, unit: DistanceUnit) -> Void {
+    func updateTextFields(textField: UITextField, unit: SpeedUnit) -> Void {
         if let input = textField.text {
             if input.isEmpty {
                 clearTextFields()
             } else {
-                let distanceConverter = DistanceConverter(distance: Distance(unit: unit,
-                                                                             value: input,
-                                                                             decimalPlaces: 4))
+                let speedConverter = SpeedConverter(speed: Speed(unit: unit, value: input,
+                                                                 decimalPlaces: 4))
                 
-                for _unit in DistanceUnit.allCases {
+                for _unit in SpeedUnit.allCases {
                     if _unit == unit {
                         continue
                     }
                     let textField = mapToTextField(unit: _unit)
-                    textField.text = distanceConverter.convert(to: _unit)
+                    textField.text = speedConverter.convert(unit: _unit)
                 }
             }
         }
@@ -213,38 +191,29 @@ class DistanceViewController: UIViewController, CustomNumericKeyboardDelegate {
     
     /// Clear all the `TextFields`
     func clearTextFields() {
-        mileTextField.text = ""
-        kilometerTextField.text = ""
-        meterTextField.text = ""
-        yardTextField.text = ""
-        inchTextField.text = ""
-        centimeterTextField.text = ""
-        millimeterTextField.text = ""
+        msTextField.text = ""
+        kmhTextField.text = ""
+        mihTextField.text = ""
+        knotTextField.text = ""
     }
     
     /**
-     Map the `DistanceUnit` to the respective `UITextField`
+     Map the `SpeedUnit` to the respective `UITextField`
      
-     - Parameter unit: Distance unit type
+     - Parameter unit: Speed unit type
      - Returns: Corresponding `UITextField`
      */
-    func mapToTextField(unit: DistanceUnit) -> UITextField {
-        var textField = meterTextField
+    func mapToTextField(unit: SpeedUnit) -> UITextField {
+        var textField = msTextField
         switch unit {
-        case .mile:
-            textField = mileTextField
-        case .kilometer:
-            textField = kilometerTextField
-        case .meter:
-            textField = meterTextField
-        case .yard:
-            textField = yardTextField
-        case .inch:
-            textField = inchTextField
-        case .centimeter:
-            textField = centimeterTextField
-        case .millimeter:
-            textField = millimeterTextField
+        case .ms:
+            textField = msTextField
+        case .kmh:
+            textField = kmhTextField
+        case .mih:
+            textField = mihTextField
+        case .knot:
+            textField = knotTextField
         }
         return textField!
     }

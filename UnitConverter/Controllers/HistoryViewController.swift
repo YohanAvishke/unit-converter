@@ -49,7 +49,7 @@ class HistoryViewController: UIViewController ,UITableViewDataSource,UITableView
             conversionType = VOLUME_USER_DEFAULTS_KEY
             icon = UIImage(named: "volume")!
         case 3:
-            conversionType = SPEED_USER_DEFAULTS_KEY
+            conversionType = HistoryConst.SPEED_KEY
             icon = UIImage(named: "speed")!
         default:
             break

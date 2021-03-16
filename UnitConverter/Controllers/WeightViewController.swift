@@ -37,7 +37,6 @@ class WeightViewController: UIViewController, CustomNumericKeyboardDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        // Attach the custom keyboard
         kilogramTextField.setPaddingFor(left: UnitTextField.LEFT_TEXT_PADDING)
         kilogramTextField.setAsNumericKeyboard(delegate: self)
         
