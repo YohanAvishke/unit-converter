@@ -33,7 +33,7 @@
 		C880626925FB678400CDEC0C /* SpeedConversionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C880626425FB678400CDEC0C /* SpeedConversionViewController.swift */; };
 		C880626C25FB67EE00CDEC0C /* CustomNumericKeyboard.xib in Resources */ = {isa = PBXBuildFile; fileRef = C880626B25FB67EE00CDEC0C /* CustomNumericKeyboard.xib */; };
 		C880627325FB682F00CDEC0C /* UITextField+CustomNumericKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C880626F25FB682F00CDEC0C /* UITextField+CustomNumericKeyboard.swift */; };
-		C880627425FB682F00CDEC0C /* UITextField+PlaceholderColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C880627025FB682F00CDEC0C /* UITextField+PlaceholderColor.swift */; };
+		C880627425FB682F00CDEC0C /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C880627025FB682F00CDEC0C /* UITextField.swift */; };
 		C880627525FB682F00CDEC0C /* UITableView+EmptyTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C880627125FB682F00CDEC0C /* UITableView+EmptyTable.swift */; };
 		C880627625FB682F00CDEC0C /* UIViewController+HideKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C880627225FB682F00CDEC0C /* UIViewController+HideKeyboard.swift */; };
 		C880627A25FB687400CDEC0C /* CustomNumericKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C880627925FB687400CDEC0C /* CustomNumericKeyboard.swift */; };
@@ -74,7 +74,7 @@
 		C880626425FB678400CDEC0C /* SpeedConversionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeedConversionViewController.swift; sourceTree = "<group>"; };
 		C880626B25FB67EE00CDEC0C /* CustomNumericKeyboard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomNumericKeyboard.xib; sourceTree = "<group>"; };
 		C880626F25FB682F00CDEC0C /* UITextField+CustomNumericKeyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+CustomNumericKeyboard.swift"; sourceTree = "<group>"; };
-		C880627025FB682F00CDEC0C /* UITextField+PlaceholderColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+PlaceholderColor.swift"; sourceTree = "<group>"; };
+		C880627025FB682F00CDEC0C /* UITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		C880627125FB682F00CDEC0C /* UITableView+EmptyTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+EmptyTable.swift"; sourceTree = "<group>"; };
 		C880627225FB682F00CDEC0C /* UIViewController+HideKeyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+HideKeyboard.swift"; sourceTree = "<group>"; };
 		C880627925FB687400CDEC0C /* CustomNumericKeyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNumericKeyboard.swift; sourceTree = "<group>"; };
@@ -194,7 +194,7 @@
 			children = (
 				C880627125FB682F00CDEC0C /* UITableView+EmptyTable.swift */,
 				C880626F25FB682F00CDEC0C /* UITextField+CustomNumericKeyboard.swift */,
-				C880627025FB682F00CDEC0C /* UITextField+PlaceholderColor.swift */,
+				C880627025FB682F00CDEC0C /* UITextField.swift */,
 				C880627225FB682F00CDEC0C /* UIViewController+HideKeyboard.swift */,
 				C81A9EDF26005C5600760DBD /* Double.swift */,
 			);
@@ -294,7 +294,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C8026A0825FA977C008C9F9C /* JsonReader.swift in Sources */,
-				C880627425FB682F00CDEC0C /* UITextField+PlaceholderColor.swift in Sources */,
+				C880627425FB682F00CDEC0C /* UITextField.swift in Sources */,
 				C880627325FB682F00CDEC0C /* UITextField+CustomNumericKeyboard.swift in Sources */,
 				C8026A2725FAA27B008C9F9C /* ConverterViewCell.swift in Sources */,
 				C880625A25FB675900CDEC0C /* Distance.swift in Sources */,

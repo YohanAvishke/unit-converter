@@ -38,14 +38,27 @@ class WeightViewController: UIViewController, CustomNumericKeyboardDelegate {
         super.viewWillAppear(animated)
         
         // Attach the custom keyboard
+        kilogramTextField.setPaddingFor(left: UnitTextField.LEFT_TEXT_PADDING)
         kilogramTextField.setAsNumericKeyboard(delegate: self)
+        
+        gramTextField.setPaddingFor(left: UnitTextField.LEFT_TEXT_PADDING)
         gramTextField.setAsNumericKeyboard(delegate: self)
+        
+        ounceTextField.setPaddingFor(left: UnitTextField.LEFT_TEXT_PADDING)
         ounceTextField.setAsNumericKeyboard(delegate: self)
+        
+        poundTextField.setPaddingFor(left: UnitTextField.LEFT_TEXT_PADDING)
         poundTextField.setAsNumericKeyboard(delegate: self)
+        
+        spStoneTextField.setPaddingFor(left: UnitTextField.LEFT_TEXT_PADDING)
         spStoneTextField.setAsNumericKeyboard(delegate: self)
+        
+        spPoundTextField.setPaddingFor(left: UnitTextField.LEFT_TEXT_PADDING)
         spPoundTextField.setAsNumericKeyboard(delegate: self)
+        
         // Disable events for the stone-pound text field
         spPoundTextField.isUserInteractionEnabled = false
+        
         // Observe keyboard show event to add prerequisits
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(keyboardWillShow(notification:)),

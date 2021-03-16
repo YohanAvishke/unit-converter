@@ -24,3 +24,7 @@ struct HistoryConst {
 struct ParentStack {
     static let TOP_PADDING: CGFloat = 20.0
 }
+
+struct UnitTextField {
+    static let LEFT_TEXT_PADDING: CGFloat = 10.0
+}
