@@ -11,20 +11,20 @@ import UIKit
 class ConvertersController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
-        return converters.count
+        return converterViews.count
     }
     
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
             as! ConverterViewCell
-        cell.converterName.text = converters[indexPath.row].name
-        cell.converterImage.image = converters[indexPath.row].image
-        cell.converterDescription.text = converters[indexPath.row].description
+        cell.converterName.text = converterViews[indexPath.row].name
+        cell.converterImage.image = converterViews[indexPath.row].image
+        cell.converterDescription.text = converterViews[indexPath.row].description
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        performSegue(withIdentifier: converters[indexPath.row].segueID, sender: self)
+        performSegue(withIdentifier: converterViews[indexPath.row].segueID, sender: self)
     }
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-var converters: [Converter] = load("converterData.json")
+var converterViews: [ConverterView] = load("converterData.json")
 
 func load<T: Decodable>(_ filename: String) -> T {
     let data: Data

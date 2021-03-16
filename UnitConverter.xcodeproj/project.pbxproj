@@ -13,7 +13,7 @@
 		C802694725FA2708008C9F9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C802694625FA2708008C9F9C /* Assets.xcassets */; };
 		C802694A25FA2708008C9F9C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C802694825FA2708008C9F9C /* LaunchScreen.storyboard */; };
 		C8026A0825FA977C008C9F9C /* JsonReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8026A0625FA977B008C9F9C /* JsonReader.swift */; };
-		C8026A1A25FA9E50008C9F9C /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8026A1925FA9E50008C9F9C /* Converter.swift */; };
+		C8026A1A25FA9E50008C9F9C /* ConverterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8026A1925FA9E50008C9F9C /* ConverterView.swift */; };
 		C8026A1D25FA9E6B008C9F9C /* converterData.json in Resources */ = {isa = PBXBuildFile; fileRef = C8026A1C25FA9E6B008C9F9C /* converterData.json */; };
 		C8026A2425FA9F56008C9F9C /* ConvertersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8026A2325FA9F56008C9F9C /* ConvertersController.swift */; };
 		C8026A2725FAA27B008C9F9C /* ConverterViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8026A2625FAA27B008C9F9C /* ConverterViewCell.swift */; };
@@ -38,10 +38,11 @@
 		C880627625FB682F00CDEC0C /* UIViewController+HideKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C880627225FB682F00CDEC0C /* UIViewController+HideKeyboard.swift */; };
 		C880627A25FB687400CDEC0C /* CustomNumericKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C880627925FB687400CDEC0C /* CustomNumericKeyboard.swift */; };
 		C880627E25FB71B200CDEC0C /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C880627C25FB71B200CDEC0C /* HistoryViewController.swift */; };
-		C880628425FB71E000CDEC0C /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = C880628225FB71DF00CDEC0C /* History.swift */; };
+		C880628425FB71E000CDEC0C /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C880628225FB71DF00CDEC0C /* HistoryView.swift */; };
 		C880628525FB71E000CDEC0C /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C880628325FB71E000CDEC0C /* HistoryTableViewCell.swift */; };
 		C8B21FEC25FBE98E00A25463 /* TableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B21FEB25FBE98E00A25463 /* TableController.swift */; };
 		C8B21FF025FC78BD00A25463 /* TableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B21FEF25FC78BD00A25463 /* TableCellView.swift */; };
+		C8D7F12B2600750600D9C343 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D7F12A2600750600D9C343 /* History.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,7 +54,7 @@
 		C802694925FA2708008C9F9C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C802694B25FA2708008C9F9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C8026A0625FA977B008C9F9C /* JsonReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonReader.swift; sourceTree = "<group>"; };
-		C8026A1925FA9E50008C9F9C /* Converter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Converter.swift; sourceTree = "<group>"; };
+		C8026A1925FA9E50008C9F9C /* ConverterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterView.swift; sourceTree = "<group>"; };
 		C8026A1C25FA9E6B008C9F9C /* converterData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = converterData.json; sourceTree = "<group>"; };
 		C8026A2325FA9F56008C9F9C /* ConvertersController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertersController.swift; sourceTree = "<group>"; };
 		C8026A2625FAA27B008C9F9C /* ConverterViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterViewCell.swift; sourceTree = "<group>"; };
@@ -78,10 +79,11 @@
 		C880627225FB682F00CDEC0C /* UIViewController+HideKeyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+HideKeyboard.swift"; sourceTree = "<group>"; };
 		C880627925FB687400CDEC0C /* CustomNumericKeyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNumericKeyboard.swift; sourceTree = "<group>"; };
 		C880627C25FB71B200CDEC0C /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
-		C880628225FB71DF00CDEC0C /* History.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
+		C880628225FB71DF00CDEC0C /* HistoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		C880628325FB71E000CDEC0C /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 		C8B21FEB25FBE98E00A25463 /* TableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableController.swift; sourceTree = "<group>"; };
 		C8B21FEF25FC78BD00A25463 /* TableCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCellView.swift; sourceTree = "<group>"; };
+		C8D7F12A2600750600D9C343 /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,7 +116,6 @@
 		C802693C25FA2705008C9F9C /* UnitConverter */ = {
 			isa = PBXGroup;
 			children = (
-				C880626E25FB682300CDEC0C /* Helpers */,
 				C8026A0C25FA9C34008C9F9C /* Utils */,
 				C8026A0B25FA9BED008C9F9C /* Controllers */,
 				C8026A0125FA95A7008C9F9C /* Resources */,
@@ -143,9 +144,10 @@
 		C80269FF25FA93CC008C9F9C /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				C880628225FB71DF00CDEC0C /* History.swift */,
+				C880628225FB71DF00CDEC0C /* HistoryView.swift */,
 				C880628325FB71E000CDEC0C /* HistoryTableViewCell.swift */,
-				C8026A1925FA9E50008C9F9C /* Converter.swift */,
+				C8026A1925FA9E50008C9F9C /* ConverterView.swift */,
+				C8D7F12A2600750600D9C343 /* History.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -179,7 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				C81A9EDE26005C4700760DBD /* Extensions */,
-				C880625425FB674900CDEC0C /* conversions */,
+				C880625425FB674900CDEC0C /* Converters */,
 				C8026A0625FA977B008C9F9C /* JsonReader.swift */,
 				C81A9ED825FFB53500760DBD /* Constants.swift */,
 				C81A9EDB25FFC8DE00760DBD /* Utils.swift */,
@@ -190,12 +192,16 @@
 		C81A9EDE26005C4700760DBD /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				C880627125FB682F00CDEC0C /* UITableView+EmptyTable.swift */,
+				C880626F25FB682F00CDEC0C /* UITextField+CustomNumericKeyboard.swift */,
+				C880627025FB682F00CDEC0C /* UITextField+PlaceholderColor.swift */,
+				C880627225FB682F00CDEC0C /* UIViewController+HideKeyboard.swift */,
 				C81A9EDF26005C5600760DBD /* Double.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		C880625425FB674900CDEC0C /* conversions */ = {
+		C880625425FB674900CDEC0C /* Converters */ = {
 			isa = PBXGroup;
 			children = (
 				C880625525FB675800CDEC0C /* Distance.swift */,
@@ -204,26 +210,7 @@
 				C880625925FB675900CDEC0C /* Volume.swift */,
 				C880625725FB675800CDEC0C /* Weight.swift */,
 			);
-			path = conversions;
-			sourceTree = "<group>";
-		};
-		C880626E25FB682300CDEC0C /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				C880627825FB683400CDEC0C /* Extensions */,
-			);
-			path = Helpers;
-			sourceTree = "<group>";
-		};
-		C880627825FB683400CDEC0C /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				C880627125FB682F00CDEC0C /* UITableView+EmptyTable.swift */,
-				C880626F25FB682F00CDEC0C /* UITextField+CustomNumericKeyboard.swift */,
-				C880627025FB682F00CDEC0C /* UITextField+PlaceholderColor.swift */,
-				C880627225FB682F00CDEC0C /* UIViewController+HideKeyboard.swift */,
-			);
-			path = Extensions;
+			path = Converters;
 			sourceTree = "<group>";
 		};
 		C8B21FE925FBE3C900A25463 /* Helpers */ = {
@@ -321,14 +308,15 @@
 				C81A9ED925FFB53500760DBD /* Constants.swift in Sources */,
 				C802693E25FA2705008C9F9C /* AppDelegate.swift in Sources */,
 				C880627625FB682F00CDEC0C /* UIViewController+HideKeyboard.swift in Sources */,
-				C8026A1A25FA9E50008C9F9C /* Converter.swift in Sources */,
-				C880628425FB71E000CDEC0C /* History.swift in Sources */,
+				C8026A1A25FA9E50008C9F9C /* ConverterView.swift in Sources */,
+				C880628425FB71E000CDEC0C /* HistoryView.swift in Sources */,
 				C802694025FA2705008C9F9C /* SceneDelegate.swift in Sources */,
 				C880626825FB678400CDEC0C /* VolumeConversionViewController.swift in Sources */,
 				C8B21FF025FC78BD00A25463 /* TableCellView.swift in Sources */,
 				C880626625FB678400CDEC0C /* DistanceConversionViewController.swift in Sources */,
 				C80BC48325FB9F2700A50B9A /* MainTabController.swift in Sources */,
 				C880625B25FB675900CDEC0C /* Speed.swift in Sources */,
+				C8D7F12B2600750600D9C343 /* History.swift in Sources */,
 				C880628525FB71E000CDEC0C /* HistoryTableViewCell.swift in Sources */,
 				C880626525FB678400CDEC0C /* WeightViewController.swift in Sources */,
 				C880625E25FB675900CDEC0C /* Volume.swift in Sources */,

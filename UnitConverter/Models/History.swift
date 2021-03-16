@@ -1,33 +1,48 @@
 //
 //  History.swift
-//  utility-converter
+//  UnitConverter
 //
-//  Created by Brion Silva on 27/03/2019.
-//  Copyright © 2019 Brion Silva. All rights reserved.
+//  Created by Yohan Avishke Ediriweera on 2021-03-16.
 //
 
-import UIKit
+import Foundation
 
-class History {
-    let type: String
-    let icon: UIImage
-    let conversion: String
-    
-    init(type: String, icon: UIImage, conversion: String) {
-        self.type = type
-        self.icon = icon
-        self.conversion = conversion
+final class History {
+    var weight: [String] {
+        didSet {
+            UserDefaults.standard.set(weight, forKey: HistoryConst.WEIGHT_KEY)
+        }
     }
     
-    func getHistoryType() -> String {
-        return type
+    var temperature: [String] {
+        didSet {
+            UserDefaults.standard.set(temperature, forKey: "temperature")
+        }
     }
     
-    func getHistoryIcon() -> UIImage {
-        return icon
+    var distance: [String] {
+        didSet {
+            UserDefaults.standard.set(distance, forKey: "distance")
+        }
     }
     
-    func getHistoryConversion() -> String {
-        return conversion
+    var speed: [String] {
+        didSet {
+            UserDefaults.standard.set(speed, forKey: "speed")
+        }
+    }
+    
+    var volume: [String] {
+        didSet {
+            UserDefaults.standard.set(volume, forKey: "volume")
+        }
+    }
+    
+    init() {
+        self.weight = UserDefaults.standard.array(forKey: HistoryConst.WEIGHT_KEY) as? [String] ?? []
+        self.temperature = UserDefaults.standard.object(forKey: "temperature") as? [String] ?? []
+        self.distance = UserDefaults.standard.object(forKey: "distance") as? [String] ?? []
+        self.speed = UserDefaults.standard.object(forKey: "speed") as? [String] ?? []
+        self.volume = UserDefaults.standard.object(forKey: "volume") as? [String] ?? []
     }
 }

@@ -13,7 +13,7 @@ class HistoryViewController: UIViewController ,UITableViewDataSource,UITableView
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     
-    var histories = [History]()
+    var histories = [HistoryView]()
     var conversionType = HistoryConst.WEIGHT_KEY
     var icon: UIImage = UIImage(named: "weight")!
     
@@ -79,7 +79,7 @@ class HistoryViewController: UIViewController ,UITableViewDataSource,UITableView
         
         if historyList?.count ?? 0 > 0 {
             for conersion in historyList! {
-                let history = History(type: type,icon: icon,conversion: conersion)
+                let history = HistoryView(type: type,icon: icon,conversion: conersion)
                 histories += [history]
             }
         }

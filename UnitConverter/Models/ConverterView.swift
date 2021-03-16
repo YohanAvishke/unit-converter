@@ -1,5 +1,5 @@
 //
-//  Converter.swift
+//  ConverterView.swift
 //  UnitConverter
 //
 //  Created by Yohan Avishke Ediriweera on 2021-03-12.
@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-struct Converter: Hashable, Codable, Identifiable {
+struct ConverterView: Hashable, Codable, Identifiable {
     var id: Int
     var name: String
     var description: String

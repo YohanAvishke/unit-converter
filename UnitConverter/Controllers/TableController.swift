@@ -20,13 +20,13 @@ class TableController: UIViewController {
 
 extension TableController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return converters.count
+        return converterViews.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
             as! TableCellView
-        let converter = converters[indexPath.row]
+        let converter = converterViews[indexPath.row]
         cell.labelName.text = converter.name
         cell.imageConverter.image = converter.image
         cell.labelDescription.text = converter.description

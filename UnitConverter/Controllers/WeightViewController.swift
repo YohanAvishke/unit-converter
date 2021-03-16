@@ -20,6 +20,7 @@ class WeightViewController: UIViewController, CustomNumericKeyboardDelegate {
     
     var textFeilds: [UITextField]? = nil
     var activeTextField = UITextField()
+    var history = History().weight
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -140,6 +141,38 @@ class WeightViewController: UIViewController, CustomNumericKeyboardDelegate {
     }
     
     /**
+     Save of conversion on to the userdefaults. Only 5 conversions will be saved under each type.
+     
+     - Warning Can only save 5 conversions of each converter type
+     - Warning Alert will be show if saving is succesful
+     - Parameter sender: Navigation button item
+     */
+    @IBAction func onSaveClick(_ sender: UIBarButtonItem) {
+        if !isTextFieldsEmpty(list: textFeilds!) {
+            let conversion = """
+                             kilogram = \(kilogramTextField.text!) gram = \(gramTextField.text!) \
+                             ounz = \(ounceTextField.text!) ponds =  \(poundTextField.text!) \
+                             stones = \(spStoneTextField.text!)  & pounds = \(spPoundTextField.text!)
+                             """
+            // Update weight's history from the new conversion value (algo: FIFO)
+            if history.count > HistoryConst.MAX_SIZE {
+                history = Array(history.suffix(HistoryConst.MAX_SIZE - 1))
+            }
+            history.append(conversion)
+            History().weight = history
+            
+            // Alert user about the update
+            let alert = UIAlertController(title: "Success",
+                                          message: "The conversion is succesfully saved!!!",
+                                          preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "OK",
+                                          style: UIAlertAction.Style.default,
+                                          handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    /**
      Modifies all the respective `TextFields` with conversions of the changed text field
      
      - Parameter textField: Changed field
@@ -162,34 +195,6 @@ class WeightViewController: UIViewController, CustomNumericKeyboardDelegate {
                     moderateStonePounds(weight: weightConverter.weight)
                 }
             }
-        }
-    }
-    
-    /// This function handles the saving of conversions on to the userdefaults.
-    /// Only 5 conversions will be saved under each type.
-    /// It checks if the text fields are filled and saves the conversion in user
-    /// defaults and if the text fields aren't empty an alert will be shown.
-    ///
-    /// - Parameter sender: The navigation button item.
-    @IBAction func handleSaveButtonClick(_ sender: UIBarButtonItem) {
-        if !isTextFieldsEmpty(list: textFeilds!) {
-            let conversion = "\(kilogramTextField.text!) kg = \(gramTextField.text!) g = \(ounceTextField.text!) oz =  \(poundTextField.text!) lb = \(spStoneTextField.text!) stones & \(spPoundTextField.text!) pounds"
-            
-            var arr = UserDefaults.standard.array(forKey: HistoryConst.WEIGHT_KEY) as? [String] ?? []
-            
-            if arr.count >= HistoryConst.MAX_SIZE {
-                arr = Array(arr.suffix(HistoryConst.MAX_SIZE - 1))
-            }
-            arr.append(conversion)
-            UserDefaults.standard.set(arr, forKey: HistoryConst.WEIGHT_KEY)
-            
-            let alert = UIAlertController(title: "Success", message: "The weight conversion was successully saved!", preferredStyle: UIAlertController.Style.alert)
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
-        } else {
-            let alert = UIAlertController(title: "Error", message: "You are trying to save an empty conversion!", preferredStyle: UIAlertController.Style.alert)
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
         }
     }
     
@@ -246,35 +251,31 @@ class WeightViewController: UIViewController, CustomNumericKeyboardDelegate {
         }
     }
     
-    /// This function is a part of the CustomNumericKeyboardDelegate interface
-    /// and will be triggered when the retract button is pressed on the custom keyboard.
+    /**
+     Overidden from `CustomNumericKeyboardDelegate` will be triggered when retract button is pressed
+     */
     func retractKeyPressed() {
-        //        keyboardWillHide()
+        hideKeyboard()
     }
     
-    /// This function is a part of the CustomNumericKeyboardDelegate interface
-    /// and will be triggered when the numeric buttons are pressed on the custom keyboard.
+    /**
+     Overidden from `CustomNumericKeyboardDelegate` will be triggered when numeric buttons are pressed
+     */
     func numericKeyPressed(key: Int) {
         print("Numeric key \(key) pressed!")
     }
     
-    /// This function is a part of the CustomNumericKeyboardDelegate interface
-    /// and will be triggered when the backspace button is pressed on the custom keyboard.
+    /**
+     Overidden from `CustomNumericKeyboardDelegate` will be triggered when backspace button is pressed
+     */
     func numericBackspacePressed() {
         print("Backspace pressed!")
     }
     
-    /// This function is a part of the CustomNumericKeyboardDelegate interface
-    /// and will be triggered when the symobol buttons are pressed on the custom keyboard.
+    /**
+     Overidden from `CustomNumericKeyboardDelegate` will be triggered when  symobol buttons are pressed
+     */
     func numericSymbolPressed(symbol: String) {
         print("Symbol \(symbol) pressed!")
-    }
-}
-
-extension Float
-{
-    var cleanValue: String
-    {
-        return self.truncatingRemainder(dividingBy: 1) == 0 ? String(format: "%.0f", self) : String(self)
     }
 }
