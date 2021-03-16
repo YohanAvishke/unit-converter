@@ -44,16 +44,12 @@ class SpeedConversionViewController: UIViewController, CustomNumericKeyboardDele
         super.viewWillAppear(animated)
         
         // Set Text Field Styles
-        msTextField._lightPlaceholderColor(UIColor.lightText)
         msTextField.setAsNumericKeyboard(delegate: self)
         
-        kmhTextField._lightPlaceholderColor(UIColor.lightText)
         kmhTextField.setAsNumericKeyboard(delegate: self)
         
-        mihTextField._lightPlaceholderColor(UIColor.lightText)
         mihTextField.setAsNumericKeyboard(delegate: self)
         
-        knTextField._lightPlaceholderColor(UIColor.lightText)
         knTextField.setAsNumericKeyboard(delegate: self)
         
         // ad an observer to track keyboard show event

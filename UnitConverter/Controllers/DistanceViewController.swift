@@ -134,17 +134,19 @@ class DistanceViewController: UIViewController, CustomNumericKeyboardDelegate {
         var unit: DistanceUnit?
         
         if textField.tag == 1 {
-            unit = DistanceUnit.meter
-        } else if textField.tag == 2 {
-            unit = DistanceUnit.centimeter
-        } else if textField.tag == 3 {
-            unit = DistanceUnit.millimeter
-        } else if textField.tag == 4 {
             unit = DistanceUnit.mile
-        } else if textField.tag == 5 {
+        } else if textField.tag == 2 {
+            unit = DistanceUnit.kilometer
+        } else if textField.tag == 3 {
+            unit = DistanceUnit.meter
+        } else if textField.tag == 4 {
             unit = DistanceUnit.yard
-        } else if textField.tag == 6 {
+        } else if textField.tag == 5 {
             unit = DistanceUnit.inch
+        } else if textField.tag == 6 {
+            unit = DistanceUnit.centimeter
+        } else if textField.tag == 7 {
+            unit = DistanceUnit.millimeter
         }
         updateTextFields(textField: textField, unit: unit!)
         
@@ -201,7 +203,7 @@ class DistanceViewController: UIViewController, CustomNumericKeyboardDelegate {
                 clearTextFields()
             } else {
                 let weightConverter = DistanceConverter(distance: Distance(unit: unit, value: input,
-                                                                     decimalPlaces: 4))
+                                                                           decimalPlaces: 4))
                 
                 for _unit in DistanceUnit.allCases {
                     if _unit == unit {

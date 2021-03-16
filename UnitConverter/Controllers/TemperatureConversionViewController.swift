@@ -42,13 +42,10 @@ class TemperatureConversionViewController: UIViewController, CustomNumericKeyboa
         super.viewWillAppear(animated)
         
         // set Text Field Styles and Properties
-        celsiusTextField._lightPlaceholderColor(UIColor.lightText)
         celsiusTextField.setAsNumericKeyboard(delegate: self)
         
-        fahrenheitTextField._lightPlaceholderColor(UIColor.lightText)
         fahrenheitTextField.setAsNumericKeyboard(delegate: self)
         
-        kelvinTextField._lightPlaceholderColor(UIColor.lightText)
         kelvinTextField.setAsNumericKeyboard(delegate: self)
         
         // ad an observer to track keyboard show event

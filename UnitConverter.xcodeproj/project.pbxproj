@@ -204,11 +204,11 @@
 		C880625425FB674900CDEC0C /* Converters */ = {
 			isa = PBXGroup;
 			children = (
+				C880625725FB675800CDEC0C /* Weight.swift */,
 				C880625525FB675800CDEC0C /* Distance.swift */,
 				C880625625FB675800CDEC0C /* Speed.swift */,
 				C880625825FB675800CDEC0C /* Temperature.swift */,
 				C880625925FB675900CDEC0C /* Volume.swift */,
-				C880625725FB675800CDEC0C /* Weight.swift */,
 			);
 			path = Converters;
 			sourceTree = "<group>";

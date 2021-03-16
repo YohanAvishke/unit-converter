@@ -45,19 +45,14 @@ class VolumeConversionViewController: UIViewController, CustomNumericKeyboardDel
         super.viewWillAppear(animated)
         
         // Set Text Field Styles
-        litreTextField._lightPlaceholderColor(UIColor.lightText)
         litreTextField.setAsNumericKeyboard(delegate: self)
         
-        millilitreTextField._lightPlaceholderColor(UIColor.lightText)
         millilitreTextField.setAsNumericKeyboard(delegate: self)
         
-        gallonTextField._lightPlaceholderColor(UIColor.lightText)
         gallonTextField.setAsNumericKeyboard(delegate: self)
         
-        pintTextField._lightPlaceholderColor(UIColor.lightText)
         pintTextField.setAsNumericKeyboard(delegate: self)
         
-        fluidOunceTextField._lightPlaceholderColor(UIColor.lightText)
         fluidOunceTextField.setAsNumericKeyboard(delegate: self)
         
         // ad an observer to track keyboard show event
