@@ -154,7 +154,7 @@ class VolumeViewController: UIViewController, CustomNumericKeyboardDelegate {
                              gallon = \(gallonTextField.text!) pint =  \(pintTextField.text!) \
                              fluid ounce =  \(fluidOunceTextField.text!)
                              """
-            // Update speed's history from the new conversion value (algo: FIFO)
+            // Update volume's history from the new conversion value (algo: FIFO)
             if history.count > HistoryConst.MAX_SIZE {
                 history = Array(history.suffix(HistoryConst.MAX_SIZE - 1))
             }
@@ -209,7 +209,7 @@ class VolumeViewController: UIViewController, CustomNumericKeyboardDelegate {
     /**
      Map the `VolumeUnit` to the respective `UITextField`
      
-     - Parameter unit: Speed unit type
+     - Parameter unit: Volume unit type
      - Returns: Corresponding `UITextField`
      */
     func mapToTextField(unit: VolumeUnit) -> UITextField {
