@@ -62,7 +62,7 @@ class WeightViewController: UIViewController, CustomNumericKeyboardDelegate {
         // Observe keyboard show event to add prerequisits
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(keyboardWillShow(notification:)),
-                                               name: UIResponder.keyboardWillChangeFrameNotification,
+                                               name: UIResponder.keyboardWillShowNotification,
                                                object: nil)
     }
     

@@ -1,5 +1,5 @@
 //
-//  DistanceViewController.swift
+//  TemperatureViewController.swift
 //  UnitConverter
 //
 //  Created by Yohan Avishke Ediriweera on 2021-03-16.
@@ -7,25 +7,20 @@
 
 import UIKit
 
-class DistanceViewController: UIViewController, CustomNumericKeyboardDelegate {
+class TemperatureViewController: UIViewController, CustomNumericKeyboardDelegate {
     @IBOutlet weak var viewScroller: UIScrollView!
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var stackViewTopConstraint: NSLayoutConstraint!
-    @IBOutlet weak var mileTextField: UITextField!
-    @IBOutlet weak var kilometerTextField: UITextField!
-    @IBOutlet weak var meterTextField: UITextField!
-    @IBOutlet weak var yardTextField: UITextField!
-    @IBOutlet weak var inchTextField: UITextField!
-    @IBOutlet weak var centimeterTextField: UITextField!
-    @IBOutlet weak var millimeterTextField: UITextField!
+    @IBOutlet weak var celsiusTextField: UITextField!
+    @IBOutlet weak var fahrenheitTextField: UITextField!
+    @IBOutlet weak var kelvinTextField: UITextField!
     
     var textFeilds: [UITextField]? = nil
     var activeTextField = UITextField()
-    var history = History().distance
+    var history = History().temperature
     
     override func viewDidLoad() {
-        textFeilds = [mileTextField, kilometerTextField, meterTextField, yardTextField,
-                      inchTextField, centimeterTextField, millimeterTextField]
+        textFeilds = [celsiusTextField, fahrenheitTextField, kelvinTextField]
         
         // Hide keyboard if view is tapped
         view.addGestureRecognizer(
@@ -37,33 +32,23 @@ class DistanceViewController: UIViewController, CustomNumericKeyboardDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        // Attach the custom keyboard
-        mileTextField.setPaddingFor(left: UnitTextField.LEFT_TEXT_PADDING)
-        mileTextField.setAsNumericKeyboard(delegate: self)
+        // set Text Field Styles and Properties
+        celsiusTextField.setPaddingFor(left: UnitTextField.LEFT_TEXT_PADDING)
+        celsiusTextField.setAsNumericKeyboard(delegate: self)
         
-        kilometerTextField.setPaddingFor(left: UnitTextField.LEFT_TEXT_PADDING)
-        kilometerTextField.setAsNumericKeyboard(delegate: self)
+        fahrenheitTextField.setPaddingFor(left: UnitTextField.LEFT_TEXT_PADDING)
+        fahrenheitTextField.setAsNumericKeyboard(delegate: self)
         
-        meterTextField.setPaddingFor(left: UnitTextField.LEFT_TEXT_PADDING)
-        meterTextField.setAsNumericKeyboard(delegate: self)
-        
-        yardTextField.setPaddingFor(left: UnitTextField.LEFT_TEXT_PADDING)
-        yardTextField.setAsNumericKeyboard(delegate: self)
-        
-        inchTextField.setPaddingFor(left: UnitTextField.LEFT_TEXT_PADDING)
-        inchTextField.setAsNumericKeyboard(delegate: self)
-        
-        centimeterTextField.setPaddingFor(left: UnitTextField.LEFT_TEXT_PADDING)
-        centimeterTextField.setAsNumericKeyboard(delegate: self)
-        
-        millimeterTextField.setPaddingFor(left: UnitTextField.LEFT_TEXT_PADDING)
-        millimeterTextField.setAsNumericKeyboard(delegate: self)
+        kelvinTextField.setPaddingFor(left: UnitTextField.LEFT_TEXT_PADDING)
+        kelvinTextField.setAsNumericKeyboard(delegate: self)
         
         // Observe keyboard show event to add prerequisits
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(keyboardWillShow(notification:)),
                                                name: UIResponder.keyboardWillShowNotification,
                                                object: nil)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "enableMinusButton"),
+                                        object: nil)
     }
     
     /// Listen to taps on the view. Handle hiding the keyboard and resotre the view
@@ -126,22 +111,14 @@ class DistanceViewController: UIViewController, CustomNumericKeyboardDelegate {
      - Parameter textField: Value changed text field.
      */
     @IBAction func onTextFieldChange(_ textField: UITextField) {
-        var unit: DistanceUnit?
+        var unit: TemperatureUnit?
         
         if textField.tag == 1 {
-            unit = DistanceUnit.mile
+            unit = TemperatureUnit.celsius
         } else if textField.tag == 2 {
-            unit = DistanceUnit.kilometer
+            unit = TemperatureUnit.fahrenheit
         } else if textField.tag == 3 {
-            unit = DistanceUnit.meter
-        } else if textField.tag == 4 {
-            unit = DistanceUnit.yard
-        } else if textField.tag == 5 {
-            unit = DistanceUnit.inch
-        } else if textField.tag == 6 {
-            unit = DistanceUnit.centimeter
-        } else if textField.tag == 7 {
-            unit = DistanceUnit.millimeter
+            unit = TemperatureUnit.kelvin
         }
         updateTextFields(textField: textField, unit: unit!)
         
@@ -163,17 +140,16 @@ class DistanceViewController: UIViewController, CustomNumericKeyboardDelegate {
     @IBAction func onSaveClick(_ sender: UIBarButtonItem) {
         if !isTextFieldsEmpty(list: textFeilds!) {
             let conversion = """
-                             mile = \(mileTextField.text!) kilometer = \(kilometerTextField.text!) \
-                             meter = \(meterTextField.text!) yard =  \(yardTextField.text!) \
-                             inch = \(inchTextField.text!) centimeter = \(centimeterTextField.text!) \
-                             millimeter = \(millimeterTextField.text!)
+                             celsius = \(celsiusTextField.text!) \
+                             fahrenheit = \(fahrenheitTextField.text!) \
+                             kelvin = \(kelvinTextField.text!)
                              """
-            // Update distance's history from the new conversion value (algo: FIFO)
+            // Update temperature's history from the new conversion value (algo: FIFO)
             if history.count > HistoryConst.MAX_SIZE {
                 history = Array(history.suffix(HistoryConst.MAX_SIZE - 1))
             }
             history.append(conversion)
-            History().distance = history
+            History().temperature = history
             
             // Alert user about the update
             let alert = UIAlertController(title: "Success",
@@ -190,23 +166,22 @@ class DistanceViewController: UIViewController, CustomNumericKeyboardDelegate {
      Modifies all the respective `TextFields` with conversions of the changed text field
      
      - Parameter textField: Changed field
-     - Parameter unit: `DistanceUnit` type of the changed field
+     - Parameter unit: `TemperatureUnit` type of the changed field
      */
-    func updateTextFields(textField: UITextField, unit: DistanceUnit) -> Void {
+    func updateTextFields(textField: UITextField, unit: TemperatureUnit) -> Void {
         if let input = textField.text {
             if input.isEmpty {
                 clearTextFields()
             } else {
-                let distanceConverter = DistanceConverter(distance: Distance(unit: unit,
-                                                                             value: input,
-                                                                             decimalPlaces: 4))
+                let temperatureConverter = TemperatureConverter(
+                    temperature: Temperature(unit: unit, value: input, decimalPlaces: 4))
                 
-                for _unit in DistanceUnit.allCases {
+                for _unit in TemperatureUnit.allCases {
                     if _unit == unit {
                         continue
                     }
                     let textField = mapToTextField(unit: _unit)
-                    textField.text = distanceConverter.convert(to: _unit)
+                    textField.text = temperatureConverter.convert(unit: _unit)
                 }
             }
         }
@@ -214,38 +189,26 @@ class DistanceViewController: UIViewController, CustomNumericKeyboardDelegate {
     
     /// Clear all the `TextFields`
     func clearTextFields() {
-        mileTextField.text = ""
-        kilometerTextField.text = ""
-        meterTextField.text = ""
-        yardTextField.text = ""
-        inchTextField.text = ""
-        centimeterTextField.text = ""
-        millimeterTextField.text = ""
+        celsiusTextField.text = ""
+        fahrenheitTextField.text = ""
+        kelvinTextField.text = ""
     }
     
     /**
-     Map the `DistanceUnit` to the respective `UITextField`
+     Map the `TemperatureUnit` to the respective `UITextField`
      
-     - Parameter unit: Distance unit type
+     - Parameter unit: Temperature unit type
      - Returns: Corresponding `UITextField`
      */
-    func mapToTextField(unit: DistanceUnit) -> UITextField {
-        var textField = meterTextField
+    func mapToTextField(unit: TemperatureUnit) -> UITextField {
+        var textField = celsiusTextField
         switch unit {
-        case .mile:
-            textField = mileTextField
-        case .kilometer:
-            textField = kilometerTextField
-        case .meter:
-            textField = meterTextField
-        case .yard:
-            textField = yardTextField
-        case .inch:
-            textField = inchTextField
-        case .centimeter:
-            textField = centimeterTextField
-        case .millimeter:
-            textField = millimeterTextField
+        case .celsius:
+            textField = celsiusTextField
+        case .fahrenheit:
+            textField = fahrenheitTextField
+        case .kelvin:
+            textField = kelvinTextField
         }
         return textField!
     }

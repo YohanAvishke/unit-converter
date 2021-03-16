@@ -1,53 +1,79 @@
 //
 //  Temperature.swift
-//  utility-converter
+//  UnitConverter
 //
-//  Created by Brion Silva on 26/03/2019.
-//  Copyright © 2019 Brion Silva. All rights reserved.
+//  Created by Yohan Avishke Ediriweera on 2021-03-16.
 //
 
 import Foundation
 
-enum TemperatureUnit {
+enum TemperatureUnit: CaseIterable {
     case celsius
     case fahrenheit
     case kelvin
-    
-    static let getAllUnits = [celsius, fahrenheit, kelvin]
 }
 
-struct Temperature {
-    let value: Double
-    let unit: TemperatureUnit
+class Temperature {
+    var unit: TemperatureUnit
+    var value: Double
+    var decimalPlaces: Int
     
-    init(unit: TemperatureUnit, value: Double) {
-        self.value = value
+    init(unit: TemperatureUnit, value: String, decimalPlaces: Int) {
         self.unit = unit
+        self.value = Double(value)!
+        self.decimalPlaces = decimalPlaces
+    }
+}
+
+class TemperatureConverter {
+    var temperature: Temperature
+    
+    init(temperature: Temperature) {
+        self.temperature = temperature
     }
     
-    func convert(unit to: TemperatureUnit) -> Double {
+    /**
+     Convert `temperature.value` from `temperature.unit` to `to`
+     
+     - Parameters: `TemperatureUnit` type  that  `value` is converted to
+     - Returns: `String` containing the converted value
+     */
+    func convert(unit to: TemperatureUnit) -> String {
         var output = 0.0
         
-        switch unit {
+        switch temperature.unit {
         case .celsius:
             if to == .fahrenheit {
-                output = (value * 9 / 5) + 32
+                output = (temperature.value * 9 / 5) + 32
             } else if to == .kelvin {
-                output = value + 273.15
+                output = temperature.value + 273.15
             }
         case .fahrenheit:
             if to == .celsius {
-                output = (value - 32) * 5 / 9
+                output = (temperature.value - 32) * 5 / 9
             } else if to == .kelvin {
-                output = ((value - 32) * 5 / 9) + 273.15
+                output = ((temperature.value - 32) * 5 / 9) + 273.15
             }
         case .kelvin:
             if to == .celsius {
-                output = value - 273.15
+                output = temperature.value - 273.15
             } else if to == .fahrenheit {
-                output = ((value - 273.15) * 9 / 5) + 32
+                output = ((temperature.value - 273.15) * 9 / 5) + 32
             }
         }
-        return output
+        
+        // Check if output has a decimal part. And if true then round it off
+        let deciamlPart = output.truncatingRemainder(dividingBy: 1)
+        if deciamlPart > 0 {
+            output = output.rounded(toPlaces: temperature.decimalPlaces)
+        } else {
+            return String(Int(output))
+        }
+        
+        if output == 0.0 {
+            return ""
+        }
+        
+        return String(output)
     }
 }

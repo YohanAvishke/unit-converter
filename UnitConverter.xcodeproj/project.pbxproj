@@ -28,7 +28,7 @@
 		C880625E25FB675900CDEC0C /* Volume.swift in Sources */ = {isa = PBXBuildFile; fileRef = C880625925FB675900CDEC0C /* Volume.swift */; };
 		C880626525FB678400CDEC0C /* WeightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C880626025FB678300CDEC0C /* WeightViewController.swift */; };
 		C880626625FB678400CDEC0C /* DistanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C880626125FB678300CDEC0C /* DistanceViewController.swift */; };
-		C880626725FB678400CDEC0C /* TemperatureConversionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C880626225FB678300CDEC0C /* TemperatureConversionViewController.swift */; };
+		C880626725FB678400CDEC0C /* TemperatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C880626225FB678300CDEC0C /* TemperatureViewController.swift */; };
 		C880626825FB678400CDEC0C /* VolumeConversionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C880626325FB678400CDEC0C /* VolumeConversionViewController.swift */; };
 		C880626925FB678400CDEC0C /* SpeedConversionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C880626425FB678400CDEC0C /* SpeedConversionViewController.swift */; };
 		C880626C25FB67EE00CDEC0C /* CustomNumericKeyboard.xib in Resources */ = {isa = PBXBuildFile; fileRef = C880626B25FB67EE00CDEC0C /* CustomNumericKeyboard.xib */; };
@@ -69,7 +69,7 @@
 		C880625925FB675900CDEC0C /* Volume.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Volume.swift; sourceTree = "<group>"; };
 		C880626025FB678300CDEC0C /* WeightViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeightViewController.swift; sourceTree = "<group>"; };
 		C880626125FB678300CDEC0C /* DistanceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DistanceViewController.swift; sourceTree = "<group>"; };
-		C880626225FB678300CDEC0C /* TemperatureConversionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemperatureConversionViewController.swift; sourceTree = "<group>"; };
+		C880626225FB678300CDEC0C /* TemperatureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemperatureViewController.swift; sourceTree = "<group>"; };
 		C880626325FB678400CDEC0C /* VolumeConversionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VolumeConversionViewController.swift; sourceTree = "<group>"; };
 		C880626425FB678400CDEC0C /* SpeedConversionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeedConversionViewController.swift; sourceTree = "<group>"; };
 		C880626B25FB67EE00CDEC0C /* CustomNumericKeyboard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomNumericKeyboard.xib; sourceTree = "<group>"; };
@@ -168,9 +168,9 @@
 				C80BC48225FB9F2700A50B9A /* MainTabController.swift */,
 				C8026A2325FA9F56008C9F9C /* ConvertersController.swift */,
 				C880626025FB678300CDEC0C /* WeightViewController.swift */,
+				C880626225FB678300CDEC0C /* TemperatureViewController.swift */,
 				C880626125FB678300CDEC0C /* DistanceViewController.swift */,
 				C880626425FB678400CDEC0C /* SpeedConversionViewController.swift */,
-				C880626225FB678300CDEC0C /* TemperatureConversionViewController.swift */,
 				C880626325FB678400CDEC0C /* VolumeConversionViewController.swift */,
 				C880627C25FB71B200CDEC0C /* HistoryViewController.swift */,
 			);
@@ -205,9 +205,9 @@
 			isa = PBXGroup;
 			children = (
 				C880625725FB675800CDEC0C /* Weight.swift */,
+				C880625825FB675800CDEC0C /* Temperature.swift */,
 				C880625525FB675800CDEC0C /* Distance.swift */,
 				C880625625FB675800CDEC0C /* Speed.swift */,
-				C880625825FB675800CDEC0C /* Temperature.swift */,
 				C880625925FB675900CDEC0C /* Volume.swift */,
 			);
 			path = Converters;
@@ -300,7 +300,7 @@
 				C880625A25FB675900CDEC0C /* Distance.swift in Sources */,
 				C880627E25FB71B200CDEC0C /* HistoryViewController.swift in Sources */,
 				C880627A25FB687400CDEC0C /* CustomNumericKeyboard.swift in Sources */,
-				C880626725FB678400CDEC0C /* TemperatureConversionViewController.swift in Sources */,
+				C880626725FB678400CDEC0C /* TemperatureViewController.swift in Sources */,
 				C81A9EDC25FFC8DE00760DBD /* Utils.swift in Sources */,
 				C8B21FEC25FBE98E00A25463 /* TableController.swift in Sources */,
 				C880626925FB678400CDEC0C /* SpeedConversionViewController.swift in Sources */,
