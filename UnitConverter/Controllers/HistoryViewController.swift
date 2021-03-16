@@ -14,7 +14,7 @@ class HistoryViewController: UIViewController ,UITableViewDataSource,UITableView
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     
     var histories = [History]()
-    var conversionType = WEIGHTS_USER_DEFAULTS_KEY
+    var conversionType = HistoryConst.WEIGHT_KEY
     var icon: UIImage = UIImage(named: "weight")!
     
     override func viewDidLoad() {
@@ -40,7 +40,7 @@ class HistoryViewController: UIViewController ,UITableViewDataSource,UITableView
     @IBAction func handleSegmentControlIndexChange(_ sender: UISegmentedControl) {
         switch segmentedControl.selectedSegmentIndex {
         case 0:
-            conversionType = WEIGHTS_USER_DEFAULTS_KEY
+            conversionType = HistoryConst.WEIGHT_KEY
             icon = UIImage(named: "weight")!
         case 1:
             conversionType = TEMP_USER_DEFAULTS_KEY

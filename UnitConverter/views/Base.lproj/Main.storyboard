@@ -85,13 +85,13 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="B8t-ih-LvM">
                                                             <rect key="frame" x="112" y="21.5" width="180" height="57.5"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Conversion" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uWY-sj-o6m">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Conversion" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uWY-sj-o6m">
                                                                     <rect key="frame" x="0.0" y="0.0" width="180" height="33.5"/>
                                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NMx-MU-w2c">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Description" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NMx-MU-w2c">
                                                                     <rect key="frame" x="0.0" y="41.5" width="180" height="16"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="180" id="bLU-mC-c8z"/>
@@ -921,7 +921,7 @@
         <!--Weight-->
         <scene sceneID="QHU-bO-oc8">
             <objects>
-                <viewController title="Weight" id="L4m-eD-bnG" sceneMemberID="viewController">
+                <viewController title="Weight" id="L4m-eD-bnG" customClass="WeightViewController" customModule="UnitConverter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="n01-dd-3Hi">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -944,7 +944,7 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="kg" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="jYI-Ss-VC6">
+                                                            <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="kg" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="jYI-Ss-VC6">
                                                                 <rect key="frame" x="0.0" y="30.5" width="374" height="55"/>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                 <constraints>
@@ -958,6 +958,9 @@
                                                                         <integer key="value" value="8"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="onTextFieldChange:" destination="L4m-eD-bnG" eventType="editingChanged" id="gQ2-8m-V9x"/>
+                                                                </connections>
                                                             </textField>
                                                         </subviews>
                                                     </stackView>
@@ -970,7 +973,7 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="g" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ei1-E5-zNG">
+                                                            <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="g" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ei1-E5-zNG">
                                                                 <rect key="frame" x="0.0" y="30.5" width="374" height="55"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="55" id="g1t-Ij-Tzv"/>
@@ -986,6 +989,9 @@
                                                                         <color key="value" systemColor="systemBackgroundColor"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="onTextFieldChange:" destination="L4m-eD-bnG" eventType="editingChanged" id="hTX-ni-73v"/>
+                                                                </connections>
                                                             </textField>
                                                         </subviews>
                                                     </stackView>
@@ -998,7 +1004,7 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ou" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="YnU-S5-dot">
+                                                            <textField opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ou" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="YnU-S5-dot">
                                                                 <rect key="frame" x="0.0" y="30.5" width="374" height="55"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="55" id="B8S-54-D5V"/>
@@ -1011,6 +1017,9 @@
                                                                     </userDefinedRuntimeAttribute>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="onTextFieldChange:" destination="L4m-eD-bnG" eventType="editingChanged" id="Rwl-ns-6Tq"/>
+                                                                </connections>
                                                             </textField>
                                                         </subviews>
                                                     </stackView>
@@ -1023,7 +1032,7 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="lb" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="W0o-AN-17i">
+                                                            <textField opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="lb" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="W0o-AN-17i">
                                                                 <rect key="frame" x="0.0" y="30.5" width="374" height="55"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="55" id="GsZ-Vv-9eT"/>
@@ -1036,6 +1045,9 @@
                                                                     </userDefinedRuntimeAttribute>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="onTextFieldChange:" destination="L4m-eD-bnG" eventType="editingChanged" id="JdR-fR-8Nb"/>
+                                                                </connections>
                                                             </textField>
                                                         </subviews>
                                                     </stackView>
@@ -1051,7 +1063,7 @@
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="st" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="L5A-xu-jwJ">
+                                                                    <textField opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="st" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="L5A-xu-jwJ">
                                                                         <rect key="frame" x="0.0" y="30.5" width="174.5" height="55"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="55" id="LL3-5i-HfH"/>
@@ -1064,6 +1076,9 @@
                                                                             </userDefinedRuntimeAttribute>
                                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                                                         </userDefinedRuntimeAttributes>
+                                                                        <connections>
+                                                                            <action selector="onTextFieldChange:" destination="L4m-eD-bnG" eventType="editingChanged" id="Qui-S4-M8z"/>
+                                                                        </connections>
                                                                     </textField>
                                                                 </subviews>
                                                             </stackView>
@@ -1076,7 +1091,7 @@
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="lb" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="wTP-TS-QEF">
+                                                                    <textField opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="lb" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="wTP-TS-QEF">
                                                                         <rect key="frame" x="0.0" y="30.5" width="174.5" height="55"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="55" id="5rt-p5-uAv"/>
@@ -1089,6 +1104,9 @@
                                                                             </userDefinedRuntimeAttribute>
                                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                                                         </userDefinedRuntimeAttributes>
+                                                                        <connections>
+                                                                            <action selector="onTextFieldChange:" destination="L4m-eD-bnG" eventType="editingChanged" id="9C4-eH-TkD"/>
+                                                                        </connections>
                                                                     </textField>
                                                                 </subviews>
                                                             </stackView>
@@ -1128,8 +1146,23 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Weight" id="bgm-1Z-VPU">
-                        <barButtonItem key="rightBarButtonItem" title="Save" image="square.and.arrow.down" catalog="system" id="jgr-9o-nmn"/>
+                        <barButtonItem key="rightBarButtonItem" title="Save" image="square.and.arrow.down" catalog="system" id="jgr-9o-nmn">
+                            <connections>
+                                <action selector="handleSaveButtonClick:" destination="L4m-eD-bnG" id="Tz3-El-MUo"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="gramTextField" destination="ei1-E5-zNG" id="0je-f9-ylJ"/>
+                        <outlet property="kilogramTextField" destination="jYI-Ss-VC6" id="tMd-Bk-EpB"/>
+                        <outlet property="ounceTextField" destination="YnU-S5-dot" id="oSL-VX-ZuD"/>
+                        <outlet property="poundTextField" destination="W0o-AN-17i" id="NU0-nt-awh"/>
+                        <outlet property="spPoundTextField" destination="wTP-TS-QEF" id="JTO-Fc-rrf"/>
+                        <outlet property="spStoneTextField" destination="L5A-xu-jwJ" id="pcr-Au-jhf"/>
+                        <outlet property="stackView" destination="5gx-by-IbJ" id="sly-6W-dEA"/>
+                        <outlet property="stackViewTopConstraint" destination="qBQ-b7-EGK" id="A3I-az-LHO"/>
+                        <outlet property="viewScroller" destination="okT-1O-ms0" id="Z42-4G-dHZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DIr-P4-7AZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

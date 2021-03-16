@@ -1,88 +1,113 @@
 //
 //  Weight.swift
-//  utility-converter
+//  UnitConverter
 //
-//  Created by Brion Silva on 25/03/2019.
-//  Copyright © 2019 Brion Silva. All rights reserved.
+//  Created by Yohan Avishke Ediriweera on 2021-03-16.
 //
 
 import Foundation
 
-enum WeightUnit {
+enum WeightUnit: CaseIterable {
     case kilogram
     case gram
     case ounce
     case pound
     case stone
-    
-    static let getAllUnits = [kilogram, gram, ounce, pound, stone]
 }
 
-struct Weight {
-    let value: Double
-    let unit: WeightUnit
+class Weight {
+    var value: Double
+    var unit: WeightUnit
+    var decimalPlaces: Int
     
-    init(unit: WeightUnit, value: Double) {
-        self.value = value
+    init(unit: WeightUnit, value: String, decimalPlaces: Int) {
         self.unit = unit
+        self.value = Double(value)!
+        self.decimalPlaces = decimalPlaces
+    }
+}
+
+class WeightConverter {
+    var weight: Weight
+    
+    init(weight: Weight) {
+        self.weight = weight
     }
     
-    func convert(unit to: WeightUnit) -> Double {
+    /**
+     Convert `weight.value` from `weight.unit` to `to`
+     
+     - Parameters: `WeightUnit` type  that  `value` is converted to
+     - Returns: `String` containing the converted value
+     */
+    func convert(to: WeightUnit) -> String {
         var output = 0.0
         
-        switch unit {
+        switch weight.unit {
         case .kilogram:
             if to == .gram {
-                output = value * 1000
+                output = weight.value * 1000
             } else if to == .ounce {
-                output = value * 35.274
+                output = weight.value * 35.274
             } else if to == .pound {
-                output = value * 2.20462
+                output = weight.value * 2.205
             } else if to == .stone {
-                output = value / 6.35029318
+                output = weight.value / 6.35
             }
         case .gram:
             if to == .kilogram {
-                output = value / 1000
+                output = weight.value / 1000
             } else if to == .ounce {
-                output = value / 28.35
+                output = weight.value / 28.35
             } else if to == .pound {
-                output = value / 453.592
+                output = weight.value / 454
             } else if to == .stone {
-                output = value / 6350.293
+                output = weight.value / 6350
             }
         case .ounce:
             if to == .kilogram {
-                output = value / 35.274
+                output = weight.value / 35.274
             } else if to == .gram {
-                output = value * 28.35
+                output = weight.value * 28.35
             } else if to == .pound {
-                output = value / 16
-            } else if to == .stone {
-                output = value / 224
+                output = weight.value / 16
+            }  else if to == .stone {
+                output = weight.value / 224
             }
         case .pound:
             if to == .kilogram {
-                output = value / 2.205
+                output = weight.value / 2.205
             } else if to == .gram {
-                output = value * 453.592
+                output = weight.value * 454
             } else if to == .ounce {
-                output = value * 16
+                output = weight.value * 16
             } else if to == .stone {
-                output = value / 14
+                output = weight.value / 14
             }
         case .stone:
             if to == .kilogram {
-                output = value * 6.35
+                output = weight.value * 6.35
             } else if to == .gram {
-                output = value * 6350.293
+                output = weight.value * 6350
             } else if to == .pound {
-                output = value *  14
+                output = weight.value *  14
             } else if to == .ounce {
-                output = value * 224
+                output = weight.value * 224
             }
         }
         
-        return output
+        // Check if output has a decimal part. And if true then round it off
+        let deciamlPart = output.truncatingRemainder(dividingBy: 1)
+        if deciamlPart > 0 {
+            output = output.rounded(toPlaces: weight.decimalPlaces)
+        } else {
+            return String(Int(output))
+        }
+        
+        if output == 0.0 {
+            return ""
+        }
+        
+        return String(output)
     }
 }
