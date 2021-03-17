@@ -32,6 +32,11 @@ class HistoryViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if history.count == 0 {
+            self.tableView.setEmptyMessage("Saved Conversions are empty!")
+        } else {
+            self.tableView.restore()
+        }
         return history.count
     }
     
