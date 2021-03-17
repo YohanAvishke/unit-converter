@@ -143,9 +143,9 @@
 			isa = PBXGroup;
 			children = (
 				C880625425FB674900CDEC0C /* Converters */,
+				C8026A1925FA9E50008C9F9C /* ConverterView.swift */,
 				C880628225FB71DF00CDEC0C /* HistoryView.swift */,
 				C8D7F12A2600750600D9C343 /* History.swift */,
-				C8026A1925FA9E50008C9F9C /* ConverterView.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";

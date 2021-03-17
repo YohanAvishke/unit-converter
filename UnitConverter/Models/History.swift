@@ -40,9 +40,9 @@ final class History {
     
     init() {
         self.weight = UserDefaults.standard.array(forKey: HistoryConst.WEIGHT_KEY) as? [String] ?? []
-        self.temperature = UserDefaults.standard.object(forKey: "temperature") as? [String] ?? []
-        self.distance = UserDefaults.standard.object(forKey: "distance") as? [String] ?? []
-        self.speed = UserDefaults.standard.object(forKey: "speed") as? [String] ?? []
-        self.volume = UserDefaults.standard.object(forKey: "volume") as? [String] ?? []
+        self.temperature = UserDefaults.standard.object(forKey:  HistoryConst.TEMP_KEY) as? [String] ?? []
+        self.distance = UserDefaults.standard.object(forKey:  HistoryConst.DISTANCE_KEY) as? [String] ?? []
+        self.speed = UserDefaults.standard.object(forKey:  HistoryConst.SPEED_KEY) as? [String] ?? []
+        self.volume = UserDefaults.standard.object(forKey:  HistoryConst.VOLUME_KEY) as? [String] ?? []
     }
 }
