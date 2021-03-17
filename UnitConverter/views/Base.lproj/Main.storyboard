@@ -44,7 +44,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hgs-vN-iUo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1539" y="-252"/>
+            <point key="canvasLocation" x="-1425" y="-210"/>
         </scene>
         <!--Converters-->
         <scene sceneID="JP2-6x-Iyt">
@@ -142,7 +142,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wi3-jF-P3d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="855" y="-638"/>
+            <point key="canvasLocation" x="854" y="-638"/>
         </scene>
         <!--ConverterNavigation-->
         <scene sceneID="Nsg-xt-lj8">
@@ -392,17 +392,21 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Weight" id="bgm-1Z-VPU">
-                        <barButtonItem key="rightBarButtonItem" title="Save" image="square.and.arrow.down" catalog="system" id="jgr-9o-nmn">
-                            <connections>
-                                <action selector="onSaveClick:" destination="L4m-eD-bnG" id="gdb-Zf-2gT"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Save" image="square.and.arrow.down" catalog="system" id="vrH-fo-h4Z">
+                                <connections>
+                                    <action selector="onSaveClick:" destination="L4m-eD-bnG" id="vt0-jm-Ivh"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Settings" image="gearshape" catalog="system" id="jgr-9o-nmn"/>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="gramTextField" destination="ei1-E5-zNG" id="0je-f9-ylJ"/>
                         <outlet property="kilogramTextField" destination="jYI-Ss-VC6" id="tMd-Bk-EpB"/>
                         <outlet property="ounceTextField" destination="YnU-S5-dot" id="oSL-VX-ZuD"/>
                         <outlet property="poundTextField" destination="W0o-AN-17i" id="NU0-nt-awh"/>
+                        <outlet property="settingsButton" destination="jgr-9o-nmn" id="Cuo-Fg-shr"/>
                         <outlet property="spPoundTextField" destination="wTP-TS-QEF" id="JTO-Fc-rrf"/>
                         <outlet property="spStoneTextField" destination="L5A-xu-jwJ" id="pcr-Au-jhf"/>
                         <outlet property="stackView" destination="5gx-by-IbJ" id="sly-6W-dEA"/>
@@ -412,7 +416,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DIr-P4-7AZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2062" y="-1505"/>
+            <point key="canvasLocation" x="1761" y="-1511"/>
         </scene>
         <!--History-->
         <scene sceneID="zGo-S3-Fx2">
@@ -803,7 +807,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BfB-5a-94R" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2994" y="-1306"/>
+            <point key="canvasLocation" x="2752" y="-1343"/>
         </scene>
         <!--Temperature-->
         <scene sceneID="PxY-yZ-Xoq">
@@ -960,7 +964,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IVT-Pa-mpo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3852" y="-972"/>
+            <point key="canvasLocation" x="3601" y="-1015"/>
         </scene>
         <!--Speed-->
         <scene sceneID="4gc-IX-eyY">
@@ -1147,7 +1151,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f1x-Rm-TPn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3141" y="-427"/>
+            <point key="canvasLocation" x="2986" y="-380"/>
         </scene>
         <!--Volume-->
         <scene sceneID="Ciy-SG-yZr">
@@ -1364,12 +1368,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X5l-YQ-t5f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2232" y="-84"/>
+            <point key="canvasLocation" x="2217" y="-41"/>
         </scene>
     </scenes>
     <resources>
         <image name="clock" catalog="system" width="128" height="121"/>
         <image name="clock.fill" catalog="system" width="128" height="121"/>
+        <image name="gearshape" catalog="system" width="128" height="121"/>
         <image name="house" catalog="system" width="128" height="106"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="lungs" catalog="system" width="128" height="91"/>

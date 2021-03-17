@@ -5,9 +5,11 @@
 //  Created by Yohan Avishke Ediriweera on 2021-03-12.
 //
 
+import Foundation
 import UIKit
 
 class WeightViewController: UIViewController, CustomKeyboardDelegate {
+    @IBOutlet weak var settingsButton: UIBarButtonItem!
     @IBOutlet weak var viewScroller: UIScrollView!
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var stackViewTopConstraint: NSLayoutConstraint!
@@ -18,6 +20,8 @@ class WeightViewController: UIViewController, CustomKeyboardDelegate {
     @IBOutlet weak var spStoneTextField: UITextField!
     @IBOutlet weak var spPoundTextField: UITextField!
     
+    var settingsMenu: UIMenu?
+    var decimalPlaces: Int = 2
     var textFeilds: [UITextField]? = nil
     var activeTextField = UITextField()
     var history = History().weight
@@ -32,6 +36,8 @@ class WeightViewController: UIViewController, CustomKeyboardDelegate {
             UITapGestureRecognizer(target: self, action: #selector(hideKeyboard)))
         // Disable save button
         navigationItem.rightBarButtonItem!.isEnabled = false;
+        
+        configureSettingsMenu()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -59,10 +65,9 @@ class WeightViewController: UIViewController, CustomKeyboardDelegate {
         spPoundTextField.isUserInteractionEnabled = false
         
         // Observe keyboard show event to add prerequisits
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(keyboardWillShow(notification:)),
-                                               name: UIResponder.keyboardWillShowNotification,
-                                               object: nil)
+        NotificationCenter.default
+            .addObserver(self, selector: #selector(keyboardWillShow(notification:)),
+                         name: UIResponder.keyboardWillShowNotification, object: nil)
     }
     
     /**
@@ -187,6 +192,26 @@ class WeightViewController: UIViewController, CustomKeyboardDelegate {
         }
     }
     
+    func configureSettingsMenu() {
+        settingsMenu = UIMenu(
+            title: "Decimal Places", image: nil, identifier: nil, options: [],
+            children: [
+                UIAction(title: "Two Places", image: UIImage(systemName: "2.circle"),
+                         handler: { (_) in self.onSettingsChange(decimalPlaces: 2) }),
+                UIAction(title: "Three Places", image: UIImage(systemName: "3.circle"),
+                         handler: { (_) in self.onSettingsChange(decimalPlaces: 3) }),
+                UIAction(title: "Four Places", image: UIImage(systemName: "4.circle"),
+                         handler: { (_) in self.onSettingsChange(decimalPlaces: 4) })
+            ]
+        )
+        settingsButton.menu = settingsMenu
+    }
+    
+    func onSettingsChange(decimalPlaces: Int) {
+        self.decimalPlaces = decimalPlaces
+        updateTextFields(textField: poundTextField, of: WeightUnit.pound)
+    }
+    
     /**
      Modifies all the respective `TextFields` with conversions of the changed text field
      
@@ -199,7 +224,7 @@ class WeightViewController: UIViewController, CustomKeyboardDelegate {
                 clearTextFields()
             } else {
                 let weightConverter = WeightConverter(weight: Weight(unit: unit, value: input,
-                                                                     decimalPlaces: 4))
+                                                                     decimalPlaces: self.decimalPlaces))
                 
                 for _unit in WeightUnit.allCases {
                     if _unit == unit {
@@ -266,6 +291,10 @@ class WeightViewController: UIViewController, CustomKeyboardDelegate {
         }
     }
     
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
     /// Overidden from `CustomNumericKeyboardDelegate` will be triggered when retract button is pressed
     func retractKeyPressed() {
         hideKeyboard()
@@ -285,4 +314,5 @@ class WeightViewController: UIViewController, CustomKeyboardDelegate {
     func numericSymbolPressed(symbol: String) {
         print("Symbol \(symbol) pressed!")
     }
+    
 }

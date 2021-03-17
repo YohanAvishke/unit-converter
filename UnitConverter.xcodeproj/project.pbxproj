@@ -41,6 +41,7 @@
 		C8D7F12B2600750600D9C343 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D7F12A2600750600D9C343 /* History.swift */; };
 		C8E152DD260204050028CC58 /* CustomKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E152DC260204050028CC58 /* CustomKeyboard.swift */; };
 		C8E152E126020A3D0028CC58 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8E152E026020A3C0028CC58 /* Color.xcassets */; };
+		C8E152E5260236220028CC58 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E152E4260236220028CC58 /* SettingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +81,7 @@
 		C8D7F12A2600750600D9C343 /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
 		C8E152DC260204050028CC58 /* CustomKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomKeyboard.swift; path = UnitConverter/views/CustomKeyboard.swift; sourceTree = SOURCE_ROOT; };
 		C8E152E026020A3C0028CC58 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
+		C8E152E4260236220028CC58 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +166,7 @@
 				C80BC48225FB9F2700A50B9A /* MainTabController.swift */,
 				C880627C25FB71B200CDEC0C /* HistoryViewController.swift */,
 				C8026A2325FA9F56008C9F9C /* ConvertersController.swift */,
+				C8E152E4260236220028CC58 /* SettingViewController.swift */,
 				C880626025FB678300CDEC0C /* WeightViewController.swift */,
 				C880626225FB678300CDEC0C /* TemperatureViewController.swift */,
 				C880626125FB678300CDEC0C /* DistanceViewController.swift */,
@@ -280,6 +283,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8E152E5260236220028CC58 /* SettingViewController.swift in Sources */,
 				C8026A0825FA977C008C9F9C /* JsonReader.swift in Sources */,
 				C880627425FB682F00CDEC0C /* UITextField.swift in Sources */,
 				C880627325FB682F00CDEC0C /* UITextField+CustomNumericKeyboard.swift in Sources */,
