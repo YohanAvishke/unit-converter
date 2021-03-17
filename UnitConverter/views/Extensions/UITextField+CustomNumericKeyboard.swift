@@ -7,17 +7,17 @@
 //
 import UIKit
 
-private var numericKeyboardDelegate: CustomNumericKeyboardDelegate? = nil
+private var numericKeyboardDelegate: CustomKeyboardDelegate? = nil
 
 
 // MARK: - This extension can be used to make UITextFields as a part of the custom numeric keyboard.
-extension UITextField: CustomNumericKeyboardDelegate {
+extension UITextField: CustomKeyboardDelegate {
     
     /// This function sets the text field as a part of numeric keyboard.
     ///
     /// - Parameter delegate: The deligate
-    func setAsNumericKeyboard(delegate: CustomNumericKeyboardDelegate?) {
-        let numericKeyboard = CustomNumericKeyboard(frame: CGRect(x: 0, y: 0, width: 0, height: customNKbRecommendedHeight))
+    func setAsNumericKeyboard(delegate: CustomKeyboardDelegate?) {
+        let numericKeyboard = CustomKeyboard(frame: CGRect(x: 0, y: 0, width: 0, height: customNKbRecommendedHeight))
         self.inputView = numericKeyboard
         numericKeyboardDelegate = delegate
         numericKeyboard.delegate = self
@@ -26,7 +26,7 @@ extension UITextField: CustomNumericKeyboardDelegate {
     
     /// This function unsets the text field as a part of numeric keyboard.
     func unsetAsNumericKeyboard() {
-        if let numericKeyboard = self.inputView as? CustomNumericKeyboard {
+        if let numericKeyboard = self.inputView as? CustomKeyboard {
             numericKeyboard.delegate = nil
         }
         self.inputView = nil

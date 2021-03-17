@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DistanceViewController: UIViewController, CustomNumericKeyboardDelegate {
+class DistanceViewController: UIViewController, CustomKeyboardDelegate {
     @IBOutlet weak var viewScroller: UIScrollView!
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var stackViewTopConstraint: NSLayoutConstraint!

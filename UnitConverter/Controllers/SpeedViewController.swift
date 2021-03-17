@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SpeedViewController: UIViewController, CustomNumericKeyboardDelegate {
+class SpeedViewController: UIViewController, CustomKeyboardDelegate {
     @IBOutlet weak var viewScroller: UIScrollView!
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var stackViewTopConstraint: NSLayoutConstraint!
