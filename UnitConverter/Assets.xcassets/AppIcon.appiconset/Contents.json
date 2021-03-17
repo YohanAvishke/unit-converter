@@ -1,49 +1,49 @@
 {
   "images" : [
     {
-      "filename" : "Chimp Apparel 2-8.png",
+      "filename" : "Chimp Apparel-8.png",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "20x20"
     },
     {
-      "filename" : "Chimp Apparel 2-6.png",
+      "filename" : "Chimp Apparel-6.png",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "20x20"
     },
     {
-      "filename" : "Chimp Apparel 2-7.png",
+      "filename" : "Chimp Apparel-7.png",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "29x29"
     },
     {
-      "filename" : "Chimp Apparel 2-4.png",
+      "filename" : "Chimp Apparel-4.png",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "29x29"
     },
     {
-      "filename" : "Chimp Apparel 2-5.png",
+      "filename" : "Chimp Apparel-5.png",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "40x40"
     },
     {
-      "filename" : "Chimp Apparel 2-3.png",
+      "filename" : "Chimp Apparel-2.png",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "40x40"
     },
     {
-      "filename" : "Chimp Apparel 2-2.png",
+      "filename" : "Chimp Apparel-3.png",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "60x60"
     },
     {
-      "filename" : "Chimp Apparel 2-1.png",
+      "filename" : "Chimp Apparel-1.png",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "60x60"
@@ -94,7 +94,7 @@
       "size" : "83.5x83.5"
     },
     {
-      "filename" : "Chimp Apparel 2.png",
+      "filename" : "Chimp Apparel.png",
       "idiom" : "ios-marketing",
       "scale" : "1x",
       "size" : "1024x1024"
