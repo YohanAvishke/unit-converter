@@ -215,6 +215,11 @@ class WeightViewController: UIViewController, CustomKeyboardDelegate {
      */
     func onSettingsChange(decimalPlaces: Int) {
         self.decimalPlaces = decimalPlaces
+        
+        var activeValue: Double = Double(poundTextField.text!)!
+        activeValue = activeValue.rounded(toPlaces: decimalPlaces)
+        poundTextField.text = String(activeValue)
+        
         updateTextFields(textField: poundTextField, unit: WeightUnit.pound)
     }
     
