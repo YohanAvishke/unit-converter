@@ -337,19 +337,19 @@
                                 </constraints>
                                 <segments>
                                     <segment title="">
-                                        <imageReference key="image" image="scalemass" catalog="system" symbolScale="medium"/>
+                                        <imageReference key="image" image="scalemass" catalog="system" symbolScale="large"/>
                                     </segment>
                                     <segment title="">
-                                        <imageReference key="image" image="sun.min" catalog="system" symbolScale="large"/>
+                                        <imageReference key="image" image="sun.max" catalog="system" symbolScale="large"/>
                                     </segment>
                                     <segment title="">
                                         <imageReference key="image" image="ruler" catalog="system" symbolScale="large"/>
                                     </segment>
                                     <segment title="">
-                                        <imageReference key="image" image="wind" catalog="system" symbolScale="large"/>
+                                        <imageReference key="image" image="tornado" catalog="system" symbolScale="large"/>
                                     </segment>
                                     <segment title="">
-                                        <imageReference key="image" image="lungs" catalog="system" symbolScale="medium"/>
+                                        <imageReference key="image" image="eyedropper" catalog="system" symbolScale="large"/>
                                     </segment>
                                 </segments>
                                 <connections>
@@ -1389,16 +1389,16 @@
     <resources>
         <image name="clock" catalog="system" width="128" height="121"/>
         <image name="clock.fill" catalog="system" width="128" height="121"/>
+        <image name="eyedropper" catalog="system" width="128" height="119"/>
         <image name="gearshape" catalog="system" width="128" height="121"/>
         <image name="house" catalog="system" width="128" height="106"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
-        <image name="lungs" catalog="system" width="128" height="91"/>
         <image name="ruler" catalog="system" width="128" height="57"/>
         <image name="scalemass" catalog="system" width="128" height="119"/>
         <image name="square.and.arrow.down" catalog="system" width="121" height="128"/>
-        <image name="sun.min" catalog="system" width="128" height="121"/>
+        <image name="sun.max" catalog="system" width="128" height="124"/>
+        <image name="tornado" catalog="system" width="118" height="128"/>
         <image name="trash" catalog="system" width="121" height="128"/>
-        <image name="wind" catalog="system" width="128" height="101"/>
         <systemColor name="secondarySystemBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
