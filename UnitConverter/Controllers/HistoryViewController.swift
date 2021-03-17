@@ -27,27 +27,6 @@ class HistoryViewController: UIViewController, UITableViewDataSource, UITableVie
         toggleDeleteVisibility()
     }
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if history.count == 0 {
-            self.tableView.setEmptyMessage("Saved Conversions are empty!")
-        } else {
-            self.tableView.restore()
-        }
-        return history.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-            as! HistoryTableViewCell
-        cell.data.text = history[indexPath.row]
-        cell.icon.image = icon
-        return cell
-    }
-    
     /**
      Trigger on change of `UISegmentedControl` and update the `history`
      
@@ -108,5 +87,26 @@ class HistoryViewController: UIViewController, UITableViewDataSource, UITableVie
         } else {
             self.navigationItem.rightBarButtonItem!.isEnabled = false;
         }
+    }
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if history.count == 0 {
+            self.tableView.setEmptyMessage("Saved Conversions are empty!")
+        } else {
+            self.tableView.restore()
+        }
+        return history.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+            as! HistoryTableViewCell
+        cell.data.text = history[indexPath.row]
+        cell.icon.image = icon
+        return cell
     }
 }

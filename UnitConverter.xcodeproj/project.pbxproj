@@ -16,12 +16,11 @@
 		C8026A1A25FA9E50008C9F9C /* ConverterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8026A1925FA9E50008C9F9C /* ConverterView.swift */; };
 		C8026A1D25FA9E6B008C9F9C /* converterData.json in Resources */ = {isa = PBXBuildFile; fileRef = C8026A1C25FA9E6B008C9F9C /* converterData.json */; };
 		C8026A2425FA9F56008C9F9C /* ConvertersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8026A2325FA9F56008C9F9C /* ConvertersController.swift */; };
-		C8026A2725FAA27B008C9F9C /* ConverterViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8026A2625FAA27B008C9F9C /* ConverterViewCell.swift */; };
 		C80BC48325FB9F2700A50B9A /* MainTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80BC48225FB9F2700A50B9A /* MainTabController.swift */; };
 		C81A9ED925FFB53500760DBD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81A9ED825FFB53500760DBD /* Constants.swift */; };
 		C81A9EDC25FFC8DE00760DBD /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81A9EDB25FFC8DE00760DBD /* Utils.swift */; };
 		C81A9EE026005C5600760DBD /* DoubleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81A9EDF26005C5600760DBD /* DoubleExtension.swift */; };
-		C86149A026014BF300189F87 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C861499F26014BF300189F87 /* HistoryTableViewCell.swift */; };
+		C86149A026014BF300189F87 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C861499F26014BF300189F87 /* TableViewCell.swift */; };
 		C880625A25FB675900CDEC0C /* Distance.swift in Sources */ = {isa = PBXBuildFile; fileRef = C880625525FB675800CDEC0C /* Distance.swift */; };
 		C880625B25FB675900CDEC0C /* Speed.swift in Sources */ = {isa = PBXBuildFile; fileRef = C880625625FB675800CDEC0C /* Speed.swift */; };
 		C880625C25FB675900CDEC0C /* Weight.swift in Sources */ = {isa = PBXBuildFile; fileRef = C880625725FB675800CDEC0C /* Weight.swift */; };
@@ -55,12 +54,11 @@
 		C8026A1925FA9E50008C9F9C /* ConverterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterView.swift; sourceTree = "<group>"; };
 		C8026A1C25FA9E6B008C9F9C /* converterData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = converterData.json; sourceTree = "<group>"; };
 		C8026A2325FA9F56008C9F9C /* ConvertersController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertersController.swift; sourceTree = "<group>"; };
-		C8026A2625FAA27B008C9F9C /* ConverterViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterViewCell.swift; sourceTree = "<group>"; };
 		C80BC48225FB9F2700A50B9A /* MainTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabController.swift; sourceTree = "<group>"; };
 		C81A9ED825FFB53500760DBD /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C81A9EDB25FFC8DE00760DBD /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		C81A9EDF26005C5600760DBD /* DoubleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleExtension.swift; sourceTree = "<group>"; };
-		C861499F26014BF300189F87 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HistoryTableViewCell.swift; path = UnitConverter/views/HistoryTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		C861499F26014BF300189F87 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TableViewCell.swift; path = UnitConverter/views/TableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		C880625525FB675800CDEC0C /* Distance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Distance.swift; sourceTree = "<group>"; };
 		C880625625FB675800CDEC0C /* Speed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Speed.swift; sourceTree = "<group>"; };
 		C880625725FB675800CDEC0C /* Weight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weight.swift; sourceTree = "<group>"; };
@@ -130,8 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				C81A9EDE26005C4700760DBD /* Extensions */,
-				C8026A2625FAA27B008C9F9C /* ConverterViewCell.swift */,
-				C861499F26014BF300189F87 /* HistoryTableViewCell.swift */,
+				C861499F26014BF300189F87 /* TableViewCell.swift */,
 				C802694825FA2708008C9F9C /* LaunchScreen.storyboard */,
 				C802694325FA2705008C9F9C /* Main.storyboard */,
 				C880626B25FB67EE00CDEC0C /* CustomKeyboard.xib */,
@@ -283,10 +280,9 @@
 				C8026A0825FA977C008C9F9C /* JsonReader.swift in Sources */,
 				C880627425FB682F00CDEC0C /* UITextField.swift in Sources */,
 				C880627325FB682F00CDEC0C /* UITextField+CustomNumericKeyboard.swift in Sources */,
-				C8026A2725FAA27B008C9F9C /* ConverterViewCell.swift in Sources */,
 				C880625A25FB675900CDEC0C /* Distance.swift in Sources */,
 				C880627E25FB71B200CDEC0C /* HistoryViewController.swift in Sources */,
-				C86149A026014BF300189F87 /* HistoryTableViewCell.swift in Sources */,
+				C86149A026014BF300189F87 /* TableViewCell.swift in Sources */,
 				C880626725FB678400CDEC0C /* TemperatureViewController.swift in Sources */,
 				C81A9EDC25FFC8DE00760DBD /* Utils.swift in Sources */,
 				C880626925FB678400CDEC0C /* SpeedViewController.swift in Sources */,

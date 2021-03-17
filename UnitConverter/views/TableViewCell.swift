@@ -12,3 +12,9 @@ class HistoryTableViewCell: UITableViewCell {
     @IBOutlet weak var icon: UIImageView!
     @IBOutlet weak var data: UILabel!
 }
+
+class ConverterTableViewCell: UITableViewCell {
+    @IBOutlet weak var converterImage: UIImageView!
+    @IBOutlet weak var converterName: UILabel!
+    @IBOutlet weak var converterDescription: UILabel!
+}
