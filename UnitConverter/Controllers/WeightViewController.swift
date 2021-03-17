@@ -150,7 +150,7 @@ class WeightViewController: UIViewController, CustomKeyboardDelegate {
         } else if textField.tag == 5 {
             unit = .stone
         }
-        updateTextFields(textField: textField, of: unit!)
+        updateTextFields(textField: textField, unit: unit!)
         
         // Disable save button if all the TextFields are empty
         if isTextFieldsEmpty(list: textFeilds!) {
@@ -192,6 +192,9 @@ class WeightViewController: UIViewController, CustomKeyboardDelegate {
         }
     }
     
+    /**
+     Configure and Add the menu to display the decimal places on settings button click
+     */
     func configureSettingsMenu() {
         settingsMenu = UIMenu(
             title: "Decimal Places", image: nil, identifier: nil, options: [],
@@ -207,9 +210,12 @@ class WeightViewController: UIViewController, CustomKeyboardDelegate {
         settingsButton.menu = settingsMenu
     }
     
+    /**
+     When an menu item is selected update the `TextFields`
+     */
     func onSettingsChange(decimalPlaces: Int) {
         self.decimalPlaces = decimalPlaces
-        updateTextFields(textField: poundTextField, of: WeightUnit.pound)
+        updateTextFields(textField: poundTextField, unit: WeightUnit.pound)
     }
     
     /**
@@ -218,7 +224,7 @@ class WeightViewController: UIViewController, CustomKeyboardDelegate {
      - Parameter textField: Changed field
      - Parameter unit: `WeightUnit` type of the changed field
      */
-    func updateTextFields(textField: UITextField, of unit: WeightUnit) -> Void {
+    func updateTextFields(textField: UITextField, unit: WeightUnit) -> Void {
         if let input = textField.text {
             if input.isEmpty {
                 clearTextFields()

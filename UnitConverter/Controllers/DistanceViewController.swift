@@ -8,6 +8,7 @@
 import UIKit
 
 class DistanceViewController: UIViewController, CustomKeyboardDelegate {
+    @IBOutlet weak var settingsButton: UIBarButtonItem!
     @IBOutlet weak var viewScroller: UIScrollView!
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var stackViewTopConstraint: NSLayoutConstraint!
@@ -19,6 +20,8 @@ class DistanceViewController: UIViewController, CustomKeyboardDelegate {
     @IBOutlet weak var centimeterTextField: UITextField!
     @IBOutlet weak var millimeterTextField: UITextField!
     
+    var settingsMenu: UIMenu?
+    var decimalPlaces: Int = 2
     var textFeilds: [UITextField]? = nil
     var activeTextField = UITextField()
     var history = History().distance
@@ -32,6 +35,8 @@ class DistanceViewController: UIViewController, CustomKeyboardDelegate {
             UITapGestureRecognizer(target: self, action: #selector(hideKeyboard)))
         // Disable save button
         navigationItem.rightBarButtonItem!.isEnabled = false;
+        
+        configureSettingsMenu()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -186,6 +191,32 @@ class DistanceViewController: UIViewController, CustomKeyboardDelegate {
     }
     
     /**
+     Configure and Add the menu to display the decimal places on settings button click
+     */
+    func configureSettingsMenu() {
+        settingsMenu = UIMenu(
+            title: "Decimal Places", image: nil, identifier: nil, options: [],
+            children: [
+                UIAction(title: "Two Places", image: UIImage(systemName: "2.circle"),
+                         handler: { (_) in self.onSettingsChange(decimalPlaces: 2) }),
+                UIAction(title: "Three Places", image: UIImage(systemName: "3.circle"),
+                         handler: { (_) in self.onSettingsChange(decimalPlaces: 3) }),
+                UIAction(title: "Four Places", image: UIImage(systemName: "4.circle"),
+                         handler: { (_) in self.onSettingsChange(decimalPlaces: 4) })
+            ]
+        )
+        settingsButton.menu = settingsMenu
+    }
+    
+    /**
+     When an menu item is selected update the `TextFields`
+     */
+    func onSettingsChange(decimalPlaces: Int) {
+        self.decimalPlaces = decimalPlaces
+        updateTextFields(textField: millimeterTextField, unit: DistanceUnit.millimeter)
+    }
+    
+    /**
      Modifies all the respective `TextFields` with conversions of the changed text field
      
      - Parameter textField: Changed field
@@ -198,7 +229,7 @@ class DistanceViewController: UIViewController, CustomKeyboardDelegate {
             } else {
                 let distanceConverter = DistanceConverter(distance: Distance(unit: unit,
                                                                              value: input,
-                                                                             decimalPlaces: 4))
+                                                                             decimalPlaces: decimalPlaces))
                 
                 for _unit in DistanceUnit.allCases {
                     if _unit == unit {

@@ -8,6 +8,7 @@
 import UIKit
 
 class VolumeViewController: UIViewController, CustomKeyboardDelegate {
+    @IBOutlet weak var settingsButton: UIBarButtonItem!
     @IBOutlet weak var viewScroller: UIScrollView!
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var stackViewTopConstraint: NSLayoutConstraint!
@@ -17,6 +18,8 @@ class VolumeViewController: UIViewController, CustomKeyboardDelegate {
     @IBOutlet weak var pintTextField: UITextField!
     @IBOutlet weak var fluidOunceTextField: UITextField!
     
+    var settingsMenu: UIMenu?
+    var decimalPlaces: Int = 2
     var textFeilds: [UITextField]? = nil
     var activeTextField = UITextField()
     var history = History().volume
@@ -29,6 +32,8 @@ class VolumeViewController: UIViewController, CustomKeyboardDelegate {
             UITapGestureRecognizer(target: self, action: #selector(hideKeyboard)))
         // Disable save button
         navigationItem.rightBarButtonItem!.isEnabled = false;
+        
+        configureSettingsMenu()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -173,6 +178,32 @@ class VolumeViewController: UIViewController, CustomKeyboardDelegate {
     }
     
     /**
+     Configure and Add the menu to display the decimal places on settings button click
+     */
+    func configureSettingsMenu() {
+        settingsMenu = UIMenu(
+            title: "Decimal Places", image: nil, identifier: nil, options: [],
+            children: [
+                UIAction(title: "Two Places", image: UIImage(systemName: "2.circle"),
+                         handler: { (_) in self.onSettingsChange(decimalPlaces: 2) }),
+                UIAction(title: "Three Places", image: UIImage(systemName: "3.circle"),
+                         handler: { (_) in self.onSettingsChange(decimalPlaces: 3) }),
+                UIAction(title: "Four Places", image: UIImage(systemName: "4.circle"),
+                         handler: { (_) in self.onSettingsChange(decimalPlaces: 4) })
+            ]
+        )
+        settingsButton.menu = settingsMenu
+    }
+    
+    /**
+     When an menu item is selected update the `TextFields`
+     */
+    func onSettingsChange(decimalPlaces: Int) {
+        self.decimalPlaces = decimalPlaces
+        updateTextFields(textField: millilitreTextField, unit: VolumeUnit.millilitre)
+    }
+    
+    /**
      Modifies all the respective `TextFields` with conversions of the changed text field
      
      - Parameter textField: Changed field
@@ -184,7 +215,7 @@ class VolumeViewController: UIViewController, CustomKeyboardDelegate {
                 clearTextFields()
             } else {
                 let volumeConverter = VolumeConverter(volume: Volume(unit: unit, value: input,
-                                                                     decimalPlaces: 4))
+                                                                     decimalPlaces: decimalPlaces))
                 
                 for _unit in VolumeUnit.allCases {
                     if _unit == unit {

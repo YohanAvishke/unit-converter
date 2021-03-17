@@ -786,11 +786,14 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Distance" id="rV6-Re-Aqr">
-                        <barButtonItem key="rightBarButtonItem" title="Save" image="square.and.arrow.down" catalog="system" id="xHV-sk-6oK">
-                            <connections>
-                                <action selector="onSaveClick:" destination="W5N-93-Z2N" id="2QL-SU-gKj"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Save" image="square.and.arrow.down" catalog="system" id="xHV-sk-6oK">
+                                <connections>
+                                    <action selector="onSaveClick:" destination="W5N-93-Z2N" id="2QL-SU-gKj"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Settings" image="gearshape" catalog="system" id="lHM-Cq-3qf"/>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="centimeterTextField" destination="9De-3g-8fQ" id="suw-Vx-87i"/>
@@ -799,6 +802,7 @@
                         <outlet property="meterTextField" destination="sGb-Ai-x4W" id="xiu-Zg-2lp"/>
                         <outlet property="mileTextField" destination="uMS-eb-1xq" id="pIj-MX-NNQ"/>
                         <outlet property="millimeterTextField" destination="bcf-h4-3dJ" id="7OG-Kn-kyj"/>
+                        <outlet property="settingsButton" destination="lHM-Cq-3qf" id="bbX-RL-G2Y"/>
                         <outlet property="stackView" destination="oBE-Cz-f5a" id="JsV-mM-Acq"/>
                         <outlet property="stackViewTopConstraint" destination="ZcX-rK-nzO" id="QKo-cG-Svh"/>
                         <outlet property="viewScroller" destination="wP9-7v-xfb" id="CBJ-tn-QeW"/>
@@ -947,16 +951,20 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Temperature" id="T2p-TK-Kah">
-                        <barButtonItem key="rightBarButtonItem" title="Save" image="square.and.arrow.down" catalog="system" id="CGe-JI-7vC">
-                            <connections>
-                                <action selector="onSaveClick:" destination="Nsi-2b-BiN" id="B2F-Sj-bEu"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Save" image="square.and.arrow.down" catalog="system" id="CGe-JI-7vC">
+                                <connections>
+                                    <action selector="onSaveClick:" destination="Nsi-2b-BiN" id="B2F-Sj-bEu"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Settings" image="gearshape" catalog="system" id="v7N-hG-PJ8"/>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="celsiusTextField" destination="mSJ-E1-OA5" id="aH0-MM-hnV"/>
                         <outlet property="fahrenheitTextField" destination="kog-VY-jOA" id="1lR-xE-t4v"/>
                         <outlet property="kelvinTextField" destination="1SY-er-TnX" id="vru-d5-RDE"/>
+                        <outlet property="settingsButton" destination="v7N-hG-PJ8" id="uPn-WH-HCl"/>
                         <outlet property="stackView" destination="MCI-28-6jf" id="EgM-Dd-2te"/>
                         <outlet property="stackViewTopConstraint" destination="EfW-AG-bEi" id="vzS-yZ-XYT"/>
                         <outlet property="viewScroller" destination="UGh-Dz-uEY" id="QNX-1Z-Klb"/>
@@ -1133,17 +1141,21 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Speed" id="11Y-dC-MRB">
-                        <barButtonItem key="rightBarButtonItem" title="Save" image="square.and.arrow.down" catalog="system" id="nxP-oT-9jJ">
-                            <connections>
-                                <action selector="onSaveClick:" destination="Z4i-cx-Xje" id="Fxl-FW-giK"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Save" image="square.and.arrow.down" catalog="system" id="nxP-oT-9jJ">
+                                <connections>
+                                    <action selector="onSaveClick:" destination="Z4i-cx-Xje" id="Fxl-FW-giK"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Settings" image="gearshape" catalog="system" id="yxV-LS-YYk"/>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="kmhTextField" destination="cla-Oe-T7L" id="o3S-4L-Tqe"/>
                         <outlet property="knotTextField" destination="cto-1o-Yra" id="kjp-GA-DAb"/>
                         <outlet property="mihTextField" destination="E0T-kH-yId" id="51X-jt-5It"/>
                         <outlet property="msTextField" destination="aGZ-y0-9ra" id="Zzf-67-T5y"/>
+                        <outlet property="settingsButton" destination="yxV-LS-YYk" id="NjF-h6-wOP"/>
                         <outlet property="stackView" destination="Pyh-a0-K1c" id="hc8-vj-ixn"/>
                         <outlet property="stackViewTopConstraint" destination="SZA-66-kQ6" id="83I-fT-a6H"/>
                         <outlet property="viewScroller" destination="mKC-dd-AQa" id="x9d-go-j19"/>
@@ -1349,11 +1361,14 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Volume" id="jQ0-0g-xeY">
-                        <barButtonItem key="rightBarButtonItem" title="Save" image="square.and.arrow.down" catalog="system" id="iXz-Xb-qck">
-                            <connections>
-                                <action selector="onSaveClick:" destination="11e-MU-KCP" id="N9H-uH-UTJ"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Save" image="square.and.arrow.down" catalog="system" id="iXz-Xb-qck">
+                                <connections>
+                                    <action selector="onSaveClick:" destination="11e-MU-KCP" id="N9H-uH-UTJ"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Settings" image="gearshape" catalog="system" id="RBk-Q2-HSv"/>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="fluidOunceTextField" destination="HxE-LS-Cgg" id="q1R-jE-37r"/>
@@ -1361,6 +1376,7 @@
                         <outlet property="litreTextField" destination="aCu-ca-VbL" id="TSO-E5-rYE"/>
                         <outlet property="millilitreTextField" destination="0VM-hW-g2Z" id="jPy-2n-cX9"/>
                         <outlet property="pintTextField" destination="cCz-hq-fZx" id="ZpI-1P-Bke"/>
+                        <outlet property="settingsButton" destination="RBk-Q2-HSv" id="nkO-4W-hgJ"/>
                         <outlet property="stackView" destination="HKh-Tq-dGL" id="k6J-Ar-a7j"/>
                         <outlet property="stackViewTopConstraint" destination="FEa-Wz-AnE" id="MPB-he-Hy2"/>
                         <outlet property="viewScroller" destination="7Hk-Rf-geL" id="rTo-ZW-iko"/>

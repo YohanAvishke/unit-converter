@@ -8,6 +8,7 @@
 import UIKit
 
 class TemperatureViewController: UIViewController, CustomKeyboardDelegate {
+    @IBOutlet weak var settingsButton: UIBarButtonItem!
     @IBOutlet weak var viewScroller: UIScrollView!
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var stackViewTopConstraint: NSLayoutConstraint!
@@ -15,6 +16,8 @@ class TemperatureViewController: UIViewController, CustomKeyboardDelegate {
     @IBOutlet weak var fahrenheitTextField: UITextField!
     @IBOutlet weak var kelvinTextField: UITextField!
     
+    var settingsMenu: UIMenu?
+    var decimalPlaces: Int = 2
     var textFeilds: [UITextField]? = nil
     var activeTextField = UITextField()
     var history = History().temperature
@@ -27,6 +30,8 @@ class TemperatureViewController: UIViewController, CustomKeyboardDelegate {
             UITapGestureRecognizer(target: self, action: #selector(hideKeyboard)))
         // Disable save button
         navigationItem.rightBarButtonItem!.isEnabled = false;
+        
+        configureSettingsMenu()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -162,6 +167,32 @@ class TemperatureViewController: UIViewController, CustomKeyboardDelegate {
     }
     
     /**
+     Configure and Add the menu to display the decimal places on settings button click
+     */
+    func configureSettingsMenu() {
+        settingsMenu = UIMenu(
+            title: "Decimal Places", image: nil, identifier: nil, options: [],
+            children: [
+                UIAction(title: "Two Places", image: UIImage(systemName: "2.circle"),
+                         handler: { (_) in self.onSettingsChange(decimalPlaces: 2) }),
+                UIAction(title: "Three Places", image: UIImage(systemName: "3.circle"),
+                         handler: { (_) in self.onSettingsChange(decimalPlaces: 3) }),
+                UIAction(title: "Four Places", image: UIImage(systemName: "4.circle"),
+                         handler: { (_) in self.onSettingsChange(decimalPlaces: 4) })
+            ]
+        )
+        settingsButton.menu = settingsMenu
+    }
+    
+    /**
+     When an menu item is selected update the `TextFields`
+     */
+    func onSettingsChange(decimalPlaces: Int) {
+        self.decimalPlaces = decimalPlaces
+        updateTextFields(textField: kelvinTextField, unit: TemperatureUnit.kelvin)
+    }
+    
+    /**
      Modifies all the respective `TextFields` with conversions of the changed text field
      
      - Parameter textField: Changed field
@@ -173,7 +204,7 @@ class TemperatureViewController: UIViewController, CustomKeyboardDelegate {
                 clearTextFields()
             } else {
                 let temperatureConverter = TemperatureConverter(
-                    temperature: Temperature(unit: unit, value: input, decimalPlaces: 4))
+                    temperature: Temperature(unit: unit, value: input, decimalPlaces: decimalPlaces))
                 
                 for _unit in TemperatureUnit.allCases {
                     if _unit == unit {
