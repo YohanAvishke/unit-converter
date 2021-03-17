@@ -447,7 +447,7 @@
                                     </segment>
                                 </segments>
                                 <connections>
-                                    <action selector="handleSegmentControlIndexChange:" destination="jAB-w7-ALn" eventType="valueChanged" id="ku8-eU-yFx"/>
+                                    <action selector="onChangeSegmentControlIndex:" destination="jAB-w7-ALn" eventType="valueChanged" id="w6N-pa-Qn1"/>
                                 </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="gFp-L4-nJ5">
@@ -515,7 +515,7 @@
                         <barButtonItem key="rightBarButtonItem" title="Item" image="trash" catalog="system" id="b9F-eY-Zfs">
                             <color key="tintColor" systemColor="systemOrangeColor"/>
                             <connections>
-                                <action selector="handleHistoryClearButtonClick:" destination="jAB-w7-ALn" id="wHb-pU-qRc"/>
+                                <action selector="onClickDelete:" destination="jAB-w7-ALn" id="AWs-L4-AXJ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -803,7 +803,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BfB-5a-94R" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3019" y="-1320"/>
+            <point key="canvasLocation" x="2994" y="-1306"/>
         </scene>
         <!--Temperature-->
         <scene sceneID="PxY-yZ-Xoq">
@@ -960,7 +960,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IVT-Pa-mpo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3919" y="-1013"/>
+            <point key="canvasLocation" x="3852" y="-972"/>
         </scene>
         <!--Speed-->
         <scene sceneID="4gc-IX-eyY">
@@ -1147,7 +1147,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f1x-Rm-TPn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3281" y="-384"/>
+            <point key="canvasLocation" x="3141" y="-427"/>
         </scene>
         <!--Volume-->
         <scene sceneID="Ciy-SG-yZr">
@@ -1364,7 +1364,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X5l-YQ-t5f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2351" y="-54"/>
+            <point key="canvasLocation" x="2232" y="-84"/>
         </scene>
     </scenes>
     <resources>

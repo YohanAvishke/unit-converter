@@ -39,7 +39,6 @@
 		C880627625FB682F00CDEC0C /* UIViewController+HideKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C880627225FB682F00CDEC0C /* UIViewController+HideKeyboard.swift */; };
 		C880627A25FB687400CDEC0C /* CustomNumericKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C880627925FB687400CDEC0C /* CustomNumericKeyboard.swift */; };
 		C880627E25FB71B200CDEC0C /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C880627C25FB71B200CDEC0C /* HistoryViewController.swift */; };
-		C880628425FB71E000CDEC0C /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C880628225FB71DF00CDEC0C /* HistoryView.swift */; };
 		C8D7F12B2600750600D9C343 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D7F12A2600750600D9C343 /* History.swift */; };
 /* End PBXBuildFile section */
 
@@ -78,7 +77,6 @@
 		C880627225FB682F00CDEC0C /* UIViewController+HideKeyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+HideKeyboard.swift"; sourceTree = "<group>"; };
 		C880627925FB687400CDEC0C /* CustomNumericKeyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNumericKeyboard.swift; sourceTree = "<group>"; };
 		C880627C25FB71B200CDEC0C /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
-		C880628225FB71DF00CDEC0C /* HistoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		C8D7F12A2600750600D9C343 /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -144,7 +142,6 @@
 			children = (
 				C880625425FB674900CDEC0C /* Converters */,
 				C8026A1925FA9E50008C9F9C /* ConverterView.swift */,
-				C880628225FB71DF00CDEC0C /* HistoryView.swift */,
 				C8D7F12A2600750600D9C343 /* History.swift */,
 			);
 			path = Models;
@@ -295,7 +292,6 @@
 				C802693E25FA2705008C9F9C /* AppDelegate.swift in Sources */,
 				C880627625FB682F00CDEC0C /* UIViewController+HideKeyboard.swift in Sources */,
 				C8026A1A25FA9E50008C9F9C /* ConverterView.swift in Sources */,
-				C880628425FB71E000CDEC0C /* HistoryView.swift in Sources */,
 				C802694025FA2705008C9F9C /* SceneDelegate.swift in Sources */,
 				C880626825FB678400CDEC0C /* VolumeViewController.swift in Sources */,
 				C880626625FB678400CDEC0C /* DistanceViewController.swift in Sources */,

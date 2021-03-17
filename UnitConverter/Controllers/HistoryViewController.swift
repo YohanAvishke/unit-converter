@@ -12,6 +12,7 @@ class HistoryViewController: UIViewController, UITableViewDataSource, UITableVie
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     
     var history = History().weight
+    var selectedSegment: SegmentType = SegmentType.weight
     var icon: UIImage = converterViews[0].image
     
     override func viewDidLoad() {
@@ -20,37 +21,8 @@ class HistoryViewController: UIViewController, UITableViewDataSource, UITableVie
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        // Reload the table view
-        DispatchQueue.main.async { self.tableView.reloadData() }
-        toggleDeleteVisibility()
-    }
-    
-    /**
-     This function is triggered when the segmented control tab is changed.
-     This assigns the respective conversion type and icon and fetches the
-     conversion history.
-     - Parameter sender: The UISegmentedControl.
-     */
-    @IBAction func handleSegmentControlIndexChange(_ sender: UISegmentedControl) {
-        switch segmentedControl.selectedSegmentIndex {
-        case 0:
-            history = History().weight
-            icon = converterViews[0].image
-        case 1:
-            history = History().temperature
-            icon = converterViews[1].image
-        case 2:
-            history = History().distance
-            icon = converterViews[2].image
-        case 3:
-            history = History().speed
-            icon = converterViews[3].image
-        case 4:
-            history = History().volume
-            icon = converterViews[4].image
-        default:
-            break
-        }
+        history = History().segmentToHistoryMapping(segmentType: selectedSegment)
+        
         DispatchQueue.main.async { self.tableView.reloadData() }
         toggleDeleteVisibility()
     }
@@ -63,7 +35,6 @@ class HistoryViewController: UIViewController, UITableViewDataSource, UITableVie
         return history.count
     }
     
-    /// This function generates the table cells.
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
             as! HistoryTableViewCell
@@ -72,19 +43,52 @@ class HistoryViewController: UIViewController, UITableViewDataSource, UITableVie
         return cell
     }
     
-    /// This function handles the clear history button click. It checks
-    /// if history us available and clears the corresponding history and
-    /// sets a success alert once done.
-    ///
-    /// - Parameter sender: The clear button.
-    @IBAction func handleHistoryClearButtonClick(_ sender: Any) {
+    /**
+     Trigger on change of `UISegmentedControl` and update the `history`
+     
+     - Parameter sender: UISegmentedControl.
+     */
+    @IBAction func onChangeSegmentControlIndex(_ sender: UISegmentedControl) {
+        // Update the history accordingly to the selected segment
+        switch segmentedControl.selectedSegmentIndex {
+        case 0:
+            selectedSegment = SegmentType.weight
+            icon = converterViews[0].image
+        case 1:
+            selectedSegment = SegmentType.temperature
+            icon = converterViews[1].image
+        case 2:
+            selectedSegment = SegmentType.distance
+            icon = converterViews[2].image
+        case 3:
+            selectedSegment = SegmentType.speed
+            icon = converterViews[3].image
+        case 4:
+            selectedSegment = SegmentType.volume
+            icon = converterViews[4].image
+        default:
+            break
+        }
+        history = History().segmentToHistoryMapping(segmentType: selectedSegment)
+        
+        DispatchQueue.main.async { self.tableView.reloadData() }
+        toggleDeleteVisibility()
+    }
+    
+    /**
+     Delete history list of a converter's type
+     
+     - Parameter sender: The clear button.
+     */
+    @IBAction func onClickDelete(_ sender: Any) {
         if history.count > 0 {
-            history = []
+            history = History().deleteHistory(segmentType: selectedSegment)
             
             let alert = UIAlertController(title: "Success",
                                           message: "The saved conversions were successfully deleted!",
                                           preferredStyle: UIAlertController.Style.alert)
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default,
+                                          handler: nil))
             self.present(alert, animated: true, completion: nil)
             
             DispatchQueue.main.async{ self.tableView.reloadData() }
@@ -92,8 +96,7 @@ class HistoryViewController: UIViewController, UITableViewDataSource, UITableVie
         }
     }
     
-    /// This function checks if the history is there and sets the cisibility of
-    /// the clear history button
+    /// Set the visibility of delete button
     func toggleDeleteVisibility() {
         if history.count > 0 {
             self.navigationItem.rightBarButtonItem!.isEnabled = true;
